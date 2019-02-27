@@ -161,3 +161,10 @@ div.container {
     background-color: #DC2D13; }
     .card__dashes-texture-btn:hover {
       background-color: #c22b13; }
+  .card__dashes-texture .card {
+    border-color: #ccc6c6; }
+
+.card__dark {
+  background-color: #222222; }
+  .card__dark-text {
+    color: white; }

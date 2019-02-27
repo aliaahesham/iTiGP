@@ -1,5 +1,7 @@
-.card__dashes-texture
+.card
 {
+    &__dashes-texture
+    {
    background-image: url('../images/texture-1.gif');
    background-repeat: repeat;
    border:1px solid $gray-color-shade1;
@@ -12,5 +14,17 @@
      {
         background-color: $primary-color-dark;
      }
+   }
+   .card
+   {
+       border-color: $gray-color-shade1;
+   }
+   }
+   &__dark
+   {
+       background-color: $gray-color-shade5;
+       &-text{
+           color:$white-color;
+       }
    }
 }
