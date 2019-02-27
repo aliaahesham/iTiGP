@@ -1,0 +1,16 @@
+.card__dashes-texture
+{
+   background-image: url('../images/texture-1.gif');
+   background-repeat: repeat;
+   border:1px solid $gray-color-shade1;
+
+   &-btn
+   {
+       border:none;
+     background-color: $primary-color;
+     &:hover
+     {
+        background-color: $primary-color-dark;
+     }
+   }
+}

@@ -1,0 +1,33 @@
+div{
+    &.container-fluid
+    {
+      //  background-color: aqua;
+     &.no-gutters
+     {
+        padding-left: 0;
+        padding-right:0;
+     }
+    }
+   
+    &.container
+    {
+      //  background-color: aqua;
+       padding-left: 0;
+       padding-right: 0;
+     &.no-gutters
+     {
+        padding-left: 0;
+        padding-right:0;
+     }
+    }
+  }
+
+// .row
+// {
+//    background-color: pink;
+
+// }
+// .col
+// {
+//    background-color: burlywood;
+// }
