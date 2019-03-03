@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+    <!--buttons component-->
+    <!-- <div class="container-fluid mt-1">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-secondary btn--skewx btn--skewx"> <span class="btn--skewx--text__primary-color">The All New</span>  </button>
+                <button type="button" class="btn btn-secondary btn--skewx btn--skewx__right-border"> <span class="btn--skewx--text__secondary-color">The All New</span>  </button>
+                <button type="button" class="btn btn-secondary btn--ordinary btn--ordinary__without-border"> <span >Add your car</span>  </button>
+                <button type="button" class="btn btn-secondary btn--ordinary btn--triangle"> <div class="btn--triangle--small"></div> <span class="btn--triangle--text"> Top</span> </button>
+                
+                <div class="btn--3D-btn btn--ordinary__right-border"> <span >submit</span>  </div>
+                
+            </div>
+        </div>
+    </div> -->
+
+    <!--header-->
+    <div class="container-fluid no-gutters">
+        <div class="row no-gutters">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--title-->
+    <div class="container-fluid no-gutters page-title">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card text-white page-title__card">
+                    <div class=" page-title__overlay"></div>
+                    <img src="./images/diagnostic-test-result.jpg" class="card-img page-title__card-image" alt="...">
+                    <div class="lines-seperator"></div>
+                    <div class="card-img-overlay">
+                        <h1 class="card-title page-title__card-text">New Cars</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--body-->
+    <section class="card-listing">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row mb-3 ">
+                        <div class="col-md-12 sorting-bar">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-6 mt-3 dropdown-box ">
+                                            <span>Sorted By</span>
+                                            <button type="button" class="sekwed-btn p-2 border-0">
+                                                <span> Last Added <i class="fas fa-caret-down"></i></span>
+                                            </button>
+                                            <ul class="dropdown d-none">
+                                                <li class="p-2 border-bottom">latest added</li>
+                                                <li class="p-2 border-bottom">latest added</li>
+                                                <li class="p-2 border-bottom">latest added</li>
+                                                <li class="p-2">latest added</li>
+                                            </ul>
+
+                                        </div>
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-right sorting-bar-icons mt-3">
+                                    <i class="fas fa-list-ul mr-2"></i>
+                                    <i class="fas fa-th-large mr-3"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------------------------- horizontal card ----------------------->
+                    <div class="row horizontal">
+                        <div class="card card-box col-md-12 p-3 mt-2 rounded-0">
+                            <a href="" class="card-link">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <img src="images/car.jpg" class="card-img rounded-0" alt="...">
+                                        <div class="card-tag">
+                                            <span>500000</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body pt-1">
+                                            <h4 class="card-title mt-0">Ford Car</h4>
+                                            <div class="card-line"></div>
+                                            <p class="card-text text-muted mt-3">This is a wider card with supporting
+                                                text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <div class="row">
+                                                <div class="col-md-6 list-unstyled text-left">
+                                                    <ul class="pl-0">
+                                                        <li class="list-unstyled">
+                                                            <span>name:</span>
+                                                            <span class="text-muted">example</span>
+                                                        </li>
+                                                        <li class="list-unstyled">
+                                                            <span>name:</span>
+                                                            <span class="text-muted">example</span>
+                                                        </li>
+                                                        <li class="list-unstyled">
+                                                            <span>name:</span>
+                                                            <span class="text-muted">example</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 text-left">
+                                                    <li class="list-unstyled ">
+                                                        <span>name:</span>
+                                                        <span class="text-muted">example</span>
+                                                    </li>
+                                                    <li class="list-unstyled">
+                                                        <span>name:</span>
+                                                        <span class="text-muted">example</span>
+                                                    </li>
+                                                    <li class="list-unstyled">
+                                                        <span>name:</span>
+                                                        <span class="text-muted">example</span>
+                                                    </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-------------------------------- vertical card ----------------------->
+                    <div class="row vertical mt-3">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="card col rounded-0 border-0 p-0 mr-4 ">
+                                    <a href="" class="card-link">
+                                        <div class="card-container">
+                                            <img src="images/car.jpg" class="card-img-top rounded-0" alt="...">
+                                            <div class="card-icon">
+                                                <i class="far fa-compass"></i>
+                                                <i class="far fa-compass"></i>
+                                            </div>
+                                            <div class="card-tag">
+                                                <span>500000</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-center p-3">
+                                            <h5 class="card-title text-dark mt-0">Ford Car escoda</h5>
+                                            <div class="row">
+                                                <div class="col"></div>
+                                                <div class="col pr-2">
+                                                    <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
+                                                    <span class="text-muted border-left pl-3">2019</span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fas fa-car-battery d-block card__icon"></i>
+                                                    <span
+                                                        class="text-muted border-left border-right pl-3 pr-3">2000</span>
+                                                </div>
+                                                <div class="col"></div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card col rounded-0 border-0 p-0 mr-4 ">
+                                    <a href="" class="card-link">
+                                        <div class="card-container">
+                                            <img src="images/car.jpg" class="card-img-top rounded-0" alt="...">
+                                            <div class="card-icon">
+                                                <i class="far fa-compass"></i>
+                                                <i class="far fa-compass"></i>
+                                            </div>
+                                            <div class="card-tag">
+                                                <span>500000</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-center p-3">
+                                            <h5 class="card-title text-dark mt-0">Ford Car escoda</h5>
+                                            <div class="row">
+                                                <div class="col"></div>
+                                                <div class="col pr-2">
+                                                    <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
+                                                    <span class="text-muted border-left pl-3">2019</span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fas fa-car-battery d-block card__icon"></i>
+                                                    <span
+                                                        class="text-muted border-left border-right pl-3 pr-3">2000</span>
+                                                </div>
+                                                <div class="col"></div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card col rounded-0 border-0 p-0 ">
+                                    <a href="" class="card-link">
+                                        <div class="card-container">
+                                            <img src="images/car.jpg" class="card-img-top rounded-0" alt="...">
+                                            <div class="card-icon">
+                                                <i class="far fa-compass"></i>
+                                                <i class="far fa-compass"></i>
+                                            </div>
+                                            <div class="card-tag">
+                                                <span>500000</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-center p-3">
+                                            <h5 class="card-title text-dark mt-0">Ford Car escoda</h5>
+                                            <div class="row">
+                                                <div class="col"></div>
+                                                <div class="col pr-2">
+                                                    <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
+                                                    <span class="text-muted border-left pl-3">2019</span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fas fa-car-battery d-block card__icon"></i>
+                                                    <span
+                                                        class="text-muted border-left border-right pl-3 pr-3">2000</span>
+                                                </div>
+                                                <div class="col"></div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-------------------------------- side bar ----------------------->
+
+                <div class="col ml-4 side-bar pl-0">
+                    <div class="col-md-12 pl-0 mt-4">
+                        <h6 class="pl-3">YOUR CAR</h6>
+                    </div>
+                    <div class="col-md-12 pl-5">
+                        <div class="card-line"></div>
+                    </div>
+                    <div class="col-md-12 text-center mt-3 pl-4">
+                        <a href="" class="ml-2 ">ADD YOUR CAR</a>
+                    </div>
+                    <div class="col-md-12 pl-0 mt-5">
+                        <h6 class="pl-3">BY MAKING & MODELS</h6>
+                    </div>
+                    <div class="col-md-12 pl-5">
+                        <div class="card-line"></div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-4">
+                            <span> MAKING <i class="fas fa-caret-down"></i></span>
+                        </button>
+                        <ul class="dropdown d-none">
+                            <li class="p-2 border-bottom">latest added</li>
+                            <li class="p-2 border-bottom">latest added</li>
+                            <li class="p-2 border-bottom">latest added</li>
+                            <li class="p-2">latest added</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-4">
+                            <span> MODELS <i class="fas fa-caret-down"></i></span>
+                        </button>
+                        <ul class="dropdown d-none">
+                            <li class="p-2 border-bottom">latest added</li>
+                            <li class="p-2 border-bottom">latest added</li>
+                            <li class="p-2 border-bottom">latest added</li>
+                            <li class="p-2">latest added</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 pl-0 mt-5">
+                        <h6 class="pl-3">BY TYPES</h6>
+                    </div>
+                    <div class="col-md-12 pl-5">
+                            <div class="card-line"></div>
+                        </div>
+                    <div class="row mt-4 no-gutters text-center">
+                        <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
+                            <img src="images/sedan-mini.png" class="img-fluid">
+                        </div>
+                        <div class="col-5 car-type ml-1 p-2 mb-2">
+                            <img src="images/suv-mini.png" class="img-fluid">
+                        </div>
+                        <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
+                            <img src="images/picup-mini.png" class="img-fluid">
+                        </div>
+                        <div class="col-5 car-type ml-1 p-2 mb-2 ">
+                            <img src="images/mini-mini.png" class="img-fluid">
+                        </div>
+                        <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
+                            <img src="images/convert-mini.png" class="img-fluid">
+                        </div>
+                        <div class="col-5 car-type ml-1 p-2 mb-2">
+                            <img src="images/coupe-mini.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <div class="container-fluid no-gutters">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        This is the footer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
