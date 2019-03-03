@@ -1,0 +1,7 @@
+.sekwed-btn{
+    transform: skew(-15deg);
+    background-color: $white-color-shade2;
+    &>span{
+        transform: skew(10deg);
+    }
+}
