@@ -168,3 +168,47 @@ div.container {
   background-color: #222222; }
   .card__dark-text {
     color: white; }
+
+.tutorial-cover {
+  width: 100%; }
+  .tutorial-cover .card {
+    border-radius: 0; }
+    .tutorial-cover .card .card-img-overlay {
+      padding-top: 5%; }
+      .tutorial-cover .card .card-img-overlay .card-title.main {
+        font-size: 2.8rem;
+        font-weight: 700; }
+      .tutorial-cover .card .card-img-overlay .card-text.main {
+        padding-right: 40%;
+        font-size: 1rem;
+        line-height: 1.75rem; }
+  .tutorial-cover .card.sub {
+    color: #2e3d49; }
+    .tutorial-cover .card.sub:hover {
+      cursor: pointer; }
+      .tutorial-cover .card.sub:hover i {
+        color: #DC2D13; }
+
+.tutorial-nav {
+  padding-top: 2rem; }
+
+.tutorial-items {
+  padding-top: 1.5rem; }
+  .tutorial-items .card {
+    height: 100%;
+    transition: all ease .4s; }
+    .tutorial-items .card img {
+      height: 100%; }
+    .tutorial-items .card-title {
+      font-size: 1.9rem; }
+    .tutorial-items .card p {
+      visibility: hidden;
+      transition: all ease .4s; }
+    .tutorial-items .card-img-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: all ease .4s; }
+    .tutorial-items .card:hover .card-img-overlay {
+      background-color: rgba(138, 0, 0, 0.7); }
+    .tutorial-items .card:hover p {
+      visibility: visible;
+      transition: all ease .4s; }
