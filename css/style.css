@@ -203,9 +203,9 @@ div.container {
 .footer {
   position: relative;
   height: 650px;
-  border: none;
-  overflow-x: hidden;
-  overflow-y: visible; }
+  border: none; }
+  .footer-container {
+    overflow: hidden; }
   .footer .card-body {
     padding: 0; }
   .footer-image {
