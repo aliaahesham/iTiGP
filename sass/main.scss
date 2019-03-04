@@ -1,16 +1,18 @@
-@import'abstracts/variables';
-@import'abstracts/functions';
-@import'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+ 
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import'base/animations';
-@import'base/base';
-@import'base/typography';
-@import'base/utilities';
 
-@import'components/buttons';
-@import'components/page-title';
-@import'components/lines-seperator';
-@import'components/cards';
+@import 'components/buttons';
+@import 'components/page-title';
+@import 'components/lines-seperator';
+@import 'components/cards';
+@import 'components/carDetails';
 
 
 
