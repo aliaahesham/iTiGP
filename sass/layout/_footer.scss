@@ -1,10 +1,13 @@
 .footer
 {
+    &-container
+    {
+    overflow: hidden;
+    }
+
     position: relative;
     height:650px;
     border:none;
-    overflow-x: hidden;
-    overflow-y: visible;
 
     .card-body
     {
