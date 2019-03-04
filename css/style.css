@@ -359,7 +359,8 @@ div.container {
   transform: skew(-15deg);
   background-color: #f5f5f5; }
   .sekwed-btn > span {
-    transform: skew(10deg); }
+    transform: skew(10deg);
+    font-size: 14px; }
 
 .sorting-bar {
   background-image: url(../images/texture-1.gif);
@@ -378,4 +379,6 @@ div.container {
     background-color: #DC2D13;
     color: white;
     padding: 0.5rem;
-    display: block; }
+    display: block;
+    font-size: 13px;
+    text-decoration: none; }
