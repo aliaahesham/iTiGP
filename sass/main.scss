@@ -7,6 +7,8 @@
 @import'base/typography';
 @import'base/utilities';
 
+@import 'pages/new-car';
+
 @import'components/buttons';
 @import'components/page-title';
 @import'components/lines-seperator';
@@ -14,6 +16,13 @@
 @import'components/squares';
 
 @import'layout/footer';
+
+@import 'components/tutorial';
+@import 'components/car-card';
+@import 'components/dropdown';
+@import 'components/sekwed-btn';
+@import 'components/sorting-bar';
+@import 'components/side-bar';
 
 
 

@@ -1,0 +1,83 @@
+.tutorial
+{
+    &-cover
+    {
+        width: 100%;
+        & .card
+        {
+            border-radius: 0;
+            & .card-img-overlay
+            {
+                padding-top: 5%;
+                & .card-title.main
+                {
+                    font-size: 2.8rem;
+                    font-weight: 700;
+                }
+                & .card-text.main
+                {
+                    padding-right: 40%;
+                    font-size: 1rem;
+                    line-height: 1.75rem;
+                }
+            }
+        }
+        & .card.sub
+        {
+            color: $pale-black;
+            // color: $secondary;
+            &:hover
+            {
+                cursor: pointer;
+                i
+                {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+    &-nav
+    {
+        padding-top: 2rem;
+    }
+    &-items
+    {
+        padding-top: 1.5rem;
+        & .card
+        {
+            height: 100%;
+            transition: all ease .4s;
+            & img
+            {
+                height: 100%;
+            }
+            &-title
+            {
+                font-size: 1.9rem;
+            }
+            & p
+            {
+                visibility: hidden;
+                transition: all ease .4s;
+            }
+            &-img-overlay
+            {
+                background-color: rgba(0, 0, 0, 0.6);
+                transition: all ease .4s;
+            }
+            &:hover
+            {
+                .card-img-overlay
+                {
+                    background-color: rgba(138, 0, 0, 0.7);
+                }
+                p
+                {
+                    visibility: visible;
+                    transition: all ease .4s;
+                }
+                
+            }
+        }
+    }
+}
