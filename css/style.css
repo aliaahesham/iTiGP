@@ -257,7 +257,10 @@ div.container {
         font-size: 1rem;
         line-height: 1.75rem; }
   .tutorial-cover .card.sub {
-    color: #2e3d49; }
+    color: #2e3d49;
+    border: none;
+    border-top: 1rem solid #DC2D13;
+    border-radius: 2px; }
     .tutorial-cover .card.sub:hover {
       cursor: pointer; }
       .tutorial-cover .card.sub:hover i {
@@ -269,6 +272,8 @@ div.container {
 .tutorial-items {
   padding-top: 1.5rem; }
   .tutorial-items .card {
+    box-shadow: 0 0 8px 0 rgba(17, 22, 26, 0.6), 0 4px 8px 0 rgba(17, 22, 26, 0.3), 0 8px 16px 0 rgba(17, 22, 26, 0.3);
+    border: none;
     height: 100%;
     transition: all ease .4s; }
     .tutorial-items .card img {
@@ -361,7 +366,8 @@ div.container {
   transform: skew(-15deg);
   background-color: #f5f5f5; }
   .sekwed-btn > span {
-    transform: skew(10deg); }
+    transform: skew(10deg);
+    font-size: 14px; }
 
 .sorting-bar {
   background-image: url(../images/texture-1.gif);
@@ -380,7 +386,9 @@ div.container {
     background-color: #DC2D13;
     color: white;
     padding: 0.5rem;
-    display: block; }
+    display: block;
+    font-size: 13px;
+    text-decoration: none; }
 
 .car-spesfication {
   background-color: #F5F5F5;
