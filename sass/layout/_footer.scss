@@ -6,7 +6,7 @@
     }
 
     position: relative;
-    height:650px;
+    height:550px;
     border:none;
 
     .card-body
@@ -20,7 +20,7 @@
         background-image: url('../images/red-car.jpg');
         background-repeat: no-repeat;
         background-size: cover; 
-        background-position: center;
+        background-position: 100% 77%;
         width:100%;
         height:100%;
         
@@ -55,13 +55,46 @@
     &-btn
     {
         text-align: center;
-        top:180px;
+        top:70px;
     }
     &-address
     {
         text-align: center;
-        color:$white-color;
 
+    }
+    &-contacts
+    {
+        text-align: center;
+    }
+    &-key
+    {
+       color: $pale-black2;
+       font-weight: bold;
+    }
+    &-value
+    {
+        color: $white-color;
+       font-weight: bold;
+       display: inline-block;
+       padding-right: 10px;
+
+    }
+    &-after
+    {
+        height:60px;
+        width:100%;
+        background-color: $white-color-shade2;
+    
+        .triangle-down-arrow
+        {
+            position: absolute;
+            left: 45%;
+            width: 0; 
+            height: 0; 
+            border-left: 70px solid transparent;
+            border-right: 70px solid transparent;
+            border-top: 50px solid $black-shade2;
+        }
     }
 
 }
