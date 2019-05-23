@@ -2,6 +2,11 @@
 {
     margin-top:150px;
     margin-bottom: 150px;
+    &-results
+    {
+        margin: auto;
+    }
+    
 .card
 {
     &__dashes-texture
@@ -9,7 +14,7 @@
    background-image: url('../images/texture-1.gif');
    background-repeat: repeat;
    border:1px solid $gray-color-shade1;
-
+   
    &-btn
    {
        border:none;
@@ -27,6 +32,8 @@
    &__dark
    {
        background-color: $gray-color-shade5;
+       width:50%;
+       margin:auto;
        &-text{
            color:$white-color;
        }

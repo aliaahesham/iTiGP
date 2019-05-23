@@ -163,6 +163,8 @@ div.container {
 .cards-container {
   margin-top: 150px;
   margin-bottom: 150px; }
+  .cards-container-results {
+    margin: auto; }
   .cards-container .card__dashes-texture {
     background-image: url("../images/texture-1.gif");
     background-repeat: repeat;
@@ -175,7 +177,9 @@ div.container {
     .cards-container .card__dashes-texture .card {
       border-color: #ccc6c6; }
   .cards-container .card__dark {
-    background-color: #222222; }
+    background-color: #222222;
+    width: 50%;
+    margin: auto; }
     .cards-container .card__dark-text {
       color: white; }
 
@@ -203,6 +207,13 @@ div.container {
     bottom: 13px;
     box-shadow: -4px 1px 0 2px #f5f5f5;
     transform: skew(40deg, -10deg); }
+
+.pagination {
+  margin-left: 44% !important; }
+
+.page-link {
+  color: #222222 !important;
+  border: 1px solid #ccc6c6 !important; }
 
 .footer {
   position: relative;
