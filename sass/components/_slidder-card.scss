@@ -1,0 +1,37 @@
+.owl{
+    
+    &-box{
+        height: 25rem;
+        border: 2px solid #ddd;
+        transition: all .3s;
+        text-align: center;
+
+        &:hover{
+            box-shadow: 2px 8px 9px #ccc;
+        }
+        &-span{
+            color: $primary-color-dark;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        &-btn{
+            background-color: $primary-color-dark;
+            color: $white-color;
+            &:hover{
+                background-color: $primary-color;
+                color: $white-color !important;
+            }
+        }
+    }
+        &-item{
+            height: 26rem;
+        }
+}
+.custom-bgcolor{
+    background-color: $white-color;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff !important;
+    background-color: #c22b13;
+}

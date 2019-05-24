@@ -18,6 +18,9 @@ div.container {
   border: 1px solid dimgray;
   cursor: pointer; }
 
+.custom-btn {
+  width: 12rem; }
+
 .btn {
   border-radius: 0%; }
   .btn--skewx {
@@ -208,12 +211,52 @@ div.container {
     box-shadow: -4px 1px 0 2px #f5f5f5;
     transform: skew(40deg, -10deg); }
 
+.owl-box {
+  height: 25rem;
+  border: 2px solid #ddd;
+  transition: all .3s;
+  text-align: center; }
+  .owl-box:hover {
+    box-shadow: 2px 8px 9px #ccc; }
+  .owl-box-span {
+    color: #c22b13;
+    font-size: 16px;
+    font-weight: bold; }
+  .owl-box-btn {
+    background-color: #c22b13;
+    color: white; }
+    .owl-box-btn:hover {
+      background-color: #DC2D13;
+      color: white !important; }
+
+.owl-item {
+  height: 26rem; }
+
+.custom-bgcolor {
+  background-color: white; }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff !important;
+  background-color: #c22b13; }
+
 .pagination {
   margin-left: 44% !important; }
 
 .page-link {
   color: #222222 !important;
   border: 1px solid #ccc6c6 !important; }
+
+.line {
+  width: 33px;
+  border: 0.7px solid #b0a9a9;
+  height: 1px; }
+  .line:after {
+    width: 35px;
+    margin-top: 4px;
+    margin-left: 10px;
+    border: 0.7px solid #b0a9a9;
+    position: absolute;
+    content: ""; }
 
 .footer {
   position: relative;
@@ -401,7 +444,9 @@ div.container {
 
 .card-listing {
   background-color: #f5f5f5;
-  height: auto; }
+  height: auto;
+  z-index: 99999;
+  position: relative; }
 
 .card-box {
   border: none; }
