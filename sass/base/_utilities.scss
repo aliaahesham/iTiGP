@@ -1,26 +1,22 @@
-div{
-    &.container-fluid
-    {
-      //  background-color: aqua;
-     &.no-gutters
-     {
-        padding-left: 0;
-        padding-right:0;
-     }
-    }
-   
-    &.container
-    {
-      //  background-color: aqua;
-       padding-left: 0;
-       padding-right: 0;
-     &.no-gutters
-     {
-        padding-left: 0;
-        padding-right:0;
-     }
+div {
+  &.container-fluid {
+    //  background-color: aqua;
+    &.no-gutters {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
+
+  &.container {
+    //  background-color: aqua;
+    padding-left: 0;
+    padding-right: 0;
+    &.no-gutters {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
 
 // .row
 // {
@@ -31,3 +27,9 @@ div{
 // {
 //    background-color: burlywood;
 // }
+
+.fs {
+  &-18 {
+    font-size: 1.8rem !important;
+  }
+}
