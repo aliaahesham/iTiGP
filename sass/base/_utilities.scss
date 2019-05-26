@@ -29,7 +29,13 @@ div {
 // }
 
 .fs {
-  &-18 {
-    font-size: 1.8rem !important;
+  &-1 {
+    font-size: 1rem !important;
+  }
+}
+
+.bg {
+  &-gray-shade-1 {
+    background-color: $gray-color-shade1 !important;
   }
 }
