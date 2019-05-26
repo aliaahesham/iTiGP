@@ -14,8 +14,11 @@ div.container {
     padding-left: 0;
     padding-right: 0; }
 
-.fs-18 {
-  font-size: 1.8rem !important; }
+.fs-1 {
+  font-size: 1rem !important; }
+
+.bg-gray-shade-1 {
+  background-color: #ccc6c6 !important; }
 
 .car-type {
   border: 1px solid dimgray;
@@ -179,7 +182,7 @@ div.container {
   .cards-container .card__dashes-texture {
     background-image: url("../images/texture-1.gif");
     background-repeat: repeat;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.199); }
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.253); }
     .cards-container .card__dashes-texture-btn {
       border: none;
       background-color: #DC2D13; }
