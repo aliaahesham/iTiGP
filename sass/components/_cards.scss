@@ -20,9 +20,10 @@
        border:none;
      background-color: $primary-color;
      &:hover
-     {
-        background-color: $primary-color-dark;
-     }
+             {
+                 background-color: $secondary-color;
+             }
+    
    }
    .card
    {

@@ -187,7 +187,7 @@ div.container {
       border: none;
       background-color: #DC2D13; }
       .cards-container .card__dashes-texture-btn:hover {
-        background-color: #c22b13; }
+        background-color: #FFA500; }
     .cards-container .card__dashes-texture .card {
       border-color: #ccc6c6; }
   .cards-container .card__dark {
@@ -406,6 +406,11 @@ div.container {
         .header-bottom .nav-btn:hover {
           background: rgba(255, 255, 255, 0.2);
           color: #fff; }
+
+.login-form {
+  border: 2px solid #beb9b9;
+  border-radius: 1rem;
+  padding: 2rem; }
 
 .tutorial-cover {
   width: 100%; }
