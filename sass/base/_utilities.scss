@@ -1,26 +1,22 @@
-div{
-    &.container-fluid
-    {
-      //  background-color: aqua;
-     &.no-gutters
-     {
-        padding-left: 0;
-        padding-right:0;
-     }
-    }
-   
-    &.container
-    {
-      //  background-color: aqua;
-       padding-left: 0;
-       padding-right: 0;
-     &.no-gutters
-     {
-        padding-left: 0;
-        padding-right:0;
-     }
+div {
+  &.container-fluid {
+    //  background-color: aqua;
+    &.no-gutters {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
+
+  &.container {
+    //  background-color: aqua;
+    padding-left: 0;
+    padding-right: 0;
+    &.no-gutters {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
 
 // .row
 // {
@@ -31,3 +27,15 @@ div{
 // {
 //    background-color: burlywood;
 // }
+
+.fs {
+  &-1 {
+    font-size: 1rem !important;
+  }
+}
+
+.bg {
+  &-gray-shade-1 {
+    background-color: $gray-color-shade1 !important;
+  }
+}
