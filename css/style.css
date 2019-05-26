@@ -192,12 +192,12 @@ div.container {
   .cards-container .card__dashes-texture {
     background-image: url("../images/texture-1.gif");
     background-repeat: repeat;
-    border: 1px solid #222222; }
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.253); }
     .cards-container .card__dashes-texture-btn {
       border: none;
       background-color: #DC2D13; }
       .cards-container .card__dashes-texture-btn:hover {
-        background-color: #c22b13; }
+        background-color: #FFA500; }
     .cards-container .card__dashes-texture .card {
       border-color: #ccc6c6; }
   .cards-container .card__dark {
@@ -268,7 +268,7 @@ div.container {
 
 .page-link {
   color: #222222 !important;
-  border: 1px solid #222222 !important; }
+  border: 1px solid #ccc6c6 !important; }
 
 .line {
   width: 33px;
@@ -416,6 +416,11 @@ div.container {
         .header-bottom .nav-btn:hover {
           background: rgba(255, 255, 255, 0.2);
           color: #fff; }
+
+.login-form {
+  border: 2px solid #beb9b9;
+  border-radius: 1rem;
+  padding: 2rem; }
 
 .tutorial-cover {
   width: 100%; }
@@ -667,7 +672,7 @@ div.container {
           .car-spesfication .sidbar .widget-content .dd-item dt::before {
             /* margin-right: 10px; */
             /* vertical-align: middle; */
-            content: "\f0da";
+            content: "/f0da";
             color: red;
             font-family: FontAwesome;
             position: absolute;
