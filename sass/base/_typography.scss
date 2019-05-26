@@ -1,0 +1,8 @@
+a {
+  color: $primary-color;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary-color-dark;
+  }
+}

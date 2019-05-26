@@ -3,6 +3,11 @@ body {
   body li {
     list-style: none; }
 
+a {
+  color: #DC2D13; }
+  a:hover, a:focus, a:active {
+    color: #c22b13; }
+
 div.container-fluid.no-gutters {
   padding-left: 0;
   padding-right: 0; }
@@ -19,6 +24,11 @@ div.container {
 
 .bg-gray-shade-1 {
   background-color: #ccc6c6 !important; }
+
+.bg-secondary-color {
+  background-color: #FFA500 !important; }
+  .bg-secondary-color:hover, .bg-secondary-color:focus {
+    background-color: #72848B !important; }
 
 .car-type {
   border: 1px solid dimgray;
@@ -50,7 +60,7 @@ div.container {
         height: 20px;
         opacity: 0;
         z-index: -1;
-        transition: all .3s ease 0s;
+        transition: all 0.3s ease 0s;
         transform: translateX(-50%) translateY(-50%) rotate(63deg);
         background-color: #DC2D13; }
     .btn--skewx--text__secondary-color {
@@ -66,7 +76,7 @@ div.container {
         height: 20px;
         opacity: 0;
         z-index: -1;
-        transition: all .3s ease 0s;
+        transition: all 0.3s ease 0s;
         transform: translateX(-50%) translateY(-50%) rotate(63deg);
         background-color: #FFA500; }
     .btn--skewx:hover :after {
@@ -594,7 +604,7 @@ div.container {
           height: 20px;
           opacity: 0;
           z-index: -1;
-          transition: all .3s ease 0s;
+          transition: all 0.3s ease 0s;
           transform: translateX(-50%) translateY(-50%) rotate(63deg);
           background-color: #dc2d13; }
   .car-spesfication .car-details .tabs .tab-content {
