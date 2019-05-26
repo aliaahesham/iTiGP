@@ -182,7 +182,7 @@ div.container {
   .cards-container .card__dashes-texture {
     background-image: url("../images/texture-1.gif");
     background-repeat: repeat;
-    border: 1px solid #222222; }
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.253); }
     .cards-container .card__dashes-texture-btn {
       border: none;
       background-color: #DC2D13; }
@@ -258,7 +258,7 @@ div.container {
 
 .page-link {
   color: #222222 !important;
-  border: 1px solid #222222 !important; }
+  border: 1px solid #ccc6c6 !important; }
 
 .line {
   width: 33px;
