@@ -71,16 +71,17 @@
     </div>
 
     <!-- form -->
-    <div class="container my-5 py-5">
-        <div class="row no-gutters pt-3">
+    <div class="container my-5 py-5 ">
+        <div class="row no-gutters pt-3 d-flex justify-content-center">
             <div class="col-md-4 col-sm-6">
-                <img src="images/addNewSparePart.png" class="rounded mx-auto d-block" alt="add new spare part">
+                <img src="images/addNewSparePart.png" class="rounded mx-auto d-block img-fluid"
+                    alt="add spare part img">
             </div>
-            <div class="col-md-8 col-sm-6">
-                <form class="w-75">
+            <div class="col-md-7 col-sm-6 mx-2 mt-n1">
+                <form>
                     <div class="form-group">
                         <label for="Name">Name</label>
-                        <input type="text" class="form-control" id="Name" placeholder="Spare Part Name">
+                        <input type="text" class="form-control" id="Name">
                     </div>
                     <div class="form-group">
                         <label for="Description">Description</label>
@@ -96,7 +97,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Price">Price</label>
-                        <input type="text" class="form-control" id="Price" placeholder="Price">
+                        <input type="text" class="form-control" id="Price">
                     </div>
                     <div class="d-flex justify-content-between">
                         <div class="w-50 pt-2">
@@ -114,19 +115,81 @@
                         </div>
                         <div class="form-group">
                             <label for="discount">Discount</label>
-                            <input type="text" class="form-control" id="discount" placeholder="Discount">
+                            <input type="text" class="form-control" id="discount">
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="reset" class="btn btn-primary mr-1">Cancel</button>
-                        <button type="submit" class="btn btn--ordinary__without-border mr-1"><span
+                        <button type="reset" class="btn btn-secondary mr-1">Cancel</button>
+                        <button type="submit" class="btn btn-primary mr-1"><span
                                 style="color: white">Add</span></button>
                     </div>
-
                 </form>
             </div>
         </div>
+    </div>
+    <!-- Footer -->
+    <div class="container-fluid no-gutters pt-5 footer-container">
+        <div class="row no-gutters">
+            <div class="col ">
+                <div class="card footer">
+                    <div class="card-body">
+                        <div class="footer-overlay">
+                            <!--two red boxes-->
+                            <div class="row no-gutters">
+                                <div class="col square__red">
 
+                                </div>
+                            </div>
+                            <!--logo-->
+                            <div class="row no-gutters">
+                                <div class="col footer-logo">
+                                    <img src="images/logo.jpg">
+                                    <div class="lines-seperator footer-logo__lines-seperator mt-3"></div>
+                                </div>
+                            </div>
+                            <!--address-->
+                            <div class="row no-gutters mt-5">
+                                <div class="col footer-address">
+                                    <p class="footer-key">: SHOWROOM LOCATION :</p>
+                                    <p class="footer-value">32 Market St.128, Deeja Town, Florida, CA 12345</p>
+                                </div>
+                            </div>
+                            <!--contact-->
+                            <div class="row no-gutters mt-5 ">
+                                <div class="col">
+                                    <div class="footer-contacts">
+                                        <span class="footer-key">PHONE: <span class="footer-value">+1 (234) 567
+                                                8900</span></span>
+                                        <span class="footer-key">FAX: <span class="footer-value">+1 (234) 567
+                                                8900</span></span>
+                                        <span class="footer-key">EMAIL: <span
+                                                class="footer-value">info@autozone.com</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--button-->
+                            <div class="row no-gutters mt-5">
+                                <div class="col footer-btn">
+                                    <button type="button" class="btn btn-secondary btn--ordinary btn--triangle">
+                                        <div class="btn--triangle--small"></div> <span class="btn--triangle--text">
+                                            Top</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="footer-after">
+                    <div class="triangle-down-arrow"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
