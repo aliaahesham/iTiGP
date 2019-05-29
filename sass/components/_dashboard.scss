@@ -1,0 +1,48 @@
+.dashboard
+{
+      margin-top:150px;
+    margin-bottom: 150px;
+    &-container
+    {
+  
+    border:1px solid $gray-color-shade1;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.253);
+    
+    }
+    &-details
+    {
+       background-color: $primary-color;
+      
+       &__card
+       {
+           background-color: transparent;
+           border: none;
+           align-items: center;
+           text-align: center;
+           padding: 1rem;
+       &-image
+       {
+          
+        width:50%;
+        border: 1px solid transparent;
+        border-radius: 50% 
+       }
+       &-links
+       {
+        display: flex !important;
+        flex-direction: column !important;
+       }
+    }
+    }
+    &-data
+    {
+      
+        &__table
+        {
+            background-color: $white-color-shade2;
+            height: 100%;
+       
+        }
+    }
+
+}

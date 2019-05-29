@@ -48,6 +48,9 @@ div.container {
     .btn--skewx__right-border {
       background-color: #DC2D13;
       border-right: 5px solid #555555; }
+    .btn--skewx__right-border-secondary {
+      background-color: #FFA500;
+      border-right: 5px solid #555555; }
     .btn--skewx--text__primary-color {
       position: relative;
       display: inline-block;
@@ -92,6 +95,17 @@ div.container {
     .btn--ordinary__right-border {
       background-color: #DC2D13;
       border-right: 5px solid #555555; }
+      .btn--ordinary__right-border:hover {
+        background-color: #555555;
+        border-right: 5px solid #FFA500;
+        color: white; }
+    .btn--ordinary__right-border-secondary {
+      background-color: #FFA500;
+      border-right: 5px solid #555555; }
+      .btn--ordinary__right-border-secondary:hover {
+        background-color: #555555;
+        border-right: 5px solid #FFA500;
+        color: white; }
     .btn--ordinary__radius {
       border: 1px solid #DC2D13;
       border-radius: 15px; }
@@ -440,7 +454,7 @@ div.container {
   .tutorial-cover .card {
     border-radius: 0; }
     .tutorial-cover .card .card-img-overlay {
-      padding-top: 5%; }
+      padding-top: 9%; }
       .tutorial-cover .card .card-img-overlay .card-title.main {
         font-size: 2.8rem;
         font-weight: 700; }
@@ -717,3 +731,28 @@ div.container {
   width: 3.3rem;
   height: 4.3rem;
   font-size: 1.4rem; }
+
+.dashboard {
+  margin-top: 150px;
+  margin-bottom: 150px; }
+  .dashboard-container {
+    border: 1px solid #ccc6c6;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.253); }
+  .dashboard-details {
+    background-color: #DC2D13; }
+    .dashboard-details__card {
+      background-color: transparent;
+      border: none;
+      align-items: center;
+      text-align: center;
+      padding: 1rem; }
+      .dashboard-details__card-image {
+        width: 50%;
+        border: 1px solid transparent;
+        border-radius: 50%; }
+      .dashboard-details__card-links {
+        display: flex !important;
+        flex-direction: column !important; }
+  .dashboard-data__table {
+    background-color: #f5f5f5;
+    height: 100%; }
