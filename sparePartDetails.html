@@ -8,6 +8,7 @@
     <title>Spare-Part Name</title>
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="font-awesome/css/all.css">
 </head>
 
 <body>
@@ -84,10 +85,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 m-3">
                 <img src="images/photoTemplate300px.png" class="rounded mx-auto d-block img-fluid" alt="spare part img">
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 m-3">
                 <h3 class="border-bottom pb-2">Details</h3>
                 <div class="row d-flex justify-content-between">
                     <div class="col-6">
@@ -108,21 +109,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12">
+            <div class="col-md-3 col-sm-12 m-3">
                 <h3 class="border-bottom pb-2 text-right">£ 22,03</h3>
                 <h5 class="mt-4 ml-3">Quantity</h5>
-                <div class="d-flex mx-3 w-50 justify-content-center">
+                <div class="d-flex mx-auto w-50 justify-content-center">
                     <a href="#"
                         class="increment-control__action d-flex justify-content-center align-items-center border">-</a>
                     <input type="text" class="form-control border text-center mx-2" title="Qty" value="1">
                     <a href="#"
                         class="increment-control__action d-flex justify-content-center align-items-center border">+</a>
                 </div>
-                <div class="row">
-                    <div class="col-12 mt-4 ml-3">
-                        <button type="button" class="btn btn--ordinary btn--color-primary">Add to Cart</button>
-                    </div>
-                </div>
+                <button type="button" class="btn btn--ordinary btn--color-primary p-3 my-4 w-100"><span
+                        class="fs-1p3"><i class="fas fa-cart-plus mr-3"></i>Add to Cart</span>
+                </button>
             </div>
         </div>
     </div>
