@@ -1,122 +1,116 @@
-.btn
-{
-    border-radius: 0%;
-    
-    &--skewx
-    {
-        transform: skewX(20deg); 
-        border:none;
-        overflow: hidden;
-        background-color: $gray-color;
-        
-        &__right-border
-        {
-            @include set-right-border($primary-color,$gray-color);
-    
-        }
-        &--text__primary-color
-        {
-            position: relative;
-            display: inline-block;
-           transform: skewX(-20deg);
-         
-           &:after
-            {
-                content: ' ';
-                @include skewed-overlay($primary-color,50%,50%,160px,20px,63deg);
-            }
-        }
-        &--text__secondary-color
-        {
-            position: relative;
-            display: inline-block;
-           transform: skewX(-20deg);
-         
-           &:after
-            {
-                content: ' ';
-                @include skewed-overlay($secondary-color,50%,50%,160px,20px,63deg);
-            }
-        }
-        
-       &:hover
-       {
-           :after
-           {
-           @include skewed-overlay-hover(136px);
-           }
-       }
+.btn {
+  border-radius: 0%;
+
+  &--skewx {
+    transform: skewX(20deg);
+    border: none;
+    overflow: hidden;
+    background-color: $gray-color;
+
+    &__right-border {
+      @include set-right-border($primary-color, $gray-color);
     }
-    &--ordinary
-    {
-        border: none;
-     
-        &__without-border
-        {
-             background-color: $primary-color;
-             &:hover
-             {
-                 background-color: $secondary-color;
-             }
-        }
-        &__right-border
-        {
-            @include set-right-border($primary-color,$gray-color);
-        }
-        &__radius
-        {
-            border: 1px solid $primary-color;
-            border-radius:15px; 
-            &:hover
-            {
-                border-color: $secondary-color;
-            }
-        }
+    &--text__primary-color {
+      position: relative;
+      display: inline-block;
+      transform: skewX(-20deg);
+
+      &:after {
+        content: " ";
+        @include skewed-overlay($primary-color, 50%, 50%, 160px, 20px, 63deg);
+      }
     }
-    &--3D-btn
-    {
-        width:100px;
-        text-align: center;
+    &--text__secondary-color {
+      position: relative;
+      display: inline-block;
+      transform: skewX(-20deg);
+
+      &:after {
+        content: " ";
+        @include skewed-overlay($secondary-color, 50%, 50%, 160px, 20px, 63deg);
+      }
+    }
+
+    &:hover {
+      :after {
+        @include skewed-overlay-hover(136px);
+      }
+    }
+  }
+  &--ordinary {
+    border: none;
+
+    &__without-border {
+      background-color: $primary-color;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+    &__right-border {
+      @include set-right-border($primary-color, $gray-color);
+    }
+    &__radius {
+      border: 1px solid $primary-color;
+      border-radius: 15px;
+      &:hover {
+        border-color: $secondary-color;
+      }
+    }
+  }
+  &--3D-btn {
+    width: 100px;
+    text-align: center;
+    color: white;
+  }
+  &--triangle {
+    // border:none;
+    width: 0;
+    height: 0;
+    padding: 0;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent $primary-color transparent;
+    position: relative;
+    &:hover {
+      background-color: transparent;
+      border-style: solid;
+      border-width: 0 30px 30px 30px;
+      border-color: transparent transparent $primary-color transparent;
+    }
+    &--small {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent $gray-color-shade2 transparent;
+      position: relative;
+    }
+    &--text {
+      color: $gray-color-shade2;
+      display: inline-block;
+      position: absolute;
+      top: 40px;
+      right: -15px;
+    }
+  }
+  &--color {
+    &-primary {
+      background-color: $primary-color;
+      color: white;
+      &:hover {
+        background-color: darken($primary-color, 10%);
         color: white;
+      }
     }
-    &--triangle
-    {
-        // border:none;
-        width: 0;
-        height: 0;
-        padding: 0;
-        background-color: transparent;
-        border-style: solid;
-        border-width: 0 30px 30px 30px;
-        border-color: transparent transparent $primary-color transparent;
-        position: relative;
-        &:hover
-        {
-            background-color: transparent;
-            border-style: solid;
-            border-width: 0 30px 30px 30px;
-            border-color: transparent transparent $primary-color transparent;
-        }
-        &--small
-        {
-            
-            position: absolute;
-            right: 10px;
-            top: 15px;
-            border-style: solid;
-            border-width: 0 10px 10px 10px;
-            border-color: transparent transparent $gray-color-shade2 transparent;
-            position: relative
-        }
-        &--text
-        {
-            color: $gray-color-shade2;
-            display: inline-block;
-            position: absolute;
-            top:40px;
-            right:-15px;
-        }
+    &-secondary {
+      background-color: $secondary-color;
+      color: white;
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+        color: white;
+      }
     }
-
-
+  }
 }

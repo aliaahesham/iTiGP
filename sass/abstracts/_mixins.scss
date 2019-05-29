@@ -1,25 +1,22 @@
-@mixin skewed-overlay ($color,$top,$left,$width,$height,$rotateDegree) {
-         position: absolute;
-         top: $top;//50%;
-         left: $left;//50%;
-         width: $width;//160px;
-         height: $height;//20px;
-         opacity: 0;
-         z-index: -1;
-         transition: all .3s ease 0s;
-         transform: translateX(-50%) translateY(-50%) rotate($rotateDegree);
-         background-color: $color;
-    
+@mixin skewed-overlay($color, $top, $left, $width, $height, $rotateDegree) {
+  position: absolute;
+  top: $top; //50%;
+  left: $left; //50%;
+  width: $width; //160px;
+  height: $height; //20px;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.3s ease 0s;
+  transform: translateX(-50%) translateY(-50%) rotate($rotateDegree);
+  background-color: $color;
 }
 
-@mixin skewed-overlay-hover($height)
-{
-    opacity: 1;
-    height:$height;
+@mixin skewed-overlay-hover($height) {
+  opacity: 1;
+  height: $height;
 }
 
-@mixin set-right-border($backgroundColor,$borderColor)
-{
-    background-color: $backgroundColor;
-        border-right: 5px solid $borderColor;
+@mixin set-right-border($backgroundColor, $borderColor) {
+  background-color: $backgroundColor;
+  border-right: 5px solid $borderColor;
 }

@@ -38,4 +38,11 @@ div {
   &-gray-shade-1 {
     background-color: $gray-color-shade1 !important;
   }
+  &-secondary-color {
+    background-color: $secondary-color !important;
+    &:hover,
+    &:focus {
+      background-color: $pale-black2 !important;
+    }
+  }
 }

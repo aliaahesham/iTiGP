@@ -3,6 +3,12 @@ body {
   body li {
     list-style: none; }
 
+a {
+  color: #DC2D13; }
+  a:hover, a:focus, a:active {
+    color: #c22b13;
+    text-decoration: none; }
+
 div.container-fluid.no-gutters {
   padding-left: 0;
   padding-right: 0; }
@@ -19,6 +25,11 @@ div.container {
 
 .bg-gray-shade-1 {
   background-color: #ccc6c6 !important; }
+
+.bg-secondary-color {
+  background-color: #FFA500 !important; }
+  .bg-secondary-color:hover, .bg-secondary-color:focus {
+    background-color: #72848B !important; }
 
 .car-type {
   border: 1px solid dimgray;
@@ -42,7 +53,7 @@ div.container {
       display: inline-block;
       transform: skewX(-20deg); }
       .btn--skewx--text__primary-color:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -50,7 +61,7 @@ div.container {
         height: 20px;
         opacity: 0;
         z-index: -1;
-        transition: all .3s ease 0s;
+        transition: all 0.3s ease 0s;
         transform: translateX(-50%) translateY(-50%) rotate(63deg);
         background-color: #DC2D13; }
     .btn--skewx--text__secondary-color {
@@ -58,7 +69,7 @@ div.container {
       display: inline-block;
       transform: skewX(-20deg); }
       .btn--skewx--text__secondary-color:after {
-        content: ' ';
+        content: " ";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -66,7 +77,7 @@ div.container {
         height: 20px;
         opacity: 0;
         z-index: -1;
-        transition: all .3s ease 0s;
+        transition: all 0.3s ease 0s;
         transform: translateX(-50%) translateY(-50%) rotate(63deg);
         background-color: #FFA500; }
     .btn--skewx:hover :after {
@@ -118,6 +129,18 @@ div.container {
       position: absolute;
       top: 40px;
       right: -15px; }
+  .btn--color-primary {
+    background-color: #DC2D13;
+    color: white; }
+    .btn--color-primary:hover {
+      background-color: #ad230f;
+      color: white; }
+  .btn--color-secondary {
+    background-color: #FFA500;
+    color: white; }
+    .btn--color-secondary:hover {
+      background-color: #cc8400;
+      color: white; }
 
 .page-title {
   height: 30rem; }
@@ -562,10 +585,10 @@ div.container {
     text-decoration: none; }
 
 .car-spesfication {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   height: 100%;
   margin-top: 3rem; }
-  .car-spesfication .car-details .car-details-title {
+  .car-spesfication .car-details-title {
     margin-bottom: 20px;
     padding-top: 17px;
     padding-right: 25px;
@@ -574,7 +597,7 @@ div.container {
     width: 100%;
     overflow: hidden;
     position: relative; }
-    .car-spesfication .car-details .car-details-title::before {
+    .car-spesfication .car-details-title::before {
       content: " ";
       display: inline-block;
       background-color: #dc2d13;
@@ -584,14 +607,14 @@ div.container {
       top: 9px;
       margin-left: 1rem;
       left: 0; }
-    .car-spesfication .car-details .car-details-title .btn {
+    .car-spesfication .car-details-title .btn {
       color: white;
       font-weight: bolder; }
-      .car-spesfication .car-details .car-details-title .btn--skewx--text__secondary-color {
+      .car-spesfication .car-details-title .btn--skewx--text__secondary-color {
         padding-left: 2rem;
         padding-right: 2rem; }
-        .car-spesfication .car-details .car-details-title .btn--skewx--text__secondary-color:after {
-          content: ' ';
+        .car-spesfication .car-details-title .btn--skewx--text__secondary-color:after {
+          content: " ";
           position: absolute;
           top: 50%;
           left: 50%;
@@ -599,7 +622,7 @@ div.container {
           height: 20px;
           opacity: 0;
           z-index: -1;
-          transition: all .3s ease 0s;
+          transition: all 0.3s ease 0s;
           transform: translateX(-50%) translateY(-50%) rotate(63deg);
           background-color: #dc2d13; }
   .car-spesfication .car-details .tabs .tab-content {
@@ -634,10 +657,11 @@ div.container {
       border: none; }
   .car-spesfication .car-details .tabs nav > div a.nav-item.nav-link .active:after {
     border-top-color: #e74c3c; }
-  .car-spesfication .car-details .tabs nav > div a.nav-item.nav-link:hover, .car-spesfication .car-details .tabs nav > div a.nav-item.nav-link :focus {
+  .car-spesfication .car-details .tabs nav > div a.nav-item.nav-link:hover,
+  .car-spesfication .car-details .tabs nav > div a.nav-item.nav-link :focus {
     color: #dc2d13;
     border: none;
-    transition: 0.20s linear; }
+    transition: 0.2s linear; }
   .car-spesfication .sidbar {
     background-color: white; }
     .car-spesfication .sidbar .widget-content {
@@ -653,7 +677,7 @@ div.container {
           margin-left: 2px;
           font-weight: 500;
           color: #222;
-          transition: all .3s;
+          transition: all 0.3s;
           text-transform: uppercase;
           /* width: 50%; */
           padding-bottom: 0;
@@ -677,5 +701,19 @@ div.container {
           margin-left: 5rem;
           font-weight: 300;
           /* line-height: 1.7; */
-          font-size: .8rem;
+          font-size: 0.8rem;
           /* vertical-align: top; */ }
+
+.increment-control__action {
+  font-size: 1.2rem;
+  width: 4.3rem;
+  color: #beb9b9;
+  font-weight: 700; }
+  .increment-control__action:hover {
+    background-color: #beb9b9; }
+
+.increment-control > .form-control {
+  font-weight: 700;
+  width: 3.3rem;
+  height: 4.3rem;
+  font-size: 1.4rem; }
