@@ -662,7 +662,7 @@ div.container {
           .car-spesfication .sidbar .widget-content .dd-item dt::before {
             /* margin-right: 10px; */
             /* vertical-align: middle; */
-            content: "\f0da";
+            content: "/f0da";
             color: red;
             font-family: FontAwesome;
             position: absolute;
