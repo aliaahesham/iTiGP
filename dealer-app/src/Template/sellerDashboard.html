@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>seller dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+
+
+    <!--title-->
+    <div class="container-fluid no-gutters page-title">
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="card text-white page-title__card">
+                    <div class=" page-title__overlay"></div>
+                    <div class="page-title__card-image"></div>
+                    <!-- <img src="./images/diagnostic-test-result.jpg" class="card-img page-title__card-image" alt="..."> -->
+                    <div class="lines-seperator"></div>
+                    <div class="card-img-overlay">
+                        <h1 class="card-title page-title__card-text">Dashboard</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--body-->
+    <div class="container-fluid no-gutters dashboard">
+        <div class="row no-gutters dashboard-container">
+            <!--seller details-->
+            <div class="col-3 dashboard-details">
+                <div class="card dashboard-details__card">
+                    <img src="../assets/photoTemplate300px.png" class="card-img-top dashboard-details__card-image"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">seller name</h5>
+                        <div class="dashboard-details__card-links">
+                            <a href="#" class="btn  mb-1 btn--ordinary__right-border-secondary">Your
+                                products</a>
+                            <a href="#" class="btn  btn--ordinary__right-border-secondary">Add product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--products data-->
+            <div class="col-9 dashboard-data ">
+                <table class="table table-bordered dashboard-data__table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">#C123</th>
+                            <td>Product one</td>
+                            <td>this product is red and has white border</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">#X123</th>
+                            <td>Product two</td>
+                            <td>this product is red and has white border</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">#Y123</th>
+                            <td>Product three</td>
+                            <td>this product is red and has white border</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Edit</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="container-fluid no-gutters pt-5 footer-container">
+        <div class="row no-gutters">
+            <div class="col ">
+                <div class="card footer">
+                    <div class="card-body">
+                        <div class="footer-overlay">
+                            <!--two red boxes-->
+                            <div class="row no-gutters">
+                                <div class="col square__red">
+
+                                </div>
+                            </div>
+                            <!--logo-->
+                            <div class="row no-gutters">
+                                <div class="col footer-logo">
+                                    <img src="../assets/logo.jpg">
+                                    <div class="lines-seperator footer-logo__lines-seperator mt-3"></div>
+                                </div>
+                            </div>
+                            <!--address-->
+                            <div class="row no-gutters mt-5">
+                                <div class="col footer-address">
+                                    <p class="footer-key">: SHOWROOM LOCATION :</p>
+                                    <p class="footer-value">32 Market St.128, Deeja Town, Florida, CA 12345</p>
+                                </div>
+                            </div>
+                            <!--contact-->
+                            <div class="row no-gutters mt-5 ">
+                                <div class="col">
+                                    <div class="footer-contacts">
+                                        <span class="footer-key">PHONE: <span class="footer-value">+1 (234) 567
+                                                8900</span></span>
+                                        <span class="footer-key">FAX: <span class="footer-value">+1 (234) 567
+                                                8900</span></span>
+                                        <span class="footer-key">EMAIL: <span
+                                                class="footer-value">info@autozone.com</span></span>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--button-->
+                            <div class="row no-gutters mt-5">
+                                <div class="col footer-btn">
+                                    <button type="button" class="btn btn-secondary btn--ordinary btn--triangle">
+                                        <div class="btn--triangle--small"></div> <span class="btn--triangle--text">
+                                            Top</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col">
+                <div class="footer-after">
+                    <div class="triangle-down-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

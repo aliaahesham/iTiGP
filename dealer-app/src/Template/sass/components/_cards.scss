@@ -1,0 +1,49 @@
+.cards-container
+{
+    margin-top:150px;
+    margin-bottom: 150px;
+    &-results
+    {
+        margin: auto;
+    }
+    
+.card
+{
+    &__dashes-texture
+    {
+   background-image: url('assets/texture-1.gif');
+   background-repeat: repeat;
+//    border:1px solid $gray-color-shade1;
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.253);
+   &-btn
+   {
+       border:none;
+     background-color: $primary-color;
+     &:hover
+             {
+                 background-color: $secondary-color;
+             }
+    
+   }
+   .card
+   {
+       border-color: $gray-color-shade1;
+   }
+   }
+   &__dark
+   {
+       background-color: $gray-color-shade5;
+       width:50%;
+       margin:auto;
+       &-text{
+           color:$white-color;
+           
+       }
+   }
+   &__dark-radius
+   {
+    background-color: $gray-color-shade5; 
+    border-radius: 10px;
+   }
+}
+}
