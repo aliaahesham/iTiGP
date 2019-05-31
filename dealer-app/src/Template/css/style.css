@@ -768,3 +768,9 @@ div.container {
   .dashboard-data__table {
     background-color: #f5f5f5;
     height: 100%; }
+    .dashboard-data__table-edit {
+      color: green;
+      font-size: 1.5rem; }
+    .dashboard-data__table-delete {
+      color: red;
+      font-size: 1.5rem; }

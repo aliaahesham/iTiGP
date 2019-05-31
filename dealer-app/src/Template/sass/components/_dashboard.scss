@@ -41,7 +41,18 @@
         {
             background-color: $white-color-shade2;
             height: 100%;
-       
+            &-edit
+            {
+              color:green;
+              font-size: 1.5rem;
+               
+            }
+            &-delete
+            {
+                color:red;
+              font-size: 1.5rem;
+
+            }
         }
     }
 
