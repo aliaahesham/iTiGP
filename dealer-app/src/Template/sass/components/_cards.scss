@@ -9,6 +9,7 @@
     
 .card
 {
+  
     &__dashes-texture
     {
    background-image: url('assets/texture-1.gif');
@@ -46,4 +47,16 @@
     border-radius: 10px;
    }
 }
+}
+.card{
+    &__dark{
+        position: relative;
+        color: white;
+        background-color: $gray-color-shade5;
+        transition: all 1s;
+       &:hover{
+           background: url("assets/texture-1.gif");
+           color: black;
+       }
+    }
 }
