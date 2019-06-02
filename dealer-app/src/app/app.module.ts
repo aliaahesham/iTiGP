@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './routing.module';
+import { DiagnosticModule } from './features/diagnostics/diagnostic.module';
+import { CarsModule } from './features/cars/cars.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,11 @@ import { RoutingModule } from './routing.module';
   ],
   imports: [
     BrowserModule,
-    RouterModule,
+    DiagnosticModule,
+    CarsModule,
+    SharedModule,
     RoutingModule,
-    SharedModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
