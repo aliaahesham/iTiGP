@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AccessoriesModule } from './features/accessories/accessories.module';
+import {TutoriesModule} from './features/tutorials/tutories.module';
+
+
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -18,6 +21,7 @@ import { CarsModule } from './features/cars/cars.module';
     DiagnosticModule,
     CarsModule,
     AccessoriesModule,
+    TutoriesModule,
     SharedModule,
     RoutingModule,
     RouterModule,
