@@ -65,7 +65,7 @@
         transition: all 1s;
         height: fit-content;
        &:hover{
-           background: url("../../assets/texture-1.gif");
+           background: url("assets/texture-1.gif");
            color: black;
            border-bottom: 4px solid #818080;
        }
@@ -89,7 +89,7 @@
     }
 
     &__video{
-        background: url("../../assets/card-video.jpg");
+        background: url("assets/card-video.jpg");
           background-size: cover;
           height: 240px;
           &--overlay{
