@@ -6,6 +6,6 @@
 // @NgModule({
 //     declarations: [CardComponent, DetailComponent,ListComponent]
 //   })
-// export class TutoriesModule {
+export class TutoriesModule {
   
-//  }
+ }
