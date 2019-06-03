@@ -10,8 +10,8 @@ import { DetailsComponent } from './details/details.component';
     imports: [
         CommonModule,
         RouterModule.forChild([
-            { path: 'tutorial', component: ListComponent },
-            { path: 'tutorial/details', component: DetailsComponent },
+            { path: 'tutorials', component: ListComponent },
+            { path: 'tutorials/details', component: DetailsComponent },
 
         ])
     ],
