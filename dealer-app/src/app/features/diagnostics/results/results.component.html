@@ -1,0 +1,115 @@
+<!--body-->
+<div class="container-fluid no-gutters cards-container ">
+  <div class="row no-gutters mr-3 ml-3 mb-5">
+
+
+    <div class="col-8 cards-container-results mt-5">
+
+      <!--card 1-->
+      <div class="card card__dashes-texture mr-2 mb-2">
+
+        <div class="card-body mb-2 mt-2 mr-2 ">
+          <h5 class="card-title">Diagnostic One</h5>
+          <p class="card-text">Description of diagnostic One</p>
+          <!-- <a href="#" class="btn btn-primary card__dashes-texture-btn">Details</a> -->
+          <button type="button" class="btn btn-primary card__dashes-texture-btn" data-toggle="modal"
+            data-target="#exampleModal">
+            Details
+          </button>
+        </div>
+      </div>
+
+      <!--card 2-->
+      <div class="card card__dashes-texture mr-2 mb-2">
+
+        <div class="card-body mb-2 mt-2 mr-2 ">
+          <h5 class="card-title">Diagnostic two</h5>
+          <p class="card-text">Description of diagnostic two</p>
+          <!-- <a href="#" class="btn btn-primary card__dashes-texture-btn">Details</a> -->
+          <button type="button" class="btn btn-primary card__dashes-texture-btn" data-toggle="modal"
+            data-target="#exampleModal">
+            Details
+          </button>
+        </div>
+      </div>
+
+
+
+      <!--pagination-->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+  </div>
+</div>
+<div class="container-fluid no-gutters cards-container ">
+
+  <div class="row no-gutters mr-3 ml-3">
+    <div class="col-12">
+      <div class="card mb-3 mb-2">
+
+        <div class="card-body card__dashes-texture">
+          <h5 class="card-title ">Need someone to help you!</h5>
+
+
+          <!--mechanical-->
+          <div class="card card__dark">
+            <div class="card-body text-center card__dark-text">
+              <h5 class="card-title">Mechanical Name</h5>
+              <p class="card-text">phone number</p>
+              <p class="card-text">address</p>
+              <a href="#" class="btn btn-primary card__dashes-texture-btn">visit his
+                profile</a>
+            </div>
+          </div>
+
+          <!--winch-->
+          <div class="card card__dark mt-2">
+            <div class="card-body text-center card__dark-text">
+              <h5 class="card-title">If you need a winch</h5>
+              <p class="card-text">phone number</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Diagnostic title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Diagnostic details
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--ordinary__without-border" data-dismiss="modal"><span
+            style="color: white">Close</span></button>
+      </div>
+    </div>
+  </div>
+</div>

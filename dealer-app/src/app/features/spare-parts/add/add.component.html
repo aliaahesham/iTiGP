@@ -1,0 +1,53 @@
+<!-- form -->
+<div class="container my-5 py-5 ">
+  <div class="row no-gutters pt-3 d-flex justify-content-center">
+    <div class="col-md-4 col-sm-6">
+      <img src="../assets/photoTemplate300px.png" class="rounded mx-auto d-block img-fluid" alt="add spare part img">
+    </div>
+    <div class="col-md-7 col-sm-6 mx-2 mt-n1">
+      <form>
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="Name">
+        </div>
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <textarea class="form-control" id="Description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="categories">Category</label>
+          <select class="form-control" id="categories">
+            <option>Interior & Exterior</option>
+            <option>Electricity</option>
+            <option>Mechanic</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Price">Price</label>
+          <input type="text" class="form-control" id="Price">
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="w-50 pt-2">
+            <label class="d-block">Sale?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="saleOptions" id="onSale" value="onSale">
+              <label class="form-check-label" for="onSale">On Sale</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="saleOptions" id="notOnSale" value="notOnSale">
+              <label class="form-check-label" for="notOnSale">Not On Sale</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="discount">Discount</label>
+            <input type="text" class="form-control" id="discount">
+          </div>
+        </div>
+        <div class="d-flex justify-content-end my-2">
+          <button type="reset" class="btn btn--ordinary btn--color-secondary  mr-1">Cancel</button>
+          <button type="submit" class="btn btn--ordinary btn--color-primary mr-1">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
