@@ -321,6 +321,16 @@ div.container {
     position: absolute;
     content: ""; }
 
+.nav-dropdown {
+  position: inherit !important;
+  z-index: 0 !important;
+  background-color: transparent !important;
+  width: auto !important;
+  margin-top: 12px; }
+  .nav-dropdown .nav-item:hover {
+    background-color: transparent !important;
+    color: #DC2D13 !important; }
+
 .footer {
   position: relative;
   height: 550px;
