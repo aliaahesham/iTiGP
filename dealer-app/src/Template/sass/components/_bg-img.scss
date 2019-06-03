@@ -1,11 +1,11 @@
-.bg--img{
-    background:url("../../assets/bg.jpg");
-    height: 360px;
-    background-attachment: fixed;
-    background-size: cover;
-   &-overlay{
-       height: 100%;
-       width: 100%;
-       background-color: rgba(10,10,10,0.75);
-   }
+.bg--img {
+  background: url("assets/bg.jpg");
+  height: 360px;
+  background-attachment: fixed;
+  background-size: cover;
+  &-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.75);
+  }
 }
