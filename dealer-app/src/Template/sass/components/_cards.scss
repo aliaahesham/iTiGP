@@ -48,15 +48,138 @@
    }
 }
 }
+// Home page Cards
 .card{
+    &__border--left{
+        border-left: 4px solid $primary-color;
+    }
+    &__box{
+        height: auto;
+        width: auto;
+    }
+   
     &__dark{
         position: relative;
         color: white;
         background-color: $gray-color-shade5;
         transition: all 1s;
+        height: fit-content;
        &:hover{
-           background: url("assets/texture-1.gif");
+           background: url("../../assets/texture-1.gif");
            color: black;
+           border-bottom: 4px solid #818080;
        }
+       &:hover h3{
+        color: $primary-color;
+        font-size: 1.10rem;
+        }
+        &:hover .card-none{
+            display: none;
+        }
+        &:hover .card__body{
+            display: block
+        }
+        &:hover .card__border{
+            border-left: 4px solid #818080;
+        }
+      
     }
+    &__body{
+        display: none;
+    }
+
+    &__video{
+        background: url("../../assets/card-video.jpg");
+          background-size: cover;
+          height: 240px;
+          &--overlay{
+              background-color: $black-shade;
+              width: 100%;
+              height: 100%;
+              display: none;
+          }
+          &--box{
+              background-color: $white-color;
+          }
+        &--box:hover &--overlay{
+           display: block
+        }
+        &--head{
+            position: relative;
+        }
+    }
+   &--img--small{
+       position: relative;
+   }
+   &__overlay , &__overlay--small{
+       position: absolute;
+       background-color: $black-shade;
+       height: 100%;
+       width: 95%;
+       top: 0;
+       display: none;
+       transition: all .5s;
+   }
+   &__overlay--small{
+    width: 90%;
+   
+   }
+   &__title a{
+    display: block;
+    position: absolute;
+    color: white;
+    bottom: 0;
+    background-color: $black-shade;
+    margin-bottom: 0;
+    padding: 0.3rem;
+    font-size: 17px;
+    z-index: 999;
+   }
+   &--img--small:hover &__overlay--small, &--img:hover &__overlay{
+       display: block;
+   }
+   &--img--small:hover &__title a , &__img--large:hover &__title a{
+    background-color: rgba(0, 0, 0, 0);
 }
+
+   &__tag--left{
+    position: absolute;
+    bottom: 6%;
+    right: 4%;
+    display: block;
+    background-color: #DC2D13;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    font-weight: bold;
+   }
+   &__img--skewed{
+       position: relative;
+       &--small{
+           position: absolute;
+           bottom: 0;
+       }
+   }
+   &--border{
+
+       border-left: 4px solid $primary-color;
+       &-gray{
+        border-left: 4px solid $black-shade;
+       }
+       & a {
+           color: $black-shade;
+       }
+       & a:hover{
+           text-decoration: #DC2D13;
+           color: #DC2D13
+       }
+   }
+   &__container img{
+       height: 200px;
+       border: $gray-color-shade2 1px solid
+       
+   }
+}
+.card__custom{
+    height: 619px;
+}
+

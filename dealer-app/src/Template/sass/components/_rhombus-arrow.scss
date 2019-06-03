@@ -1,0 +1,19 @@
+.rhombus-arrow{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 14px;
+    margin-left: 3px;
+    font-size: 8px;
+    border: 1px solid #ccc;
+    transform: rotate(45deg);
+    text-align: left;
+    & i {
+        display: block;
+        margin: 0% 0 0 3%;
+        line-height: 2;
+        color: $primary-color;
+        transform: rotate(56deg);
+        font-size: 9px;
+    }
+}
