@@ -1,15 +1,15 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-// @Component({
-//   selector: 'app-detail-component',
-//   templateUrl: './DetailComponent'
-// })
+@Component({
+  selector: 'app-tutorial-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss']
+})
+export class DetailsComponent implements OnInit {
 
-// export class DetailComponent implements OnInit {
+  constructor() { }
 
-//   constructor() { }
+  ngOnInit() {
+  }
 
-//   ngOnInit() {
-//   }
-
-// }
+}

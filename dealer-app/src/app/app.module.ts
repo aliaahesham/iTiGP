@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AccessoriesModule } from './features/accessories/accessories.module';
-import {TutoriesModule} from './features/tutorials/tutories.module';
+import { TutorialsModule } from './features/tutorials/tutorials.module';
 
 
 
@@ -21,7 +21,7 @@ import { CarsModule } from './features/cars/cars.module';
     DiagnosticModule,
     CarsModule,
     AccessoriesModule,
-    TutoriesModule,
+    TutorialsModule,
     SharedModule,
     RoutingModule,
     RouterModule,
