@@ -71,6 +71,9 @@
       border-left: 4px solid #818080;
     }
   }
+  &:hover .card__border {
+    border-left: 4px solid #818080;
+  }
   &__body {
     display: none;
   }
@@ -95,6 +98,10 @@
       position: relative;
     }
   }
+  &--head {
+    position: relative;
+  }
+
   &--img--small {
     position: relative;
   }
