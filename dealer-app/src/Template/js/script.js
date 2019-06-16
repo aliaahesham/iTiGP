@@ -7,3 +7,4 @@ var owl = $('.owl-carousel');
                 autoplayTimeout:20000,
                 autoplayHoverPause:true
             });
+            
