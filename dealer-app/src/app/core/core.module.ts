@@ -36,3 +36,4 @@ import { TitleComponent } from './title/title.component';
    
 })
 export class CoreModule { }
+ 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Seller } from 'src/app/_models/seller';
+import { LoggedInSellerService } from '../loggedIn.service';
 
 @Component({
   selector: 'app-seller-dashboard',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  loggedInSeller: Seller;
+  constructor(private LoggedInSellerService: LoggedInSellerService) { }
 
   ngOnInit() {
+    this.loggedInSeller = this.LoggedInSellerService.GetSeller();
   }
 
 }
