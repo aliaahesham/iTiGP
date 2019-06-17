@@ -8,10 +8,6 @@ export class modelService{
             {id:2,name:'Kuga'},
             {id:3,name:'Festa'},
             {id:4,name:'Fusion'},
-
-            // {id:1, making:{name:'ford'},capacity:{capacity:2000}, classification:'Level A', color:'gray' , model:{name:'Focuse RS',id:1}, fuelTank:50,description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys', year:2018},
-            // {id:2, making:{name:'ford'},capacity:{capacity:2000}, classification:'Level A', color:'gray' , model:{name:'Focuse RS',id:2}, fuelTank:50,description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys', year:2018},
-            // {id:3, making:{name:'ford'},capacity:{capacity:2000}, classification:'Level A', color:'gray' , model:{name:'Focuse RS',id:3}, fuelTank:50,description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys', year:2018}
         ]
     }
     getAll():model[]{
