@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Seller } from 'src/app/_model/seller';
+import { Seller } from 'src/app/_models/seller';
 import { SellerService } from '../seller.service';
 import { LoggedInSellerService } from '../loggedIn.service';
 import { FormControl, FormGroup } from '@angular/forms';
