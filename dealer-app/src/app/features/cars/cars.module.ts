@@ -4,6 +4,7 @@ import { ListComponent } from './list/list.component';
 import { RouterModule } from '@angular/router';
 import { AddComponent } from './add/add.component';
 import { DetailsComponent } from './details/details.component';
+import { carService } from './car.services';
 
 @NgModule({
   declarations: [ListComponent, AddComponent, DetailsComponent],
@@ -14,6 +15,7 @@ import { DetailsComponent } from './details/details.component';
       { path: 'car/add', component: AddComponent },
       { path: 'car/details', component: DetailsComponent },
     ])
-  ]
+  ],
+  providers:[carService]
 })
 export class CarsModule { }
