@@ -6,10 +6,11 @@ import {cylinder} from './cylinder';
 
 export interface car{
     id?:number;
+    code?:string;
     price?:number;
     making?:making;
     model?:model;
-    classification?:string;
+    classification?:string; //interface
     color?:string;
     year?:number;
     transimission?:transimission;
@@ -20,5 +21,9 @@ export interface car{
     height?:number;
     cylinder?:cylinder;
     capacity?:capacity;
+    type?:string; //interface
+    ABS?:string; //avaliable or not 
+    images?:string[];
+    turbo?:boolean;
 
 }
