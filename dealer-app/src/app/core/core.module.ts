@@ -30,3 +30,4 @@ import { PartnersComponent } from './home/partners/partners.component';
 
 })
 export class CoreModule { }
+ 

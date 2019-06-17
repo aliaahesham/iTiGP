@@ -5,18 +5,19 @@
     <div class="col-4 offset-4 my-5">
 
 
-      <form class="login-form">
+      <form (keyup)="checkKey($event)" class="login-form" [formGroup]="sellerLoginForm">
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
+          <label for="exampleInputText1">Name</label>
+          <input type="text" class="form-control" placeholder="Name" formControlName="name">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
         </div>
-        <button type="button" class="btn btn--ordinary__without-border"><span
-            style="color: white">Submit</span></button>
+        <button type="button" class="btn btn--ordinary__without-border" (click)="onSubmit()">
+          <span style="color: white">Submit</span>
+        </button>
+        <div style="color: red; font-weight: bold" class="mt-2">{{this.errors}}</div>
       </form>
 
     </div>
