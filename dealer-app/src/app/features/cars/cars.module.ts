@@ -18,6 +18,6 @@ import { TabsModule } from 'ngx-bootstrap';
       { path: 'car/details', component: DetailsComponent },
     ])
   ],
-  providers:[carService]
+  providers: [carService]
 })
 export class CarsModule { }
