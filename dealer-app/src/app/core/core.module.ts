@@ -8,6 +8,8 @@ import { CarsSampleComponent } from './home/cars-sample/cars-sample.component';
 import { TutorialsComponent } from './home/tutorials/tutorials.component';
 import { DiagnosticesComponent } from './home/diagnostices/diagnostices.component';
 import { PartnersComponent } from './home/partners/partners.component';
+import { HeaderComponent } from './header/header.component';
+import { TitleComponent } from './title/title.component';
 
 
 @NgModule({
@@ -20,14 +22,18 @@ import { PartnersComponent } from './home/partners/partners.component';
     TutorialsComponent,
     DiagnosticesComponent,
     PartnersComponent,
+    HeaderComponent,
+    TitleComponent,
   ],
   imports: [
     CommonModule,
   ],
   exports: [
-    FooterComponent
+    HeaderComponent,
+    FooterComponent,
+    TitleComponent
   ]
-
+   
 })
 export class CoreModule { }
  
