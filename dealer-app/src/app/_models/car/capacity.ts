@@ -1,4 +1,4 @@
 export interface capacity{
-    capacity?:number;
     id?:number;
+    name?:string;
 }

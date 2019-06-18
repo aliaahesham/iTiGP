@@ -9,6 +9,7 @@ import { car } from 'src/app/_models/car/car';
 })
 export class ListComponent implements OnInit {
    cars:car[];
+   
   constructor(private carService:carService) { }
 
   ngOnInit() {
