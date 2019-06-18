@@ -5,6 +5,8 @@ import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
+import { AccessoriesService } from './accessories.service';
+import { CategoryService } from './category.service';
 
 
 @NgModule({
@@ -26,6 +28,10 @@ import { RouterModule } from '@angular/router';
     ListComponent,
     DetailsComponent,
     AddComponent
+  ],
+  providers: [
+    AccessoriesService,
+    CategoryService
   ]
 })
 export class AccessoriesModule { }
