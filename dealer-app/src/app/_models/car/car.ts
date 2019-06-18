@@ -9,6 +9,7 @@ export interface car {
     code?: string;
     price?: number;
     making?: making;
+    makingId?:number;
     model?: model;
     classification?: string; //interface
     color?: string;
@@ -25,5 +26,6 @@ export interface car {
     ABS?: string; //avaliable or not 
     images?: string[];
     turbo?: boolean;
+
 
 }

@@ -1,27 +1,17 @@
 import { making } from 'src/app/_models/car/making';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class makingService {
     data: making[];
     constructor() {
         this.data = [
             {
-                id: 1, name: 'Ford',
-                models: [
-                    { id: 1, name: 'Focus' },
-                    { id: 2, name: 'Kuga' },
-                    { id: 3, name: 'Festa' },
-                    { id: 4, name: 'Fusion' }
-                ]
+                id: 1, name: 'Ford', modelId: [1, 2, 3, 4]
             },
             {
                 id: 2, name: 'Hyundai',
-                models: [
-                    { id: 5, name: 'Verna' },
-                    { id: 6, name: 'Accent' },
-                    { id: 7, name: 'new Accent' },
-                    { id: 8, name: 'Elantra AD' },
-                    { id: 9, name: 'Elantra HD' }
-                ]
+                modelId: [5,6,7,8,9]
             },
             { id: 3, name: 'Kia' },
             { id: 4, name: 'Renault' },
@@ -32,6 +22,9 @@ export class makingService {
     }
     getById(id: number) {
         return this.data.find(a => a.id === id);
+    }
+    getByName(name:string){
+        return this.data.find(a=> a.name===name);
     }
     add(making: making) {
         making.id = this.data.length + 1;
