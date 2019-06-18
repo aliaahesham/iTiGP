@@ -4,14 +4,14 @@ export class AccessoriesService {
     data: Accessories[];
     constructor() {
         this.data = [
-            { id: 1, name: "hamada", description: "hamada hamada", price: 100, images: ['assets/img/products/product-grey-1.jpg'], seller: { id: 1, name: "ahmed", image: "hamada", field: "hamada", password: "hamada" } },
-            { id: 2, name: "hamada", description: "hamada hamada", price: 20, images: ['assets/img/products/product-grey-1.jpg'] },
-            { id: 3, name: "hamada", description: "hamada hamada", price: 10, images: ['assets/img/products/product-grey-1.jpg'] },
-            { id: 4, name: "hamada", description: "hamada hamada", price: 1000, images: ['assets/img/products/product-grey-1.jpg'], seller: { id: 2, name: "ahmed", image: "hamada", field: "hamada", password: "ahmed" } },
-            { id: 5, name: "hamada", description: "hamada hamada", price: 110, images: ['assets/img/products/product-grey-1.jpg'] },
-            { id: 6, name: "hamada", description: "hamada hamada", price: 80, images: ['assets/img/products/product-grey-1.jpg'] },
-            { id: 7, name: "hamada", description: "hamada hamada", price: 2000, images: ['assets/img/products/product-grey-1.jpg'] },
-            { id: 8, name: "hamada", description: "hamada hamada", price: 150, images: ['assets/img/products/product-grey-1.jpg'] }
+            { id: 1, name: "hamada1", description: "hamada hamada", price: 100, images: ['assets/img/products/product-grey-1.jpg'], },
+            { id: 2, name: "hamada2", description: "hamada hamada", price: 20, images: ['assets/img/products/product-grey-1.jpg'] },
+            { id: 3, name: "hamada3", description: "hamada hamada", price: 10, images: ['assets/img/products/product-grey-1.jpg'] },
+            { id: 4, name: "hamada4", description: "hamada hamada", price: 1000, images: ['assets/img/products/product-grey-1.jpg'],  },
+            { id: 5, name: "hamada5", description: "hamada hamada", price: 110, images: ['assets/img/products/product-grey-1.jpg'] },
+            { id: 6, name: "hamada6", description: "hamada hamada", price: 80, images: ['assets/img/products/product-grey-1.jpg'] },
+            { id: 7, name: "hamada7", description: "hamada hamada", price: 2000, images: ['assets/img/products/product-grey-1.jpg'] },
+            { id: 8, name: "hamada8", description: "hamada hamada", price: 150, images: ['assets/img/products/product-grey-1.jpg'] }
         ]
     }
     getAll(): Accessories[] {
