@@ -7,8 +7,13 @@ import { RouterModule } from '@angular/router';
 import { SellerService } from './seller.service';
 import { LoggedInSellerService } from './loggedIn.service';
 import { CoreModule } from '../core/core.module';
+import { DetailsComponent } from './dashboard/details/details.component';
+import { ProductsDataComponent } from './dashboard/products-data/products-data.component';
+import { carService } from '../features/cars/car.services';
+import { SparePartsService } from '../features/spare-parts/spare-parts.service';
+import { AccessoriesService } from '../features/accessories/accessories.service';
 @NgModule({
-  declarations: [LoginFormComponent, DashboardComponent],
+  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -18,6 +23,6 @@ import { CoreModule } from '../core/core.module';
       { path: 'seller/dashboard', component: DashboardComponent }
     ])
   ],
-  providers: [SellerService, LoggedInSellerService]
+  providers: [SellerService, LoggedInSellerService, carService, SparePartsService, AccessoriesService]
 })
 export class SharedModule { }

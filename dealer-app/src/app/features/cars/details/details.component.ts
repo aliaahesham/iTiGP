@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import {Ng2BootstrapModule } from '@angular/core'
+import { TabsModule } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-car-details',

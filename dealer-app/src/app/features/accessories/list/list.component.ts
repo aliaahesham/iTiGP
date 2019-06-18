@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AccessoriesService } from './../accessories.service';
+import { Accessories } from './../../../_models/accessories/accessories';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-accessories',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
+ @Input() accessories:Accessories[];
+   
+  constructor(private accessoriesService:AccessoriesService) { }
 
   ngOnInit() {
+    this.accessories=this.accessoriesService.getAll();
+    console.log(this.accessories);
   }
-
 }

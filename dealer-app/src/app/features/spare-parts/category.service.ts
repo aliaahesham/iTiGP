@@ -15,6 +15,6 @@ export class ProductService {
     }
 
     getById(id: number): category {
-        return this.data.find(c => c.id);
+        return this.data.find(c => c.id === id);
     }
 }

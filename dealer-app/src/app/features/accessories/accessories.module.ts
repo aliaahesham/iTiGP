@@ -19,7 +19,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       { path: 'accessory', component: ListComponent },
       { path: 'accessory/add', component: AddComponent },
-      { path: 'accessory/details', component: DetailsComponent },
+      { path: 'accessory/details/:id', component: DetailsComponent },
     ])
   ],
   exports: [
