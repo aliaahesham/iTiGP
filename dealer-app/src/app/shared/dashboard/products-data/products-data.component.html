@@ -26,15 +26,15 @@
         <i class="fas fa-trash-alt  dashboard-data__table-delete" (click)="DeleteProduct('accessory',accessory.id)"></i>
       </td>
     </tr>
-    <!-- <tr *ngFor="let sparePart of spareParts">
-        <td scope="row">{{sparePart.code}}</td>
-        <td>{{sparePart.name}}</td>
-        <td style="max-width: 2rem;">{{sparePart.description}}</td>
-        <td>
-          <i class="fas fa-pencil-alt dashboard-data__table-edit m-2" (click)="EditProduct('spareParts')"></i>
-          <i class="fas fa-trash-alt  dashboard-data__table-delete" (click)="DeleteProduct('sparePart',sparePart.id)"></i>
-        </td>
-      </tr>
-   -->
+    <tr *ngFor="let sparePart of spareParts">
+      <td scope="row">{{sparePart.code}}</td>
+      <td>{{sparePart.name}}</td>
+      <td style="max-width: 2rem;">{{sparePart.description}}</td>
+      <td>
+        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2" (click)="EditProduct('spareParts')"></i>
+        <i class="fas fa-trash-alt  dashboard-data__table-delete" (click)="DeleteProduct('sparePart',sparePart.id)"></i>
+      </td>
+    </tr>
+
   </tbody>
 </table>

@@ -13,6 +13,8 @@ export class modelService {
             { id: 7, name: 'new Accent', makingId: 2 },
             { id: 8, name: 'Elantra AD', makingId: 2 },
             { id: 9, name: 'Elantra HD', makingId: 2 },
+            { id: 10, name: 'Rio', makingId: 3 },
+            { id: 11, name: 'Picanto', makingId: 3 },
         ]
     }
     getAll(): model[] {
