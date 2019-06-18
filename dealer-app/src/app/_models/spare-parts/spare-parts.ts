@@ -5,6 +5,7 @@ import { model } from '../../_models/car/model';
 export interface SparePart {
     id?: number;
     name?: string;
+    description?: string;
     categoryId?: number;
     category?: category;
     makingId?: number;
