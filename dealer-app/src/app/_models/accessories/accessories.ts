@@ -7,7 +7,7 @@ export interface Accessories {
     name?: string;
     description?: string;
     price?: number;
-    images?: string[];
+    image?: string;
     seller?: string;
     category?: Category;
 }
