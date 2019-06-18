@@ -25,5 +25,5 @@ export interface car {
     ABS?: string; //avaliable or not 
     images?: string[];
     turbo?: boolean;
-
+    seller?: string;
 }
