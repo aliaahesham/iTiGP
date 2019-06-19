@@ -1,3 +1,6 @@
+<!--title-->
+<app-title>Car Spare Parts</app-title>
+
 <!---------search bar----------->
 <div class="conatainer d-flex justify-content-center my-5 pt-5">
   <div class="row my-5 no-gutters">
@@ -8,28 +11,21 @@
       <div class="col-md-12 pl-5">
         <div class="card-line"></div>
       </div>
-      <div class="col-md-12 mt-3">
-        <button type="button" class="sekwed-btn py-2 px-5 border-0 ml-3 custom-btn w-100 bg-gray-shade-1">
-          <span class="text-uppercase fs-1"> Making <i class="fas fa-caret-down"></i></span>
-        </button>
-        <ul class="dropdown d-none">
-          <li class="p-2 border-bottom">latest added</li>
-          <li class="p-2 border-bottom">latest added</li>
-          <li class="p-2 border-bottom">latest added</li>
-          <li class="p-2">latest added</li>
-        </ul>
-      </div>
-      <div class="col-md-12 mt-3">
-        <button type="button" class="sekwed-btn py-2 px-5 border-0 ml-3 custom-btn w-100 bg-gray-shade-1">
-          <span class="text-uppercase fs-1"> Models <i class="fas fa-caret-down"></i></span>
-        </button>
-        <ul class="dropdown d-none">
-          <li class="p-2 border-bottom">latest added</li>
-          <li class="p-2 border-bottom">latest added</li>
-          <li class="p-2 border-bottom">latest added</li>
-          <li class="p-2">latest added</li>
-        </ul>
-      </div>
+      <app-dropdown>
+        <ng-container class="dropdown__btn">
+          <button type="button" class="sekwed-btn py-2 px-5 border-0 ml-3 custom-btn w-100 bg-gray-shade-1">
+            <span class="text-uppercase fs-1"> Making <i class="fas fa-caret-down"></i></span>
+          </button>
+        </ng-container>
+        <ng-container class="dropdown__list">
+          <ul class="dropdown width-21 pstn-l-7">
+            <li class="p-2 border-bottom">latest added</li>
+            <li class="p-2 border-bottom">latest added</li>
+            <li class="p-2 border-bottom">latest added</li>
+            <li class="p-2 border-bottom">latest added</li>
+          </ul>
+        </ng-container>
+      </app-dropdown>
       <div class="col-md-12 mt-3">
         <button type="button" class="sekwed-btn py-2 px-5 border-0 ml-3 custom-btn w-100 bg-gray-shade-1">
           <span class="text-uppercase fs-1"> Category <i class="fas fa-caret-down"></i></span>

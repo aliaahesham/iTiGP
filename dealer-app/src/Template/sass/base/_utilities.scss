@@ -49,3 +49,17 @@ div {
     }
   }
 }
+
+.width {
+  &-21 {
+    width: 21rem !important;
+  }
+}
+
+.pstn {
+  &-l {
+    &-7 {
+      left: 7%;
+    }
+  }
+}
