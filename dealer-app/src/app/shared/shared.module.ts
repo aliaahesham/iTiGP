@@ -12,8 +12,9 @@ import { ProductsDataComponent } from './dashboard/products-data/products-data.c
 import { carService } from '../features/cars/car.services';
 import { SparePartsService } from '../features/spare-parts/spare-parts.service';
 import { AccessoriesService } from '../features/accessories/accessories.service';
+import { DropdownComponent } from './dropdown/dropdown.component';
 @NgModule({
-  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent],
+  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent, DropdownComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -23,6 +24,15 @@ import { AccessoriesService } from '../features/accessories/accessories.service'
       { path: 'seller/dashboard', component: DashboardComponent }
     ])
   ],
-  providers: [SellerService, LoggedInSellerService, carService, SparePartsService, AccessoriesService]
+  providers: [
+    SellerService,
+    LoggedInSellerService,
+    carService,
+    SparePartsService,
+    AccessoriesService,
+  ],
+  exports: [
+    DropdownComponent
+  ]
 })
 export class SharedModule { }
