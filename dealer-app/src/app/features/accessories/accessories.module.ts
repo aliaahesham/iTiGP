@@ -7,8 +7,9 @@ import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
-//service
+import { AccessoriesResolver } from './accessories.resolver';
 import { AccessoriesService } from './accessories.service';
+//service
 import { CategoryService } from './category.service';
 
 
@@ -25,7 +26,7 @@ import { CategoryService } from './category.service';
     RouterModule.forChild([
       { path: 'accessory', component: ListComponent },
       { path: 'accessory/add', component: AddComponent },
-      { path: 'accessory/details/:id', component: DetailsComponent },
+      { path: 'accessory/details/:id', component: DetailsComponent,resolve:{myResolver:AccessoriesResolver} },
     ])
   ],
   exports: [
@@ -33,9 +34,10 @@ import { CategoryService } from './category.service';
     DetailsComponent,
     AddComponent
   ],
-  providers: [
+  providers:[
+    AccessoriesResolver,
     AccessoriesService,
-    CategoryService
+     CategoryService
   ]
 })
 export class AccessoriesModule { }

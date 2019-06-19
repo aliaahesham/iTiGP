@@ -16,12 +16,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   accessories: Accessories;
   subscription: Subscription;
   ngOnInit() {
-    this.subscription = this.activeRoute.params.subscribe(
-      (params) => {
-        this.id = params.id;
-        this.accessories = this.AccessoriesService.getById(+this.id);
-      }
-    )
+  this.accessories=this.activeRoute.snapshot.data.myResolver;
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

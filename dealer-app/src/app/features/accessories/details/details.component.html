@@ -7,9 +7,7 @@
       <div class="car-details-title">
         <div class="row">
           <div class="col-md-8 mx-auto text-left">
-            <h4>Accessory Name</h4>
-            {{accessories.name}}
-
+            <h4>{{accessories.name}} </h4>
           </div>
         </div>
       </div>
@@ -23,15 +21,13 @@
     <div class="col-md-4 col-sm-12 m-3">
       <h3 class="border-bottom pb-2">Details</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
+        {{accessories.description}}
       </p>
     </div>
 
 
     <div class="col-md-3 col-sm-12 m-3">
-      <h3 class="border-bottom pb-2 text-right">£ 22,03</h3>
+      <h3 class="border-bottom pb-2 text-right">${{accessories.price}}</h3>
       <h5 class="mt-4 ml-3">Quantity</h5>
       <div class="d-flex mx-auto w-50 justify-content-center">
         <a href="#" class="increment-control__action d-flex justify-content-center align-items-center border">-</a>

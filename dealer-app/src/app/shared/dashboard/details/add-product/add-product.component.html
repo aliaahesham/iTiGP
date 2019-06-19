@@ -1,0 +1,15 @@
+<app-title>Add new product</app-title>
+<div class="card container" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title container-title">Welcome {{loggedInSeller.name}}</h5>
+    <p class="card-text">choose which type of product you want to add</p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><span class="list-item" (click)="AddProduct($event)">Car</span></li>
+      <li class="list-group-item"><span class="list-item" (click)="AddProduct($event)">Accessory</span>
+      </li>
+      <li class="list-group-item"><span class="list-item" (click)="AddProduct($event)">Spare
+          Part</span>
+      </li>
+    </ul>
+  </div>
+</div>
