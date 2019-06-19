@@ -5,6 +5,8 @@ import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
 import { AddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
+import { AccessoriesResolver } from './accessories.resolver';
+import { AccessoriesService } from './accessories.service';
 
 
 @NgModule({
@@ -19,13 +21,17 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       { path: 'accessory', component: ListComponent },
       { path: 'accessory/add', component: AddComponent },
-      { path: 'accessory/details/:id', component: DetailsComponent },
+      { path: 'accessory/details/:id', component: DetailsComponent,resolve:{myResolver:AccessoriesResolver} },
     ])
   ],
   exports: [
     ListComponent,
     DetailsComponent,
     AddComponent
+  ],
+  providers:[
+    AccessoriesResolver,
+    AccessoriesService
   ]
 })
 export class AccessoriesModule { }
