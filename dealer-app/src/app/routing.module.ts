@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HomepageComponent } from './core/home/homepage/homepage.component';
 
-import { AccessoriesService } from './features/accessories/accessories.service';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { from } from 'rxjs';
   ],
   exports: [],
   providers: [
-    AccessoriesService
   ]
 })
 export class RoutingModule { }

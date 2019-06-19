@@ -9,7 +9,7 @@ export class makingService {
                 models: [
                     { id: 1, name: 'Focus' },
                     { id: 2, name: 'Kuga' },
-                    { id: 3, name: 'Festa' },
+                    { id: 3, name: 'Fiesta' },
                     { id: 4, name: 'Fusion' }
                 ]
             },
@@ -23,7 +23,13 @@ export class makingService {
                     { id: 9, name: 'Elantra HD' }
                 ]
             },
-            { id: 3, name: 'Kia' },
+            {
+                id: 3, name: 'Kia',
+                models: [
+                    { id: 10, name: 'Rio' },
+                    { id: 11, name: 'Picanto' },
+                ]
+            },
             { id: 4, name: 'Renault' },
         ]
     }
