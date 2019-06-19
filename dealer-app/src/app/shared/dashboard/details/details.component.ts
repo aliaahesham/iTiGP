@@ -22,7 +22,6 @@ export class DetailsComponent implements OnInit {
   SignOut() {
     this.seller = {};
     this.router.navigateByUrl('/seller/login');
-
   }
 
 }

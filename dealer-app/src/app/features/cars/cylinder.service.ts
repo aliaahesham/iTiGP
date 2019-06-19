@@ -4,9 +4,9 @@ export class cylinderService{
     data:cylinder[];
     constructor(){
         this.data=[
-            {id:1,name:'4 IN-LINE'},
-            {id:2,name:'6 IN-LINE'},
-            {id:3,name:'8 IN-LINE'},
+            {id:1,cyl:'4 IN-LINE'},
+            {id:2,cyl:'6 IN-LINE'},
+            {id:3,cyl:'8 IN-LINE'},
         ]
     }
     getAll():cylinder[]{

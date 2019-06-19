@@ -117,7 +117,7 @@
                   <div class="col-md-12 justify-content-center pl-2">
                       <div class="row justify-content-center">
                           <div *ngFor="let item of cars ; let i = index" class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
-                              <a href="" class="card-link">
+                              <a [routerLink]="['/car','details',item.id]" class="card-link">
                                   <div class="card-container">
                                       <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
                                       <div class="card-tag">
@@ -219,31 +219,33 @@
                   <div class="card-line"></div>
               </div>
               <div class="col-md-12 mt-3">
-                  <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
+                  <!-- <button type="button" (click)="isMaking = !isMaking" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
                       <span> MAKING <i class="fas fa-caret-down"></i></span>
                   </button>
-                  <ul class="dropdown d-none " style="width: 11.6rem;left: 12%;">
+                  <ul class="dropdown " [ngClass]="{'d-none': isMaking}" style="width: 11.6rem;left: 12%;">
                       <li class="p-2 border-bottom" *ngFor="let make of making; let i =index">{{make.name}}</li>
-                  </ul>
+                  </ul> -->
+                  <select class="custom-dropdown">  
+                    <option disabled>
+                            <span>SELECT MAKING <i class="fas fa-caret-down"></i></span>
+                    </option>
+                    <option  *ngFor="let make of making; let i =index" value="{{make.id}}">{{make.name}}</option>
+                  </select>
               </div>
               <div class="col-md-12 mt-3">
-                  <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
+                  <!-- <button type="button" (click)="isModel = !isModel" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
                       <span> MODELS <i class="fas fa-caret-down"></i></span>
                   </button>
-                  <ul class="dropdown d-none">
-                      <li class="p-2 border-bottom" *ngFor="let model of models; let i=index"> {{model.name}}</li>
-                      
-                  </ul>
+                  <ul class="dropdown" [ngClass]="{'d-none': isModel}" style="width: 11.6rem;left: 11%;">
+                      <li class="p-2 border-bottom" *ngFor="let model of models; let i=index"> {{model.name}}</li>      
+                  </ul> -->
+                  <select class="custom-dropdown">  
+                        <option disabled>
+                                <span>SELECT MAKING <i class="fas fa-caret-down"></i></span>
+                        </option>
+                        <option  *ngFor="let model of models; let i =index" value="{{model.id}}">{{model.name}}</option>
+                      </select>
               </div>
-              <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
-                  <span> AGENCY <i class="fas fa-caret-down"></i></span>
-              </button>
-              <ul class="dropdown d-none">
-                  <li class="p-2 border-bottom">latest added</li>
-                  <li class="p-2 border-bottom">latest added</li>
-                  <li class="p-2 border-bottom">latest added</li>
-                  <li class="p-2">latest added</li>
-              </ul>
               <div class="col-md-12 pl-0 mt-4">
                   <h6 class="pl-3">PRICE</h6>
               </div>

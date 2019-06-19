@@ -46,7 +46,7 @@ export class makingService {
         return this.data.find(a => a.id === id);
     }
     getByName(name:string){
-        return this.data.find(a=> a.name===name);
+        return this.data.filter(a=> a.name===name);
     }
     add(making: making) {
         making.id = this.data.length + 1;

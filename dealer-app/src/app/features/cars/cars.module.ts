@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule ,Router } from '@angular/router';
 import { AddComponent } from './add/add.component';
 import { CoreModule } from '../../core/core.module';
 import { DetailsComponent } from './details/details.component';
@@ -19,6 +19,7 @@ import { TabsModule } from 'ngx-bootstrap';
     RouterModule.forChild([
       { path: 'car', component: ListComponent },
       { path: 'car/add', component: AddComponent },
+      { path: 'car/details/:id', component: DetailsComponent },
       { path: 'car/details', component: DetailsComponent },
     ])
   ],

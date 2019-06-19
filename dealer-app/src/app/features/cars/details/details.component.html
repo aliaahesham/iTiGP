@@ -1,3 +1,4 @@
+<app-title>Car Details</app-title>
 <div class="car-spesfication">
     <div class="container">
         <div class="row">
@@ -6,12 +7,12 @@
                     <div class="car-details-title" style="margin-top: 64px;">
                         <div class="row">
                             <div class="col-md-8 mx-auto text-center">
-                                <h4>Ford Mustang Convertible </h4>
+                                <h4>{{car.making.name}} {{car.model.name}} </h4>
                             </div>
                             <div class="col-md-4  mx-auto text-center">
                                 <button type="button" style="background-color:#dc2d13;"
                                     class="btn btn--skewx  car-price">
-                                    <span class="btn--skewx--text__secondary-color">9,000</span></button>
+                                    <span class="btn--skewx--text__secondary-color">{{car.price}}</span></button>
                             </div>
                         </div>
                     </div>
@@ -27,7 +28,7 @@
                                             <li class="li-item">
                                                 <i class="fa fa-plus"></i>
                                                 <span style="margin-left: .5rem;">Engine Capacity (CC)<span>: </span>
-                                                    1,591 GAMMA 1.6 MPI</span>
+                                                   {{car.capacity.cap}}</span>
                                             </li>
 
                                             <li class="li-item">
@@ -37,8 +38,7 @@
                                             </li>
                                             <li class="li-item">
                                                 <i class="fa fa-plus"></i>
-                                                <span style="margin-left: .5rem;">Cylinders<span> : </span>4
-                                                    IN-LINE</span>
+                                                <span style="margin-left: .5rem;">Cylinders<span> : </span>{{car.cylinder.cyl}}</span>
                                             </li>
                                             <li class="li-item">
                                                 <i class="fa fa-plus"></i>
@@ -113,15 +113,6 @@
                                                 <i class="fa fa-plus"></i>
                                                 <span style="margin-left: .5rem;">Fuel Tank Capacity (Liters)<span> :
                                                     </span>50</span>
-                                            </li>
-                                            <li class="li-item">
-                                                <i class="fa fa-plus"></i>
-                                                <span style="margin-left: .5rem;">Transmission<span> : </span>6 Speed
-                                                    Automatic Transmission</span>
-                                            </li>
-                                            <li class="li-item">
-                                                <i class="fa fa-plus"></i>
-                                                <span style="margin-left: .5rem;">-------------</span>
                                             </li>
                                         </ul>
 

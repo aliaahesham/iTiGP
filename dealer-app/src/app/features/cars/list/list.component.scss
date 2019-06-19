@@ -11,3 +11,15 @@
     background-color: #dc2d13;
     padding: 3px;
 }
+.custom-dropdown{
+    transform: skew(-18deg);
+    padding: 4% 19%;
+    width: 100%;
+    font-size: 14px;
+    background-color: whitesmoke;
+    border: none;
+    
+}
+.custom-dropdown option:hover{
+    background-image:red; 
+}

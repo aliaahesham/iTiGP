@@ -5,7 +5,7 @@ export class capacityService{
     data:capacity[];
     constructor(){
         this.data=[
-            {id:1,name:'2000 CC'},
+            {id:1,cap:'2000 CC'},
             // {id:2,capacity:'1600 CC'},
             // {id:3,capacity:'1500 CC'},
         ]

@@ -16,10 +16,11 @@ import {model} from 'src/app/_models/car/model'
 })
 export class ListComponent implements OnInit {
   @Input() cars:car[];
-  //  capacity:capacity[];
   @Input() making:making[];
   @Input() models:model[];
   @Input() allModels:model[];
+  isMaking: boolean;
+  isModel: boolean;
    
    
 
@@ -27,9 +28,10 @@ export class ListComponent implements OnInit {
     private carService:carService,
     private makingService:makingService,
     private modelService :modelService,
-    // private capacityService:capacityService,
-
-    ) { }
+    ) {
+      this.isMaking = true;
+      this.isModel = true;
+     }
 
   ngOnInit() {
     this.cars=this.carService.getAll();
