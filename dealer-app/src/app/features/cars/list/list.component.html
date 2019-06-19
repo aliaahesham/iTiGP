@@ -113,32 +113,28 @@
               </div> -->
               <!-------------------------------- vertical card --------------------->
               <div class="row vertical mt-3">
-                  <div class="col-md-12">
-                      <div class="row">
-                          <div class="card col rounded-0 border-0 p-0 mr-4 ">
+                  <div class="col-md-12 justify-content-center pl-2">
+                      <div class="row justify-content-center">
+                          <div *ngFor="let item of cars ; let i = index" class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
                               <a href="" class="card-link">
                                   <div class="card-container">
-                                      <img src="../assets/car.jpg" class="card-img-top rounded-0" alt="...">
-                                      <div class="card-icon">
-                                          <i class="far fa-compass"></i>
-                                          <i class="far fa-compass"></i>
-                                      </div>
+                                      <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
                                       <div class="card-tag">
-                                          <span>500000</span>
+                                          <span>{{item.price}}</span>
                                       </div>
                                   </div>
                                   <div class="card-body text-center p-3">
-                                      <h5 class="card-title text-dark mt-0">Ford Car escoda</h5>
+                                      <h5 class="card-title text-dark mt-0">{{item.making.name}} {{item.model.name}}</h5>
                                       <div class="row">
                                           <div class="col"></div>
                                           <div class="col pr-2">
                                               <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
-                                              <span class="text-muted border-left pl-3">2019</span>
+                                              <span class="text-muted border-left pl-3">{{item.year}}</span>
                                           </div>
                                           <div class="col">
                                               <i class="fas fa-car-battery d-block card__icon"></i>
                                               <span
-                                                  class="text-muted border-left border-right pl-3 pr-3">2000</span>
+                                                  class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
                                           </div>
                                           <div class="col"></div>
 
@@ -146,7 +142,7 @@
                                   </div>
                               </a>
                           </div>
-                          <div class="card col rounded-0 border-0 p-0 mr-4 ">
+                          <!-- <div class="card col rounded-0 border-0 p-0 mr-4 ">
                               <a href="" class="card-link">
                                   <div class="card-container">
                                       <img src="../assets/car.jpg" class="card-img-top rounded-0" alt="...">
@@ -207,7 +203,7 @@
                                       </div>
                                   </div>
                               </a>
-                          </div>
+                          </div> -->
                       </div>
 
                   </div>
@@ -226,22 +222,17 @@
                   <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
                       <span> MAKING <i class="fas fa-caret-down"></i></span>
                   </button>
-                  <ul class="dropdown d-none">
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2">latest added</li>
+                  <ul class="dropdown d-none " style="width: 11.6rem;left: 12%;">
+                      <li class="p-2 border-bottom" *ngFor="let make of making; let i =index">{{make.name}}</li>
                   </ul>
               </div>
               <div class="col-md-12 mt-3">
                   <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
                       <span> MODELS <i class="fas fa-caret-down"></i></span>
                   </button>
-                  <ul class="dropdown d-none">
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2">latest added</li>
+                  <ul class="dropdown ">
+                      <li class="p-2 border-bottom" *ngFor="let model of models; let i=index"> {{model.name}}</li>
+                      
                   </ul>
               </div>
               <button type="button" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">

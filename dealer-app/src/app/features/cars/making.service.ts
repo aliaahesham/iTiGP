@@ -7,14 +7,36 @@ export class makingService {
     constructor() {
         this.data = [
             {
-                id: 1, name: 'Ford', modelId: [1, 2, 3, 4]
+                id: 1, name: 'Ford',
+                models: [
+                    { id: 1, name: 'Focus ST' },
+                    { id: 2, name: 'Focus RS' },
+                    { id: 3, name: 'Fiesta' },
+                ]
             },
             {
                 id: 2, name: 'Hyundai',
+                models:[
+                    { id: 1, name: 'new Accent' },
+                    { id: 2, name: 'Verna' },
+                    { id: 3, name: 'Elantra' }, 
+                ],
                 modelId: [5,6,7,8,9]
             },
-            { id: 3, name: 'Kia' },
-            { id: 4, name: 'Renault' },
+            {
+                id: 3, name: 'Kia',
+                models: [
+                    { id: 1, name: 'Rio' },
+                    { id: 2, name: 'Optima' },
+                    { id: 3, name: 'Sportage' },
+                ]
+            },
+            { id: 4, name: 'Renault',
+             models:[
+                { id: 1, name: 'Logan' },
+                { id: 2, name: 'Kadjar' },
+                { id: 3, name: 'Megan' },
+             ] },
         ]
     }
     getAll(): making[] {
