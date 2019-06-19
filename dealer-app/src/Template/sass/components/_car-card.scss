@@ -1,65 +1,64 @@
-.card{
-    &-listing{
-        background-color:$white-color-shade2; 
-        height: auto;
-        z-index: 99999;
-        position: relative;
+// .card{
+//     &-listing{
+//         background-color:$white-color-shade2; 
+//         z-index: 99999;
+//         position: relative;
 
-    }
-    &-box{
-        border: none;
-    }
-    &-line{
-        width: 30px;
-        border: 0.6px solid #d3caca;
+//     }
+//     &-box{
+//         border: none;
+//     }
+//     &-line{
+//         width: 30px;
+//         border: 0.6px solid #d3caca;
 
-        &:after{
-            width: 32px;
-            margin-top: 4px;
-            margin-left: 10px;
-            border: 0.6px solid #d3caca;
-            position: absolute;
-            content: "";
-        }
-    }
-    &-container{
-        position: relative;
-        & img {
-            height: 165px;
-        }
-    }
-    &-icon{
-        position: absolute;
-        top: 2rem;
-        left: 82%;
-        display: none;
+//         &:after{
+//             width: 32px;
+//             margin-top: 4px;
+//             margin-left: 10px;
+//             border: 0.6px solid #d3caca;
+//             position: absolute;
+//             content: "";
+//         }
+//     }
+//     &-container{
+//         position: relative;
+//         & img {
+//             height: 165px;
+//         }
+//     }
+//     &-icon{
+//         position: absolute;
+//         top: 2rem;
+//         left: 82%;
+//         display: none;
 
-        & i{
-            background-color: orange;
-            padding: 10px;
-            border-radius: 50%;
-            color: white;
-            display: block;
-            margin-bottom: 1rem;
-        }
-    }
-    &-tag{
-        position: absolute;
-        bottom: 6%;
-        left: 4%;
-        display: block;
-        background-color: $primary-color;
-        color: $white-color;
-        padding: 0.3rem 0.7rem;
-        font-weight: bold;
-    }
-    &__icon{
-        color: $gray-color-shade1;
-    }
-}
-.card-link:hover .card-icon{
-    display: block !important;
-}
-// .car-card{
-   
+//         & i{
+//             background-color: orange;
+//             padding: 10px;
+//             border-radius: 50%;
+//             color: white;
+//             display: block;
+//             margin-bottom: 1rem;
+//         }
+//     }
+//     &-tag{
+//         position: absolute;
+//         bottom: 6%;
+//         left: 4%;
+//         display: block;
+//         background-color: $primary-color;
+//         color: $white-color;
+//         padding: 0.3rem 0.7rem;
+//         font-weight: bold;
+//     }
+//     &__icon{
+//         color: $gray-color-shade1;
+//     }
 // }
+// .card-link:hover .card-icon{
+//     display: block !important;
+// }
+// // .car-card{
+   
+// // }

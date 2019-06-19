@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { carService } from '../car.services';
 import { car } from 'src/app/_models/car/car';
 import { capacity } from 'src/app/_models/car/capacity';
@@ -13,14 +13,14 @@ import {making} from 'src/app/_models/car/making';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-   cars:car[];
-   capacity:capacity[];
+  @Input() cars:car[];
+  //  capacity:capacity[];
    making:making[];
    
 
   constructor(
     private carService:carService,
-    private capacityService:capacityService,
+    // private capacityService:capacityService,
 
     ) { }
 

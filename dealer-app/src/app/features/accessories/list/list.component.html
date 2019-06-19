@@ -1,22 +1,13 @@
-<!-----------------------body------------------------->
+<!-----------------------body-------------------------
 <section class="card-listing mt-5">
     <div class="custom-bgcolor pt-3 pb-5">
         <div class="container">
             <h2 class=" mt-0">Most Recent</h2>
             <div class="line"></div>
             <div class="row mt-3">
-                <div class="owl-carousel owl-theme">
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
-                    <app-accessories-item></app-accessories-item>
+                <div class=" owl-carousel owl-theme">
+                    <app-accessories-item *ngFor="let i of  accessories"  [myItemAccessories]="i" ></app-accessories-item>
+                   
                 </div>
             </div>
         </div>
