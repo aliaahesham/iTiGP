@@ -1,0 +1,6 @@
+<div class="col-md-12 mt-3" (click)="isClosed = !isClosed">
+  <ng-content select=".dropdown__btn"></ng-content>
+  <div [ngClass]="{'d-none': isClosed}">
+    <ng-content select=".dropdown__list"></ng-content>
+  </div>
+</div>
