@@ -9,5 +9,7 @@ export interface Accessories {
     price?: number;
     image?: string;
     seller?: string;
+    sellerId?: number;
     category?: Category;
+    categoryId?: number;
 }
