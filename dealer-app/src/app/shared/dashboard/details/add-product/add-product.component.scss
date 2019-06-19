@@ -1,0 +1,20 @@
+.container
+{
+    margin-top: 8rem !important;
+    margin: auto;
+    &-title
+    {
+        color: #DC2D13;
+    }
+}
+.list-item
+{
+    font-size: 1.2rem;
+    transition: margin-left 0.5s ease;
+    &:hover
+    {
+        cursor: pointer;
+     margin-left: 1rem !important;
+     color: #FFA500;
+    }
+}

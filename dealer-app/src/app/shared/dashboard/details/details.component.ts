@@ -14,8 +14,10 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     console.log(this.seller)
   }
-  ShowDashboard() {
-    this.router.navigateByUrl('/seller/dashboard');
+
+  AddNewProduct() {
+    this.router.navigateByUrl('/seller/add/product');
+
   }
   SignOut() {
     this.seller = {};

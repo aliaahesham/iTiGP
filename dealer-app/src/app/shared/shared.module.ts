@@ -12,15 +12,17 @@ import { ProductsDataComponent } from './dashboard/products-data/products-data.c
 import { carService } from '../features/cars/car.services';
 import { SparePartsService } from '../features/spare-parts/spare-parts.service';
 import { AccessoriesService } from '../features/accessories/accessories.service';
+import { AddProductComponent } from './dashboard/details/add-product/add-product.component';
 @NgModule({
-  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent],
+  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent, AddProductComponent],
   imports: [
     CommonModule,
     CoreModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'seller/login', component: LoginFormComponent },
-      { path: 'seller/dashboard', component: DashboardComponent }
+      { path: 'seller/dashboard', component: DashboardComponent },
+      { path: 'seller/add/product', component: AddProductComponent }
     ])
   ],
   providers: [SellerService, LoggedInSellerService, carService, SparePartsService, AccessoriesService]
