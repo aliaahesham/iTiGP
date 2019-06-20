@@ -21,5 +21,16 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+  count=0;
+  myval=1;
+  counter(flag){
 
+    if(flag==='increment'){
+      this.count++;
+    }
+    if(flag==='decrement'){
+      this.count--;
+    }
+   this.myval= this.count;
+  }
 }
