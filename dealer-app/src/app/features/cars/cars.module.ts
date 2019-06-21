@@ -8,13 +8,16 @@ import { DetailsComponent } from './details/details.component';
 import { carService } from './car.services';
 import {makingService} from './making.service';
 import {modelService} from './model.service';
+import {colorService} from './color.service'
 import { TabsModule } from 'ngx-bootstrap';
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [ListComponent, AddComponent, DetailsComponent],
   imports: [
     CommonModule,
     CoreModule,
+    FormsModule,
     TabsModule.forRoot(),
     RouterModule.forChild([
       { path: 'car', component: ListComponent },
@@ -23,6 +26,6 @@ import { TabsModule } from 'ngx-bootstrap';
       { path: 'car/details', component: DetailsComponent },
     ])
   ],
-  providers: [carService, makingService, modelService]
+  providers: [carService, makingService, modelService , colorService]
 })
 export class CarsModule { }

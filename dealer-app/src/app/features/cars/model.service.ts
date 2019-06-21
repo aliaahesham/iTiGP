@@ -24,8 +24,11 @@ export class modelService {
     getById(id: number) {
         return this.data.find(a => a.id === id);
     }
-    getBymakingId(makinId: number) {
-        return this.data.find(a => a.makingId === makinId);
+    getBymakingId(makingId: number):any {
+    // let carModels= this.data.filter(a => a.makingId == makingId);
+    // let mapped = carModels.map(a=>a.name);
+    //  return console.log(carModels)
+    return this.data.filter(a => a.makingId == makingId);
     }
     add(model: model) {
         model.id = this.data.length + 1;
