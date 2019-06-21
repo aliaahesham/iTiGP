@@ -10,8 +10,9 @@
       <div class="row mt-5 mb-4">
           <!-- large card -->
           <div class="col-12 col-md-6 card--img card__img--large">
+              <a [routerLink]="['/car','details',cars[0].id]">
               <div class="card__title">
-                  <a [routerLink]="['/car','details',cars[0].id]" style="display:block !important;">{{cars[0].making.name}} - {{cars[0].model.name}}</a>
+                  <a style="display:block !important; color:white">{{cars[0].making.name}} - {{cars[0].model.name}}</a>
               </div>
               <img src="{{cars[0].images[0]}}" class="img-fluid" width="100%" style="height:430px">
               <div class="card__overlay">
@@ -19,13 +20,15 @@
                       <span>{{cars[0].price}}</span>
                   </div>
               </div>
+            </a>
           </div>
           <!-- small card -->
           <div class="col-12 col-md-6 card--img">
               <div class="row">
                   <div class="col-6 col-md-6 card--img--small">
+                      <a [routerLink]="['/car','details',cars[1].id]">
                       <div class="card__title">
-                          <a [routerLink]="['/car','details',cars[1].id]"style="display:block !important;">{{cars[1].making.name}} - {{cars[1].model.name}}</a>
+                          <a style="display:block !important; color: white">{{cars[1].making.name}} - {{cars[1].model.name}}</a>
                       </div>
                       <img src="{{cars[1].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
@@ -33,10 +36,12 @@
                               <span>{{cars[1].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
                   <div class="col-6 col-md-6 card--img--small">
+                      <a [routerLink]="['/car','details',cars[2].id]">
                       <div class="card__title">
-                          <a [routerLink]="['/car','details',cars[2].id]" style="display:block !important;">{{cars[2].making.name}} - {{cars[2].model.name}}</a>
+                          <a  style="display:block !important; color: white">{{cars[2].making.name}} - {{cars[2].model.name}}</a>
                       </div>
                       <img src="{{cars[2].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
@@ -44,10 +49,12 @@
                               <span>{{cars[2].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
                   <div class="col-6 col-md-6 card--img--small mt-3">
+                      <a [routerLink]="['/car','details',cars[3].id]">
                       <div class="card__title">
-                          <a [routerLink]="['/car','details',cars[3].id]" style="display:block !important;">{{cars[3].making.name}} - {{cars[3].model.name}}</a>
+                          <a  style="display:block !important; color: white">{{cars[3].making.name}} - {{cars[3].model.name}}</a>
                       </div>
                       <img src="{{cars[3].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
@@ -55,10 +62,12 @@
                               <span>{{cars[3].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
                   <div class="col-6 col-md-6 card--img--small mt-3">
+                      <a [routerLink]="['/car','details',cars[4].id]">
                       <div class="card__title">
-                          <a [routerLink]="['/car','details',cars[4].id]" style="display:block !important;">{{cars[4].making.name}} - {{cars[4].model.name}}</a>
+                          <a  style="display:block !important; color: white">{{cars[4].making.name}} - {{cars[4].model.name}}</a>
                       </div>
                       <img src="{{cars[4].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
@@ -66,6 +75,7 @@
                               <span>{{cars[4].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
               </div>
           </div>
