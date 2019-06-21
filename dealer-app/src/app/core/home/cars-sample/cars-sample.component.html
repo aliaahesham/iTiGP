@@ -11,12 +11,12 @@
           <!-- large card -->
           <div class="col-12 col-md-6 card--img card__img--large">
               <div class="card__title">
-                  <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                  <a [routerLink]="['/car','details',cars[0].id]" style="display:block !important;">{{cars[0].making.name}} - {{cars[0].model.name}}</a>
               </div>
-              <img src="../assets/card-video.jpg" class="img-fluid" width="100%" style="height:430px">
+              <img src="{{cars[0].images[0]}}" class="img-fluid" width="100%" style="height:430px">
               <div class="card__overlay">
                   <div class=" card__tag--left" style="right: 4%;">
-                      <span>500000</span>
+                      <span>{{cars[0].price}}</span>
                   </div>
               </div>
           </div>
@@ -25,45 +25,45 @@
               <div class="row">
                   <div class="col-6 col-md-6 card--img--small">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a [routerLink]="['/car','details',cars[1].id]"style="display:block !important;">{{cars[1].making.name}} - {{cars[1].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[1].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[1].price}}</span>
                           </div>
                       </div>
                   </div>
                   <div class="col-6 col-md-6 card--img--small">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a [routerLink]="['/car','details',cars[2].id]" style="display:block !important;">{{cars[2].making.name}} - {{cars[2].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[2].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[2].price}}</span>
                           </div>
                       </div>
                   </div>
                   <div class="col-6 col-md-6 card--img--small mt-3">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a [routerLink]="['/car','details',cars[3].id]" style="display:block !important;">{{cars[3].making.name}} - {{cars[3].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[3].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[3].price}}</span>
                           </div>
                       </div>
                   </div>
                   <div class="col-6 col-md-6 card--img--small mt-3">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a [routerLink]="['/car','details',cars[4].id]" style="display:block !important;">{{cars[4].making.name}} - {{cars[4].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[4].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[4].price}}</span>
                           </div>
                       </div>
                   </div>

@@ -10,6 +10,10 @@ import { DiagnosticesComponent } from './home/diagnostices/diagnostices.componen
 import { PartnersComponent } from './home/partners/partners.component';
 import { HeaderComponent } from './header/header.component';
 import { TitleComponent } from './title/title.component';
+import { RouterModule ,Router } from '@angular/router';
+import {DetailsComponent} from '../features/cars/details/details.component';
+
+import {carService} from '../features/cars/car.services'
 
 
 @NgModule({
@@ -24,15 +28,21 @@ import { TitleComponent } from './title/title.component';
     PartnersComponent,
     HeaderComponent,
     TitleComponent,
+   
   ],
   imports: [
     CommonModule,
+    RouterModule.forChild([
+      { path: 'car/details/:id', component: DetailsComponent },
+     
+    ])
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     TitleComponent
-  ]
+  ],
+  providers:[carService]
    
 })
 export class CoreModule { }
