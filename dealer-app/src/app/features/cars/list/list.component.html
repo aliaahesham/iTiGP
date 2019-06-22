@@ -261,9 +261,9 @@
                   <ul class="dropdown " [ngClass]="{'d-none': isMaking}" style="width: 11.6rem;left: 12%;">
                       <li class="p-2 border-bottom" *ngFor="let make of making; let i =index">{{make.name}}</li>
                   </ul> -->
-                  <select class="custom-dropdown" (change)="onChange($event)">  
-                    <option disabled>
-                            <span>SELECT MAKING <i class="fas fa-caret-down"></i></span>
+                  <select #makingSelect class="custom-dropdown" (change)="onChange($event, coloredSelect )">  
+                    <option  value='0'>
+                            <span>ALL MAKINGS <i class="fas fa-caret-down"></i></span>
                     </option>
                     <option  *ngFor="let make of making; let i =index" value="{{make.id}}"
                      >{{make.name}}</option>
@@ -276,7 +276,7 @@
                   <ul class="dropdown" [ngClass]="{'d-none': isModel}" style="width: 11.6rem;left: 11%;">
                       <li class="p-2 border-bottom" *ngFor="let model of models; let i=index"> {{model.name}}</li>      
                   </ul> -->
-                  <select class="custom-dropdown"  (click)="clickFunction($event)">  
+                  <select class="custom-dropdown"  (click)="clickFunction($event )">  
                         <option disabled>
                             <span>SELECT MODEL <i class="fas fa-caret-down"></i></span>
                         </option>
@@ -314,9 +314,10 @@
                   <div class="card-line"></div>
               </div>
               <div class="col-md-12 mt-3">
-                    <select class="custom-dropdown"  (change)="colorFunction($event)">  
-                            <option disabled>
-                                <span>SELECT COLOR <i class="fas fa-caret-down"></i></span>
+                  <!-- Color Select -->
+                    <select #coloredSelect class="custom-dropdown"   (change)="colorFunction($event,makingSelect)">  
+                            <option value='0'>
+                                <span>ALL COLORS <i class="fas fa-caret-down"></i></span>
                             </option>
                             <option  *ngFor="let color of colors; let i =index" value="{{color.id}}">{{color.name}}</option>
                           </select>
