@@ -6,38 +6,37 @@
       <img src="../assets/photoTemplate300px.png" class="rounded mx-auto d-block img-fluid" alt="add spare part img">
     </div>
     <div class="col-md-7 col-sm-6 mx-2 mt-n1">
-      <form>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
         <div class="form-group">
-          <label for="making">Making</label>
-          <select class="form-control" id="making">
-            <option>BMW</option>
-            <option>Hyundai</option>
-            <option>Toyota</option>
-            <option>Nissan</option>
+          <label for="">Making</label>
+          <!-- dropDown list -->
+          <select formControlName="makingId" class="form-control" name="ddlCategory" id="">
+            <option *ngFor="let mak of making" [value]="mak.id">{{mak.name}}</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label for="model">Model</label>
-          <select class="form-control" id="model">
-            <option>Model1</option>
-            <option>Model2</option>
-            <option>Model3</option>
-            <option>Model4</option>
+          <label for="">Model</label>
+          <!-- dropDown list -->
+          <select formControlName="modelId" class="form-control" name="ddlCategory" id="">
+            <option *ngFor="let mod of model" [value]="mod.id">{{mod.name}}</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="price">Price</label>
-          <input type="text" class="form-control" id="price">
+          <input type="text" class="form-control" id="price" formControlName="price">
         </div>
+
         <div class="form-group">
-          <label for="color">Color</label>
-          <select class="form-control" id="color">
-            <option>Red</option>
-            <option>Blue</option>
-            <option>Black</option>
-            <option>Silver</option>
+          <label for="">Color</label>
+          <!-- dropDown list -->
+          <select formControlName="colorId" class="form-control" name="ddlCategory" id="">
+            <option *ngFor="let col of color" [value]="col.id">{{col.name}}</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="types">Type</label>
           <select class="form-control" id="types">
@@ -56,78 +55,89 @@
             <option>2</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="productionYear">Production Year</label>
-          <input type="text" class="form-control" id="productionYear">
+          <input type="text" class="form-control" id="productionYear" formControlName="productionYear">
         </div>
+
         <div class="form-group">
           <label for="cc">Engine Capacity (CC)</label>
-          <input type="text" class="form-control" id="cc">
+          <input type="text" class="form-control" id="cc" formControlName="engineCapacity">
         </div>
+
         <div class="d-flex justify-content-between form-group">
           <label>Has Turbo?</label>
           <div class="w-75 pt-1">
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="turboOptions" id="withTurbo" value="withTurbo">
+              <input class="form-check-input" type="radio" name="turboOptions" id="withTurbo" [value]="1">
               <label class="form-check-label" for="withTurbo">Yes</label>
             </div>
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="turboOptions" id="withoutTurbo" value="withoutTurbo">
+              <input class="form-check-input" type="radio" name="turboOptions" id="withoutTurbo" [value]="2">
               <label class="form-check-label" for="withoutTurbo">No</label>
             </div>
           </div>
         </div>
+
         <div class="form-group">
           <label for="horsePower">Horse Power</label>
-          <input type="text" class="form-control" id="horsePower">
+          <input type="text" class="form-control" id="horsePower" formControlName="horsePower">
         </div>
+
         <div class="d-flex justify-content-between form-group">
           <label>ABS</label>
           <div class="w-75 pt-1">
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="ABSoptions" id="withABS" value="withABS">
+              <input class="form-check-input" type="radio" name="ABSoptions" id="withABS" [value]="1">
               <label class="form-check-label" for="withABS">Yes</label>
             </div>
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="ABSoptions" id="withoutABS" value="withoutABS">
+              <input class="form-check-input" type="radio" name="ABSoptions" id="withoutABS" [value]="2">
               <label class="form-check-label" for="withoutABS">No</label>
             </div>
           </div>
         </div>
+
         <div class="form-group">
           <label for="fueltank">Fueltank</label>
-          <input type="text" class="form-control" id="fueltank">
+          <input type="text" class="form-control" id="fueltank" formControlName="fueltank">
         </div>
+
         <div class="form-group">
-          <label for="cylinder">Cylinder</label>
-          <select class="form-control" id="cylinder">
-            <option>4</option>
-            <option>6</option>
-            <option>8</option>
+          <label for="">Cylinder</label>
+          <!-- dropDown list -->
+          <select formControlName="cylinderId" class="form-control" name="ddlCategory" id="">
+            <option *ngFor="let cyl of cylinder" [value]="cyl.id">{{cyl.cyl}}</option>
           </select>
         </div>
+
         <div class="form-group">
-          <label for="transmission">Transmission</label>
-          <select class="form-control" id="transmission">
-            <option>Automatic</option>
-            <option>Manual</option>
-            <option>Automatic-Manual</option>
+          <label for="">Transmission</label>
+          <!-- dropDown list -->
+          <select formControlName="transimissionId" class="form-control" name="ddlCategory" id="">
+            <option *ngFor="let trans of transimission" [value]="trans.id">{{trans.name}}</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="width">Width</label>
-          <input type="text" class="form-control" id="width">
+          <input type="text" class="form-control" id="width" formControlName="width">
         </div>
+
         <div class="form-group">
           <label for="height">Height</label>
-          <input type="text" class="form-control" id="height">
+          <input type="text" class="form-control" id="height" formControlName="height">
         </div>
+
         <div class="form-group">
           <label for="length">Length</label>
-          <input type="text" class="form-control" id="length">
+          <input type="text" class="form-control" id="length" formControlName="length">
         </div>
+
         <div class="d-flex justify-content-end">
-          <button type="reset" class="btn btn--ordinary btn--color-secondary  mr-1">Cancel</button>
+          <button type="reset" class="btn btn--ordinary btn--color-secondary  mr-1"
+            (onclick)="onClick()">Cancel</button>
           <button type="submit" class="btn btn--ordinary btn--color-primary mr-1">Add</button>
         </div>
       </form>
