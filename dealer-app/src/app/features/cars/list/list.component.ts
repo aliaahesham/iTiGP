@@ -28,10 +28,14 @@ export class ListComponent implements OnInit {
   @Input() specificMakingName :car[];
   @Input() specificColor:car[];
   @Input() colors:color[];
+  @Input() makingNameColored:car[];
+  @Input() colorSelect:string;
+  @Input() makingSelect:string;
+  
   display:boolean;
   isMaking: boolean;
   isModel: boolean;
- 
+  selectedValue:string;
    
 
   constructor(
@@ -54,21 +58,35 @@ export class ListComponent implements OnInit {
     
     // console.log(this.allModels.map(a=>a.models[name]));
   }
-  onChange(makingName: Event) {
+  onChange(makingName: Event , coloredSelect:any) {
+    console.log(coloredSelect)
     let selectElementValue = makingName.target['options']
     [makingName.target['options'].selectedIndex].value;
     let selectoption= selectElementValue as number;
     this.makingName = makingName.target['options']
     [makingName.target['options'].selectedIndex].text;
     // let selectoptionText= selectElementText as number;
-    this.specificMakingName=this.carService.getByMakingName(this.makingName);
+    this.display=false;
+    this.colorSelect=coloredSelect.options[coloredSelect.selectedIndex].text;
+    if (this.colorSelect=='ALL COLORS'){
+      this.specificMakingName=this.carService.getByMakingName(this.makingName );
+      this.models=this.modelService.getBymakingId(selectoption);
+      this.modelss= this.models.map(a=>a.name);
+      console.log('if');
+   }
+   else{
+    this.specificMakingName=this.carService.getByMakingNameAndColorName(this.colorSelect,this.makingName);
     this.models=this.modelService.getBymakingId(selectoption);
-   this.modelss= this.models.map(a=>a.name);
-   this.display=false;
+    this.modelss= this.models.map(a=>a.name);
+//      this.makingNameColored= this.carService.getByMakingNameAndColorName(this.coloredName,this.makingName)
+      console.log('else');
+   }
+   //this.selectedValue  = coloredSelect.value;
        console.log(selectElementValue);
        console.log(this.models); 
        console.log(this.makingName)
        console.log(this.modelss);
+       console.log(coloredSelect.options[coloredSelect.selectedIndex].text);
        
 }
 // clickValue(value:Event){
@@ -82,13 +100,39 @@ clickFunction(modelName:Event){
    return this.modelss;
 }
 // @HostListener('click')
-colorFunction(colorName:Event){
+colorFunction(colorName:Event, makingSelected:HTMLSelectElement){
   let selectColor = colorName.target['options']
     [colorName.target['options'].selectedIndex].text;
     let colored =selectColor as string;
-    console.log(colored);
-    this.specificColor=this.carService.getByColor(colored);
-    this.display=false;
+    // let col = colorName;
+   this.makingSelect=makingSelected.options[makingSelected.selectedIndex].text;
+   console.log(this.makingSelect);
+    // console.log(colored);
+    // console.log(col);
+    if(this.makingSelect=='ALL MAKINGS' && colored=='ALL COLORS'){
+      this.specificColor=this.carService.getAll();
+      console.log('if color');
+    }
+    else{
+      if(this.makingSelect=='ALL MAKINGS' && colored != 'ALL COLORS'){
+        this.specificMakingName=this.carService.getByColor(colored);   
+      }
+      else{
+         if(colored=='ALL COLORS'){
+          this.specificMakingName=this.carService.getByMakingName(this.makingSelect)
+         
+         }
+         else{
+           this.specificMakingName=this.carService.getByMakingNameAndColorName(selectColor,this.makingSelect);
+           console.log('if else color')
+         }
+      }
+      // this.specificMakingName=this.carService.getAll()
+    }
+    // this.specificColor=this.carService.getAll();
+
+    // this.display=false;
+    // return colored
 }
 
 // changeHandler(data:string){

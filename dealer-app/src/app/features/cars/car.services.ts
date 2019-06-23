@@ -59,8 +59,20 @@ export class carService {
         return this.data.filter((a) => a.seller === name);
     }
     getByMakingName(makingName:string){
+        /*if(makingColor!='0')
+            return this.data.filter(a=> a.making.name==makingName && a.color==makingColor);
+        else*/
         return this.data.filter(a=> a.making.name==makingName);
     }
+    getByMakingNameAndColorName(colorName:string, MakingName:any){
+       console.log(MakingName,'-',colorName)
+       console.log(this.data.filter(a=> a.color==colorName && a.making.name==MakingName))
+        return this.data.filter(a=> 
+            a.color==colorName && a.making.name==MakingName
+        )
+
+    }
+    
     getByColor(color:string){
         return this.data.filter(a=>a.color==color);
     }
