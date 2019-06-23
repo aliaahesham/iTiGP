@@ -11,7 +11,6 @@ import { modelService } from './model.service';
 import { colorService } from './color.service';
 import { cylinderService } from './cylinder.service';
 import { transimissionService } from './transimission.service';
-
 import { TabsModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
