@@ -11,6 +11,7 @@ import { modelService } from './model.service';
 import { colorService } from './color.service';
 import { cylinderService } from './cylinder.service';
 import { transimissionService } from './transimission.service';
+import {yearService} from './year.service';
 
 import { TabsModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +33,13 @@ import { ReactiveFormsModule } from '@angular/forms';
       { path: 'car/details', component: DetailsComponent },
     ])
   ],
-  providers: [carService, makingService, modelService, colorService, cylinderService, transimissionService]
+  providers: [
+     carService, 
+     makingService,
+     modelService, 
+     colorService, 
+     cylinderService, 
+     transimissionService,
+     yearService]
 })
 export class CarsModule { }

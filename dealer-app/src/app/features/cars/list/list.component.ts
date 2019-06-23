@@ -2,8 +2,10 @@ import { Component, OnInit,Input, HostListener, Output } from '@angular/core';
 import { carService } from '../car.services';
 import {makingService} from '../making.service';
 import {modelService} from '../model.service';
-import {colorService} from '../color.service'
+import {colorService} from '../color.service';
+import {yearService} from '../year.service'
 import { car } from 'src/app/_models/car/car';
+import {year} from 'src/app/_models/car/year';
 import { capacity } from 'src/app/_models/car/capacity';
 import {capacityService} from '../capacity.service';
 import {cylinderService} from '../cylinder.service';
@@ -29,8 +31,9 @@ export class ListComponent implements OnInit {
   @Input() specificColor:car[];
   @Input() colors:color[];
   @Input() makingNameColored:car[];
-  @Input() colorSelect:string;
+  @Input() colorSelect:any;
   @Input() makingSelect:string;
+  @Input() yearProduction:year[];
   
   display:boolean;
   isMaking: boolean;
@@ -43,6 +46,7 @@ export class ListComponent implements OnInit {
     private makingService:makingService,
     private modelService :modelService,
     private colorService :colorService,
+    private yearService :yearService,
     ) {
       this.isMaking = true;
       this.isModel = true;
@@ -52,6 +56,7 @@ export class ListComponent implements OnInit {
     this.cars=this.carService.getAll();
     this.making=this.makingService.getAll();
     this.colors=this.colorService.getAll();
+    this.yearProduction= this.yearService.getAll();
     this.display=true;
     
     // this.allModels=this.makingService.getByName('Ford');
@@ -66,21 +71,36 @@ export class ListComponent implements OnInit {
     this.makingName = makingName.target['options']
     [makingName.target['options'].selectedIndex].text;
     // let selectoptionText= selectElementText as number;
-    this.display=false;
     this.colorSelect=coloredSelect.options[coloredSelect.selectedIndex].text;
-    if (this.colorSelect=='ALL COLORS'){
+    if (this.colorSelect=='ALL COLORS' && this.makingName=='ALL MAKINGS'){
+      this.specificMakingName=this.carService.getAll();
+      this.display=false;
+      console.log('if');
+   }
+   else {
+     this.display=true;
+     if(this.makingName!='ALL MAKINGS' && this.colorSelect=='ALL COLORS'){
       this.specificMakingName=this.carService.getByMakingName(this.makingName );
       this.models=this.modelService.getBymakingId(selectoption);
       this.modelss= this.models.map(a=>a.name);
-      console.log('if');
-   }
-   else{
-    this.specificMakingName=this.carService.getByMakingNameAndColorName(this.colorSelect,this.makingName);
-    this.models=this.modelService.getBymakingId(selectoption);
-    this.modelss= this.models.map(a=>a.name);
-//      this.makingNameColored= this.carService.getByMakingNameAndColorName(this.coloredName,this.makingName)
-      console.log('else');
-   }
+     }
+     else{
+       if(this.colorSelect!='ALL COLORS' && this.makingName=='ALL MAKINGS'){
+        this.specificMakingName=this.carService.getByColor(this.colorSelect)
+       }
+        else{
+
+          this.specificMakingName=this.carService.getByMakingNameAndColorName(this.colorSelect,this.makingName);
+          this.models=this.modelService.getBymakingId(selectoption);
+          this.modelss= this.models.map(a=>a.name);
+        }
+     }
+     //      this.makingNameColored= this.carService.getByMakingNameAndColorName(this.coloredName,this.makingName)
+     console.log('else');
+    }
+           if(this.display==false){
+             this.specificMakingName=this.carService.getAll();
+           }
    //this.selectedValue  = coloredSelect.value;
        console.log(selectElementValue);
        console.log(this.models); 
@@ -133,6 +153,19 @@ colorFunction(colorName:Event, makingSelected:HTMLSelectElement){
 
     // this.display=false;
     // return colored
+}
+YearFunction(yearProd:Event){
+  let year = yearProd.target['options']
+  [yearProd.target['options'].selectedIndex].text;
+  let yearNum =year as string; 
+  if (yearNum == 'YEAR PRODUCTION'){
+    this.specificMakingName=this.carService.getAll();
+  }
+  else{
+    this.specificMakingName=this.carService.getByYear(year);
+  }
+  console.log(yearNum) ;
+
 }
 
 // changeHandler(data:string){
