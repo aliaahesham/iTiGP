@@ -1,6 +1,6 @@
 import { category } from '../../_models/spare-parts/category';
 
-export class ProductService {
+export class CategoryService {
     data: category[];
     constructor() {
         this.data = [

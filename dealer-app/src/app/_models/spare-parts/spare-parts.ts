@@ -13,6 +13,7 @@ export interface SparePart {
     modelId?: number;
     model?: model;
     price?: number;
+    discount?: number;
     image?: string;
     code?: string;
     seller?: string;
