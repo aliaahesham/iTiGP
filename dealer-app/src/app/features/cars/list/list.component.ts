@@ -34,6 +34,8 @@ export class ListComponent implements OnInit {
   @Input() colorSelect:any;
   @Input() makingSelect:string;
   @Input() yearProduction:year[];
+  p: number = 1;
+  collection: any[] ;
   
   display:boolean;
   isMaking: boolean;

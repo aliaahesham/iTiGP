@@ -114,8 +114,8 @@
                     <div class="col-md-12 justify-content-center pl-2">
                         <div class="row justify-content-center">
                             <!-- All Making -->
-                            <ng-container *ngIf="!specificMakingName && !specificColor ; else specificmakingname">
-                                <div *ngFor="let item of cars ; let i = index"
+                            <ng-container *ngIf="!specificMakingName && !specificColor  ; else specificmakingname">
+                                <div *ngFor="let item of cars | paginate: { itemsPerPage: 6, currentPage: p } ; let i = index"
                                     class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
                                     <a [routerLink]="['/car','details',item.id]" class="card-link">
                                         <div class="card-container">
@@ -141,68 +141,27 @@
       
                                             </div>
                                         </div>
-<!--                                         
-                                                <div class="card-body text-center p-3">
-                                                    <h5 class="card-title text-dark mt-0">{{item.making.name}} {{item.model.name}}</h5>
-                                                    <div class="row">
-                                                        <div class="col"></div>
-                                                        <div class="col pr-2">
-                                                            <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
-                                                            <span class="text-muted border-left pl-3">{{item.year}}</span>
-                                                        </div>
-                                                        <div class="col">
-                                                            <i class="fas fa-car-battery d-block card__icon"></i>
-                                                            <span class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
-                                                        </div>
-                                                </div>
-                                                <div class="col"></div>
-
-                                            </div> -->
-                                        <!-- </div> -->
                                     </a>
                                 </div>
+                                <div class="justify-content-center col-12">
+                                        <pagination-controls class="col-12" (pageChange)="p = $event"></pagination-controls>
+                                    </div>
                             </ng-container>
-                        
-                        <!-- specific making -->
-                        <!-- <ng-template #specificmakingname>
-                          <div *ngFor="let item of (specificColor ? specificColor  :  specificMakingName ) ; let i = index" class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
-                              <a [routerLink]="['/car','details',item.id]" class="card-link">
-                                  <div class="card-container">
-                                      <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
-                                      <div class="card-tag">
-                                          <span>{{item.price}}</span>
-                                      </div>
-                                  </div>
-                                  <div class="card-body text-center p-3">
-                                      <h5 class="card-title text-dark mt-0">{{item.making.name}} {{item.model.name}}</h5>
-                                      <div class="row">
-                                          <div class="col"></div>
-                                          <div class="col pr-2">
-                                              <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
-                                              <span class="text-muted border-left pl-3">{{item.year}}</span>
-                                          </div>
-                                          <div class="col">
-                                              <i class="fas fa-car-battery d-block card__icon"></i>
-                                              <span class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
-                                          </div>
-                                          <div class="col"></div>
-                             </a>
-                            </div>
-                             </ng-template> -->
+                            
                             <!-- specific making -->
                             <ng-template #specificmakingname>
-                                <div *ngFor="let item of (specificColor ? specificColor  :  specificMakingName ) ; let i = index"
-                                    class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
-                                    <a [routerLink]="['/car','details',item.id]" class="card-link">
-                                        <div class="card-container">
-                                            <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
-                                            <div class="card-tag">
-                                                <span>{{item.price}}</span>
-                                            </div>
+                                <div *ngFor="let item of (specificColor ? specificColor  :  specificMakingName ) | paginate: { itemsPerPage: 6, currentPage: p } ; let i = index"
+                                class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
+                                <a [routerLink]="['/car','details',item.id]" class="card-link">
+                                    <div class="card-container">
+                                        <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
+                                        <div class="card-tag">
+                                            <span>{{item.price}}</span>
                                         </div>
-                                        <div class="card-body text-center p-3">
-                                            <h5 class="card-title text-dark mt-0">{{item.making.name}}
-                                                {{item.model.name}}</h5>
+                                    </div>
+                                    <div class="card-body text-center p-3">
+                                        <h5 class="card-title text-dark mt-0">{{item.making.name}}
+                                            {{item.model.name}}</h5>
                                             <div class="row">
                                                 <div class="col"></div>
                                                 <div class="col pr-2">
@@ -212,16 +171,19 @@
                                                 <div class="col">
                                                     <i class="fas fa-car-battery d-block card__icon"></i>
                                                     <span
-                                                        class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
+                                                    class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
                                                 </div>
                                                 <div class="col"></div>
-
+                                                
                                             </div>
                                         </div>
                                     </a>
                                 </div>
+                                <div class="justify-content-center col-12">
+                                    <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+                                </div>
                             </ng-template>
-                        </div>
+                        </div> 
 
                     </div>
                 </div>
