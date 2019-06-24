@@ -17,6 +17,7 @@ import { CoreModule } from '../core/core.module';
 import { MatDialogModule } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DeletedProductService } from './DeletedProduct.service';
+import { EditedProductService } from './EditedProduct.service';
 @NgModule({
   declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent, AddProductComponent, DropdownComponent, ConfirmDialogComponent],
   imports: [
@@ -36,7 +37,8 @@ import { DeletedProductService } from './DeletedProduct.service';
     carService,
     SparePartsService,
     AccessoriesService,
-    DeletedProductService
+    DeletedProductService,
+    EditedProductService
   ],
   exports: [
     DropdownComponent

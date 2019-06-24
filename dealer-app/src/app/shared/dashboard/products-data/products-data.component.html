@@ -13,7 +13,7 @@
       <td>{{car.making.name}}</td>
       <td style="max-width: 2rem;">{{car.description}}</td>
       <td>
-        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2" (click)="EditProduct('car')"></i>
+        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2" (click)="EditProduct('car',car.id)"></i>
         <i class="fas fa-trash-alt  dashboard-data__table-delete" data-toggle="modal"
           data-target="#exampleModalScrollable" (click)="DeleteProduct('car',car.id)"></i>
       </td>
@@ -23,7 +23,8 @@
       <td>{{accessory.name}}</td>
       <td style="max-width: 2rem;">{{accessory.description}}</td>
       <td>
-        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2 " (click)="EditProduct('accessory')"></i>
+        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2 "
+          (click)="EditProduct('accessory',accessory.id)"></i>
         <i class="fas fa-trash-alt  dashboard-data__table-delete" data-toggle="modal"
           data-target="#exampleModalScrollable" (click)="DeleteProduct('accessory',accessory.id)"></i>
       </td>
@@ -33,7 +34,8 @@
       <td>{{sparePart.name}}</td>
       <td style="max-width: 2rem;">{{sparePart.description}}</td>
       <td>
-        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2" (click)="EditProduct('spareParts')"></i>
+        <i class="fas fa-pencil-alt dashboard-data__table-edit m-2"
+          (click)="EditProduct('spareParts',sparePart.id)"></i>
         <i class="fas fa-trash-alt  dashboard-data__table-delete" data-toggle="modal"
           data-target="#exampleModalScrollable" (click)="DeleteProduct('sparePart',sparePart.id)"></i>
       </td>

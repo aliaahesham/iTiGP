@@ -8,6 +8,7 @@ import { carService } from '../../../features/cars/car.services';
 import { AccessoriesService } from '../../../features/accessories/accessories.service';
 import { SparePartsService } from '../../../features/spare-parts/spare-parts.service';
 import { DeletedProductService } from '../../DeletedProduct.service';
+import { EditedProductService } from '../../EditedProduct.service';
 @Component({
   selector: 'app-products-data',
   templateUrl: './products-data.component.html',
@@ -23,7 +24,8 @@ export class ProductsDataComponent implements OnInit {
     private AccessoriesService: AccessoriesService,
     private SparePartsService: SparePartsService,
     private router: Router,
-    private DeletedProductService: DeletedProductService) { }
+    private DeletedProductService: DeletedProductService,
+    private EditedProductService: EditedProductService) { }
 
   ngOnInit() {
     this.accessories = this.AccessoriesService.getBySeller(this.seller.name);
@@ -36,8 +38,9 @@ export class ProductsDataComponent implements OnInit {
   ReloadDashboard() {
     this.ngOnInit();
   }
-  EditProduct(product) {
-    this.router.navigateByUrl(`${product}/add`);
+  EditProduct(service, id) {
+    this.EditedProductService.SetEditedProduct(service, id);
+    this.router.navigateByUrl(`${service}/add`);
 
   }
 }
