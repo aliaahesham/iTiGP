@@ -10,6 +10,8 @@ import { CategoryService } from '../category.service';
 import { SparePartsService } from '../spare-parts.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EditedProductService } from '../../../shared/EditedProduct.service';
+import { LoggedInSellerService } from '../../../shared/loggedIn.service';
+import { Seller } from 'src/app/_models/seller';
 @Component({
   selector: 'app-add-sparePart',
   templateUrl: './add.component.html',
@@ -24,6 +26,7 @@ export class AddComponent implements OnInit {
   sparePartForm: FormGroup;
   saleOptions = new FormControl('onSale');
   editedSparePart;
+  loggedInSeller: Seller;
   constructor(
     private categoryService: CategoryService,
     private makingService: makingService,
@@ -31,7 +34,8 @@ export class AddComponent implements OnInit {
     private sparePartService: SparePartsService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private EditedProductService: EditedProductService
+    private EditedProductService: EditedProductService,
+    private LoggedInSellerService: LoggedInSellerService
   ) {
     this.categories = this.categoryService.getAll();
     this.makings = this.makingService.getAll();
@@ -39,6 +43,7 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loggedInSeller = this.LoggedInSellerService.GetSeller();
     this.sparePartForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
       description: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(70)]),
@@ -78,19 +83,19 @@ export class AddComponent implements OnInit {
       //send new spare part after editing
       this.sparePartService.update(this.sparePartById);
       console.log(this.sparePartService.getAll())
+      this.router.navigateByUrl('/seller/dashboard');
 
     }
     else {
       if (this.sparePartForm.valid) {
-        //console.log(this.sparePartForm.value);
         this.sparePart = this.sparePartForm.value as SparePart;
+        this.sparePart.seller = this.loggedInSeller.name;
         this.sparePartService.add(this.sparePart);
         this.sparePartForm.reset();
-        //console.log(this.sparePartService.getAll());
-        //this.router.navigate(['/spareParts']);
+        this.router.navigateByUrl('/seller/dashboard');
+
 
       } else {
-        //console.log(this.sparePartForm);
         console.log("error");
       }
     }

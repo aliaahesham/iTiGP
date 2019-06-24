@@ -1,7 +1,7 @@
 <table class="table table-bordered dashboard-data__table">
   <thead>
     <tr>
-      <th scope="col">Code</th>
+      <!-- <th scope="col">Code</th> -->
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col"></th>
@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let car of cars">
-      <td scope="row">{{car.code}}</td>
+      <!-- <td scope="row">{{car.code}}</td> -->
       <td>{{car.making.name}}</td>
       <td style="max-width: 2rem;">{{car.description}}</td>
       <td>
@@ -19,7 +19,7 @@
       </td>
     </tr>
     <tr *ngFor="let accessory of accessories">
-      <td scope="row">{{accessory.code}}</td>
+      <!-- <td scope="row">{{accessory.code}}</td> -->
       <td>{{accessory.name}}</td>
       <td style="max-width: 2rem;">{{accessory.description}}</td>
       <td>
@@ -30,7 +30,7 @@
       </td>
     </tr>
     <tr *ngFor="let sparePart of spareParts">
-      <td scope="row">{{sparePart.code}}</td>
+      <!-- <td scope="row">{{sparePart.code}}</td> -->
       <td>{{sparePart.name}}</td>
       <td style="max-width: 2rem;">{{sparePart.description}}</td>
       <td>
