@@ -9,7 +9,7 @@ import { modelService } from '../../cars/model.service';
 import { CategoryService } from '../category.service';
 import { SparePartsService } from '../spare-parts.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { EditedProductService } from '../../../shared/EditedProduct.service';
 @Component({
   selector: 'app-add-sparePart',
   templateUrl: './add.component.html',
@@ -23,14 +23,15 @@ export class AddComponent implements OnInit {
   models: model[];
   sparePartForm: FormGroup;
   saleOptions = new FormControl('onSale');
-  //editFlag: boolean;
+  editedSparePart;
   constructor(
     private categoryService: CategoryService,
     private makingService: makingService,
     private modelService: modelService,
     private sparePartService: SparePartsService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private EditedProductService: EditedProductService
   ) {
     this.categories = this.categoryService.getAll();
     this.makings = this.makingService.getAll();
@@ -55,9 +56,10 @@ export class AddComponent implements OnInit {
         this.sparePartForm.get('discount').enable();
       }
     })
-
-    const id: number = +this.activatedRoute.snapshot.params.id;
+    this.editedSparePart = this.EditedProductService.GetEditedProduct();
+    const id: number = this.editedSparePart.Id;
     this.sparePartById = this.sparePartService.getById(id)
+    console.log(this.sparePartById)
     if (this.sparePartById) {
       this.sparePartForm.patchValue({
         name: this.sparePartById.name,
@@ -72,16 +74,25 @@ export class AddComponent implements OnInit {
 
   }
   onSubmit() {
-    if (this.sparePartForm.valid) {
-      //console.log(this.sparePartForm.value);
-      this.sparePart = this.sparePartForm.value as SparePart;
-      this.sparePartService.add(this.sparePart);
-      this.sparePartForm.reset();
-      //console.log(this.sparePartService.getAll());
-      //this.router.navigate(['/spareParts']);
-    } else {
-      //console.log(this.sparePartForm);
-      console.log("error");
+    if (this.sparePartById) {
+      //send new spare part after editing
+      this.sparePartService.update(this.sparePartById);
+      console.log(this.sparePartService.getAll())
+
+    }
+    else {
+      if (this.sparePartForm.valid) {
+        //console.log(this.sparePartForm.value);
+        this.sparePart = this.sparePartForm.value as SparePart;
+        this.sparePartService.add(this.sparePart);
+        this.sparePartForm.reset();
+        //console.log(this.sparePartService.getAll());
+        //this.router.navigate(['/spareParts']);
+
+      } else {
+        //console.log(this.sparePartForm);
+        console.log("error");
+      }
     }
   }
   onChange(event: Event) {

@@ -9,12 +9,12 @@ export interface car {
     code?: string;
     price?: number;
     making?: making;
-    makingId?:number;
+    makingId?: number;
     model?: model;
     classification?: string; //interface
     color?: string;
     year?: number;
-    transimission?:string;
+    transimission?: string;
     fuelTank?: number;
     description?: string;
     length?: string;

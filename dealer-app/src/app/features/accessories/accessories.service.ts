@@ -29,7 +29,7 @@ export class AccessoriesService {
         return this.data.find((a) => a.id === id);
     }
     getBySeller(name: string): Accessories[] {
-        return this.data.filter((a) => a.seller === name);
+        return this.data.filter((a) => a.seller.toLowerCase() === name.toLowerCase());
     }
     add(newProduct: Accessories): void {
         newProduct.id = this.data.length + 1;

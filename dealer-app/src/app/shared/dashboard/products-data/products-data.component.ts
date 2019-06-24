@@ -7,7 +7,8 @@ import { Accessories } from 'src/app/_models/accessories/accessories';
 import { carService } from '../../../features/cars/car.services';
 import { AccessoriesService } from '../../../features/accessories/accessories.service';
 import { SparePartsService } from '../../../features/spare-parts/spare-parts.service';
-
+import { DeletedProductService } from '../../DeletedProduct.service';
+import { EditedProductService } from '../../EditedProduct.service';
 @Component({
   selector: 'app-products-data',
   templateUrl: './products-data.component.html',
@@ -19,7 +20,12 @@ export class ProductsDataComponent implements OnInit {
   accessories: Accessories[];
   spareParts: SparePart[];
 
-  constructor(private CarService: carService, private AccessoriesService: AccessoriesService, private SparePartsService: SparePartsService, private router: Router) { }
+  constructor(private CarService: carService,
+    private AccessoriesService: AccessoriesService,
+    private SparePartsService: SparePartsService,
+    private router: Router,
+    private DeletedProductService: DeletedProductService,
+    private EditedProductService: EditedProductService) { }
 
   ngOnInit() {
     this.accessories = this.AccessoriesService.getBySeller(this.seller.name);
@@ -27,22 +33,14 @@ export class ProductsDataComponent implements OnInit {
     this.spareParts = this.SparePartsService.getBySeller(this.seller.name);
   }
   DeleteProduct(service, id) {
-
-    if (service === 'car') {
-      this.CarService.delete(id);
-      this.ngOnInit();
-    }
-    else if (service === 'sparePart') {
-      this.SparePartsService.delete(id);
-      this.ngOnInit();
-    }
-    else {
-      this.AccessoriesService.delete(id);
-      this.ngOnInit();
-    }
+    this.DeletedProductService.SetDeletedProduct(service, id);
   }
-  EditProduct(product) {
-    this.router.navigateByUrl(`${product}/add`);
+  ReloadDashboard() {
+    this.ngOnInit();
+  }
+  EditProduct(service, id) {
+    this.EditedProductService.SetEditedProduct(service, id);
+    this.router.navigateByUrl(`${service}/add`);
 
   }
 }

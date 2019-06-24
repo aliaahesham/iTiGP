@@ -56,7 +56,7 @@ export class carService {
         return this.data.find(a => a.id === id);
     }
     getBySeller(name: string): car[] {
-        return this.data.filter((a) => a.seller === name);
+        return this.data.filter((a) => a.seller.toLowerCase() === name.toLowerCase());
     }
     getByYear(year:number){
        return this.data.filter(a=>a.year==year);
