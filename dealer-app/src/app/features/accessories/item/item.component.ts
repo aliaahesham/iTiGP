@@ -8,12 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-@Input() myItemAccessories:Accessories[];
+@Input() accessories:Accessories;
   constructor(private AccessoriesService:AccessoriesService) { }
 
   ngOnInit() {
-    this.myItemAccessories=this.AccessoriesService.getAll();
-    console.log(this.myItemAccessories);
+   // this.accessories=this.AccessoriesService.getAll();
+    //console.log(this.accessories);
   }
 
 }

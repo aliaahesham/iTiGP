@@ -1,19 +1,35 @@
+import { Accessories } from 'src/app/_models/accessories/accessories';
 import { AccessoriesService } from './../accessories.service';
-import { Accessories } from './../../../_models/accessories/accessories';
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Observable } from 'rxjs';
+import { map } from "rxjs/operators";
 @Component({
   selector: 'app-accessories',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
- @Input() accessories:Accessories[];
-   
-  constructor(private accessoriesService:AccessoriesService) { }
-
+export class ListComponent implements OnInit  {
+  accessories:Accessories[];
+ config: any;
+ collection = { count: 30, accessories:[] };
+  constructor(private accessoriesService:AccessoriesService,private http: Http) { 
+    this.accessories=this.accessoriesService.getAll();  
+  }
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
   ngOnInit() {
     this.accessories=this.accessoriesService.getAll();
-    console.log(this.accessories);
+    this.config = {
+      itemsPerPage: 4,
+      currentPage: 1,
+      totalItems: this.accessories.length,
+    };
+  
   }
-}
+
+  }
+  
+ 
+ 
