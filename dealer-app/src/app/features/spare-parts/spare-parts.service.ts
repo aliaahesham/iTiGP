@@ -31,7 +31,6 @@ export class SparePartsService {
 
     update(sparePart: SparePart) {
         const i = this.data.findIndex(s => s.id === sparePart.id);
-
         this.data[i] = sparePart;
 
 

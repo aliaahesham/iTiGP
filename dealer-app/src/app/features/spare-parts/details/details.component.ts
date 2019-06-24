@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SparePart } from '../../../_models/spare-parts/spare-parts';
+import { SparePartsService } from '../spare-parts.service';
 
 @Component({
   selector: 'app-sparePart-details',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sparePartService: SparePartsService
+  ) { }
 
   ngOnInit() {
   }

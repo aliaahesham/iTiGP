@@ -35,7 +35,6 @@ export class AddComponent implements OnInit {
   ) {
     this.categories = this.categoryService.getAll();
     this.makings = this.makingService.getAll();
-    //this.editFlag = false;
   }
 
   ngOnInit() {
@@ -56,6 +55,7 @@ export class AddComponent implements OnInit {
         this.sparePartForm.get('discount').enable();
       }
     })
+
     this.editedSparePart = this.EditedProductService.GetEditedProduct();
     const id: number = this.editedSparePart.Id;
     this.sparePartById = this.sparePartService.getById(id)
@@ -75,10 +75,16 @@ export class AddComponent implements OnInit {
   }
   onSubmit() {
     if (this.sparePartById) {
-      //send new spare part after editing
+      const editedSparePart = this.sparePartForm.value as SparePart;
+      this.sparePartById.name = editedSparePart.name;
+      this.sparePartById.description = editedSparePart.description;
+      this.sparePartById.categoryId = editedSparePart.categoryId;
+      this.sparePartById.makingId = editedSparePart.makingId;
+      this.sparePartById.modelId = editedSparePart.modelId;
+      this.sparePartById.price = editedSparePart.price;
+      this.sparePartById.discount = editedSparePart.discount;
       this.sparePartService.update(this.sparePartById);
-      console.log(this.sparePartService.getAll())
-
+      //console.log(this.sparePartService.getAll());
     }
     else {
       if (this.sparePartForm.valid) {
@@ -86,7 +92,6 @@ export class AddComponent implements OnInit {
         this.sparePart = this.sparePartForm.value as SparePart;
         this.sparePartService.add(this.sparePart);
         this.sparePartForm.reset();
-        //console.log(this.sparePartService.getAll());
         //this.router.navigate(['/spareParts']);
 
       } else {
