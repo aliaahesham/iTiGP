@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { car } from 'src/app/_models/car/car';
+import { car } from '../../../_models/car/car';
 import { making } from 'src/app/_models/car/making';
 import { model } from 'src/app/_models/car/model';
 import { color } from 'src/app/_models/car/color';
