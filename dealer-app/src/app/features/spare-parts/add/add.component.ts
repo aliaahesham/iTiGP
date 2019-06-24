@@ -2,15 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { category } from '../../../_models/spare-parts/category';
 import { SparePart } from 'src/app/_models/spare-parts/spare-parts';
-<<<<<<< HEAD
 import { making } from '../../../_models/car/making';
 import { model } from '../../../_models/car/model';
 import { makingService } from '../../cars/making.service';
 import { modelService } from '../../cars/model.service';
 import { CategoryService } from '../category.service';
-=======
-import {CategoryService} from '../category.service';
->>>>>>> e3b994e8c5ec9f49a6ea733e4da14c7e9cf7f293
 import { SparePartsService } from '../spare-parts.service';
 
 @Component({
