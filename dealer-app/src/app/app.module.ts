@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AccessoriesModule } from './features/accessories/accessories.module';
+import { HttpModule } from '@angular/http';
+
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -17,6 +19,7 @@ import { CoreModule } from './core/core.module';
     AppComponent,
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     NgxPaginationModule,
     DiagnosticModule,
@@ -28,6 +31,8 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     RoutingModule,
     RouterModule,
+    NgxPaginationModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
