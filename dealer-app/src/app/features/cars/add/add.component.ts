@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { car } from 'src/app/_models/car/car';
+import { car } from '../../../_models/car/car';
 import { making } from 'src/app/_models/car/making';
 import { model } from 'src/app/_models/car/model';
 import { color } from 'src/app/_models/car/color';
@@ -36,9 +36,10 @@ export class AddComponent implements OnInit {
   //classification: classification[];
   cylinder: cylinder[];
   transimission: transimission[];
-  hasTurbo: number;
-  ABS: number;
   myForm: FormGroup;
+  turboOptions = new FormControl('yes');
+  ABSoptions = new FormControl('yes');
+
 
 
   constructor(private makingService: makingService,
@@ -62,19 +63,19 @@ export class AddComponent implements OnInit {
     //his.classification = this.classificationService.getAll();
     this.cylinder = this.cylinderService.getAll();
     this.transimission = this.transimissionService.getAll();
-    this.hasTurbo = 1;
-    this.ABS = 1;
+
+
 
     this.myForm = new FormGroup({
-      makingId: new FormControl('', Validators.required),
-      modelId: new FormControl('', Validators.required),
-      colorId: new FormControl('', Validators.required),
-      cylinderId: new FormControl('', Validators.required),
-      transimissionId: new FormControl('', Validators.required),
+      makingId: new FormControl('0', Validators.required),
+      modelId: new FormControl('0', Validators.required),
+      colorId: new FormControl('0', Validators.required),
+      cylinderId: new FormControl('0', Validators.required),
+      transimissionId: new FormControl('0', Validators.required),
       price: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
       productionYear: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
-      engineCapacity: new FormControl('', Validators.required),
-      horsePower: new FormControl('', Validators.required),
+      engineCapacity: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
+      horsePower: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
       fueltank: new FormControl('', Validators.required),
       width: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
       height: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
@@ -108,7 +109,7 @@ export class AddComponent implements OnInit {
 
       // this.router.navigate(['/car']); 
 
-      console.log(this.getAllCars);
+      // console.log(this.getAllCars);
     } else {
       console.log("error");
       console.log(this.myForm);

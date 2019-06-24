@@ -19,7 +19,7 @@ export class AddComponent implements OnInit {
   accessories: Accessories;
   numOfAllAccessores: Accessories[];
   category: Category[];
-  seller: Seller[];
+  seller: Seller;
   myForm: FormGroup;
   // myName: FormControl;
   // myPrice: FormControl;
@@ -34,16 +34,13 @@ export class AddComponent implements OnInit {
     this.accessories = {};
     this.numOfAllAccessores = this.accessoriesService.getAll();
     this.category = this.categoryService.getAll();
-    this.seller = this.sellerService.GetAll();
 
     this.myForm = new FormGroup({
-      code: new FormControl('', Validators.required),
       name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
       description: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(70)]),
       price: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
       image: new FormControl(''),
-      sellerId: new FormControl('', Validators.required),
-      categoryId: new FormControl('', Validators.required)
+      categoryId: new FormControl('0', Validators.required)
     });
 
   }
@@ -51,12 +48,10 @@ export class AddComponent implements OnInit {
   onSubmit(myForm) {
     if (this.myForm.valid) {
 
-      this.accessories.code = this.myForm.value.code;
       this.accessories.name = this.myForm.value.name;
       this.accessories.description = this.myForm.value.description;
       this.accessories.price = this.myForm.value.price;
       this.accessories.image = this.myForm.value.image;
-      this.accessories.sellerId = this.myForm.value.sellerId;
       this.accessories.categoryId = this.myForm.value.categoryId;
 
       this.accessoriesService.add(this.accessories);
