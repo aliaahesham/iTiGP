@@ -32,7 +32,7 @@ export class AccessoriesService {
         return this.data.filter((a) => a.seller.toLowerCase() === name.toLowerCase());
     }
     add(newProduct: Accessories): void {
-        newProduct.id = this.data.length;
+        newProduct.id = this.data.length + 1;
         this.data.push(newProduct);
     }
     update(updatedProduct: Accessories): void {

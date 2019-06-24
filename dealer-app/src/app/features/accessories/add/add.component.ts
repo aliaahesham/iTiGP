@@ -38,9 +38,9 @@ export class AddComponent implements OnInit {
 
     this.myForm = new FormGroup({
       code: new FormControl('', Validators.required),
-      name: new FormControl('', Validators.required),
-      description: new FormControl(''),
-      price: new FormControl('', Validators.required),
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(70)]),
+      price: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
       image: new FormControl(''),
       sellerId: new FormControl('', Validators.required),
       categoryId: new FormControl('', Validators.required)
@@ -49,27 +49,25 @@ export class AddComponent implements OnInit {
   }
 
   onSubmit(myForm) {
-    // console.log(this.myForm);
-    // const num = this.numOfAllAccessores.length - 1
-    // let tst = 8;
-    // console.log(this.numOfAllAccessores[num].id);
-    // console.log(tst);
-    // this.accessories.id = 9;
-    // console.log(this.accessories.id);
+    if (this.myForm.valid) {
 
-    this.accessories.code = this.myForm.value.code;
-    this.accessories.name = this.myForm.value.name;
-    this.accessories.description = this.myForm.value.description;
-    this.accessories.price = this.myForm.value.price;
-    this.accessories.image = this.myForm.value.image;
-    this.accessories.sellerId = this.myForm.value.sellerId;
-    this.accessories.categoryId = this.myForm.value.categoryId;
+      this.accessories.code = this.myForm.value.code;
+      this.accessories.name = this.myForm.value.name;
+      this.accessories.description = this.myForm.value.description;
+      this.accessories.price = this.myForm.value.price;
+      this.accessories.image = this.myForm.value.image;
+      this.accessories.sellerId = this.myForm.value.sellerId;
+      this.accessories.categoryId = this.myForm.value.categoryId;
 
-    this.accessoriesService.add(this.accessories);
+      this.accessoriesService.add(this.accessories);
 
-    console.log(this.accessories);
-    console.log(this.numOfAllAccessores);
+      console.log(this.accessories);
+      console.log(this.numOfAllAccessores);
 
-    // this.router.navigate(['/accessory']);
+      // this.router.navigate(['/accessory']);
+    } else {
+      console.log("error");
+      console.log(this.myForm);
+    }
   }
 }

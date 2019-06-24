@@ -14,6 +14,9 @@
           <select formControlName="makingId" class="form-control" name="ddlCategory" id="">
             <option *ngFor="let mak of making" [value]="mak.id">{{mak.name}}</option>
           </select>
+          <div class="error-msg" *ngIf="myForm.get('makingId').hasError('required') && myForm.get('makingId').touched">
+            Please choose Making
+          </div>
         </div>
 
         <div class="form-group">
@@ -22,11 +25,20 @@
           <select formControlName="modelId" class="form-control" name="ddlCategory" id="">
             <option *ngFor="let mod of model" [value]="mod.id">{{mod.name}}</option>
           </select>
+          <div class="error-msg" *ngIf="myForm.get('modelId').hasError('required') && myForm.get('modelId').touched">
+            Please choose Model
+          </div>
         </div>
 
         <div class="form-group">
           <label for="price">Price</label>
           <input type="text" class="form-control" id="price" formControlName="price">
+          <div class="error-msg" *ngIf="myForm.get('price').hasError('required') && myForm.get('price').touched ">
+            Please Enter Price
+          </div>
+          <div class="error-msg" *ngIf="myForm.get('price').hasError('pattern') && myForm.get('price').touched ">
+            Price should be only number
+          </div>
         </div>
 
         <div class="form-group">
@@ -35,6 +47,9 @@
           <select formControlName="colorId" class="form-control" name="ddlCategory" id="">
             <option *ngFor="let col of color" [value]="col.id">{{col.name}}</option>
           </select>
+          <div class="error-msg" *ngIf="myForm.get('colorId').hasError('required') && myForm.get('colorId').touched">
+            Please choose Color
+          </div>
         </div>
 
         <div class="form-group">
@@ -59,11 +74,27 @@
         <div class="form-group">
           <label for="productionYear">Production Year</label>
           <input type="text" class="form-control" id="productionYear" formControlName="productionYear">
+          <div class="error-msg"
+            *ngIf="myForm.get('productionYear').hasError('required') && myForm.get('productionYear').touched ">
+            Please Enter Production Year
+          </div>
+          <div class="error-msg"
+            *ngIf="myForm.get('productionYear').hasError('pattern') && myForm.get('productionYear').touched ">
+            Production Year should be only number
+          </div>
         </div>
 
         <div class="form-group">
           <label for="cc">Engine Capacity (CC)</label>
           <input type="text" class="form-control" id="cc" formControlName="engineCapacity">
+          <div class="error-msg"
+            *ngIf="myForm.get('engineCapacity').hasError('required') && myForm.get('engineCapacity').touched ">
+            Please Enter Engine Capacity
+          </div>
+          <div class="error-msg"
+            *ngIf="myForm.get('engineCapacity').hasError('pattern') && myForm.get('engineCapacity').touched ">
+            Engine Capacity should be only number
+          </div>
         </div>
 
         <div class="d-flex justify-content-between form-group">
@@ -83,6 +114,14 @@
         <div class="form-group">
           <label for="horsePower">Horse Power</label>
           <input type="text" class="form-control" id="horsePower" formControlName="horsePower">
+          <div class="error-msg"
+            *ngIf="myForm.get('horsePower').hasError('required') && myForm.get('horsePower').touched ">
+            Please Enter Horse Power
+          </div>
+          <div class="error-msg"
+            *ngIf="myForm.get('horsePower').hasError('pattern') && myForm.get('horsePower').touched ">
+            Horse Power should be only number
+          </div>
         </div>
 
         <div class="d-flex justify-content-between form-group">
@@ -102,6 +141,9 @@
         <div class="form-group">
           <label for="fueltank">Fueltank</label>
           <input type="text" class="form-control" id="fueltank" formControlName="fueltank">
+          <div class="error-msg" *ngIf="myForm.get('fueltank').hasError('required') && myForm.get('fueltank').touched ">
+            Please Enter Fueltank
+          </div>
         </div>
 
         <div class="form-group">
@@ -110,6 +152,10 @@
           <select formControlName="cylinderId" class="form-control" name="ddlCategory" id="">
             <option *ngFor="let cyl of cylinder" [value]="cyl.id">{{cyl.cyl}}</option>
           </select>
+          <div class="error-msg"
+            *ngIf="myForm.get('cylinderId').hasError('required') && myForm.get('cylinderId').touched">
+            Please choose Cylinder
+          </div>
         </div>
 
         <div class="form-group">
@@ -118,21 +164,43 @@
           <select formControlName="transimissionId" class="form-control" name="ddlCategory" id="">
             <option *ngFor="let trans of transimission" [value]="trans.id">{{trans.name}}</option>
           </select>
+          <div class="error-msg"
+            *ngIf="myForm.get('transimissionId').hasError('required') && myForm.get('transimissionId').touched">
+            Please choose Transmission
+          </div>
         </div>
 
         <div class="form-group">
           <label for="width">Width</label>
           <input type="text" class="form-control" id="width" formControlName="width">
+          <div class="error-msg" *ngIf="myForm.get('width').hasError('required') && myForm.get('width').touched ">
+            Please Enter Width
+          </div>
+          <div class="error-msg" *ngIf="myForm.get('width').hasError('pattern') && myForm.get('width').touched ">
+            Width should be only number
+          </div>
         </div>
 
         <div class="form-group">
           <label for="height">Height</label>
           <input type="text" class="form-control" id="height" formControlName="height">
+          <div class="error-msg" *ngIf="myForm.get('height').hasError('required') && myForm.get('height').touched ">
+            Please Enter Height
+          </div>
+          <div class="error-msg" *ngIf="myForm.get('height').hasError('pattern') && myForm.get('height').touched ">
+            Height should be only number
+          </div>
         </div>
 
         <div class="form-group">
           <label for="length">Length</label>
           <input type="text" class="form-control" id="length" formControlName="length">
+          <div class="error-msg" *ngIf="myForm.get('length').hasError('required') && myForm.get('length').touched ">
+            Please Enter Length
+          </div>
+          <div class="error-msg" *ngIf="myForm.get('length').hasError('pattern') && myForm.get('length').touched ">
+            Length should be only number
+          </div>
         </div>
 
         <div class="d-flex justify-content-end">
