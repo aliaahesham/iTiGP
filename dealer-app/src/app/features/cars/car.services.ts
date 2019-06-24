@@ -9,41 +9,41 @@ export class carService {
             // {id:1, making:{name:'ford'}, classification:'Level A', color:'gray' , model:{name:'Focuse RS'},description:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys'},
 
             { id: 1, code: "C123" , seller: "Tafanin", making: { name: 'Ford' }, classification: 'Level A', color: 'Silver', model: { name: 'Focus RS', id: 1 }, fuelTank: 50, price:300000,
-            year: 2018 , length:'4,570 (mm)', turbo:'Not Avaliable',abs:'Not Avaliable', transimission:'Automated',
-               images:['https://pictures.topspeed.com/IMG/jpg/201705/the-2017-ford-focus-.jpg'] , capacity:{cap:'2000'}  ,cylinder:{cyl:'4 IN-LINE'}},
+            year: 2018 , length:'4,570 (mm)', turbo:'Not Avaliable',abs:'Not Avaliable', transimission:'Automated', description:'This is Ford Making , Focus RS Model with Silver Color',
+               images:['https://pictures.topspeed.com/IMG/jpg/201705/the-2017-ford-focus-.jpg'] , capacity:{cap:'2000'}  ,cylinder:{cyl:'4 IN-LINE'},type:'Sedan'},
             { id: 2, code: "X451", seller: "RK Anjel", making: { name: 'Hyundai' }, classification: 'Level B', color: 'Blue', model: { name: 'new Accent', id: 2 }, fuelTank: 45, price:400000, 
-             year: 2017,length:'4,570 (mm)', turbo:'Avaliable',abs:'Not Avaliable',transimission:'Automated',
-             images:['https://www.bookyourcar.co.in/uploads/colorimage/14616_Marine%20Blue%20Xcent.jpg'], capacity:{cap:'2000'} ,cylinder:{cyl:'6 IN-LINE'} },
+             year: 2017,length:'4,570 (mm)', turbo:'Avaliable',abs:'Not Avaliable',transimission:'Automated',description:'This is Hyundai Making , new Accent Model with Blue Color',
+             images:['https://www.bookyourcar.co.in/uploads/colorimage/14616_Marine%20Blue%20Xcent.jpg'], capacity:{cap:'2000'} ,cylinder:{cyl:'6 IN-LINE'} , type:'Suv' },
             
              { id: 3, code: "FT21", seller: "Xperience", making: { name: 'Kia' }, classification: 'Level A', color: 'DarkRed', model: { name: 'Rio', id: 3 }, fuelTank: 50, price:500000,
-              year: 2018,length:'4,570 (mm)',turbo:'Not Avaliable',abs:'Avaliable',transimission:'Automated',
+              year: 2018,length:'4,570 (mm)',turbo:'Not Avaliable',abs:'Avaliable',transimission:'Automated', type:'PickUp', description:'This is Kia Making , Rio Model with DarkRed Color',
             images:['https://www.goauto.com.au/assets/contents/f5d966df72c1f246b255fbdcf1e44f4f32c0c422.jpg'] , capacity:{cap:'2000'} ,cylinder:{cyl:'4 IN-LINE'}},
             { id: 4, code: "Y742", seller: "Tomas Mikhaal", making: { name: 'Renault' }, classification: 'Level A', color: 'Blue', model: { name: 'Logan', id: 4 }, fuelTank: 55,price:280000,
-               year: 2016,length:'4,570 (mm)', turbo:'Not Avaliable',abs:'Not Avaliable',transimission:'Manual',
+               year: 2016,length:'4,570 (mm)', turbo:'Not Avaliable',abs:'Not Avaliable',transimission:'Manual', type:'MiniCar', description:'This is Renault Making , Logan Model with Blue Color',
             images:['https://i.pinimg.com/originals/4d/c5/25/4dc52579d5561f3290ec79862e9e14cf.png'] , capacity:{cap:'1400'} ,cylinder:{cyl:'6 IN-LINE'}},
             { id: 5, code: "M419", seller: "Jason Stathim", making: { name: 'Hyundai' }, classification: 'Level B', color: 'Silver', model: { name: 'Verna', id: 5 }, fuelTank: 50, price:600000,
-             year: 2018,length:'4,570 (mm)', turbo:'Avaliable',abs:'Not Avaliable',transimission:'Manual',
+             year: 2018,length:'4,570 (mm)', turbo:'Avaliable',abs:'Not Avaliable',transimission:'Manual',type:'Coupe' , description:'This is Hyundai Making , Verna  Model with Silver Color',
             images:['https://imgd.aeplcdn.com/1056x594/cw/ec/25465/Hyundai-Verna-Exterior-118764.jpg?wm=0&q=80'] , capacity:{cap:'2000'} ,cylinder:{cyl:'4 IN-LINE'} },
             { id: 6, code: "H744", seller: "Van Disel", making: { name: 'Renault' }, classification: 'Level A', color: 'Silver', model: { name: 'Kadjar', id: 6 }, fuelTank: 60,price:400000,
-             year: 2017 , length:'4,570 (mm)',  turbo:'Not Avaliable',abs:'Avaliable' ,transimission:'Manual',
+             year: 2017 , length:'4,570 (mm)',  turbo:'Not Avaliable',abs:'Avaliable' ,transimission:'Manual', type:'Convertible', description:'This is Renault Making , Kadjar Model with Silver Color',
             images:['https://gocar.be/picserver1/userdata/1/25733/VmlTxhioB/kfz45230038_img_6382.jpg'] , capacity:{cap:'1600'}  ,cylinder:{cyl:'6 IN-LINE'} },
             { id: 7, code: "P111" , seller: "Make Jonas", making: { name: 'Ford' }, classification: 'Level B', color: 'Blue', model: { name: 'Focus ST', id: 7 }, fuelTank: 50,price:500000,
-               year: 2018 , length:'4,570 (mm)', turbo:'Avaliable',abs:'Not Avaliable',transimission:'Manual',
+               year: 2018 , length:'4,570 (mm)', turbo:'Avaliable',abs:'Not Avaliable',transimission:'Manual',type:'Convertible', description:'This is Ford Making , Focus ST Model with Blue Color',
             images:['https://www.ford.co.uk/content/dam/guxeu/rhd/central/cars/2019-focus-st/future-vehicle/billboard/ford-focus-eu-ST_C519_S1_16x9-480x270.jpg'],cylinder:{cyl:'4 IN-LINE'} , capacity:{cap:'1600'}  },
             { id: 8, code: "S567", seller: "Caroline ", making: { name: 'Kia' }, classification: 'Level B', color: 'DarkRed', model: { name: 'Sportage', id: 8 }, fuelTank: 45, price:1000000,
-              year: 2016  , length:'4,570 (mm)', turbo:'Not Avaliable',abs:'Avaliable',transimission:'Automated-Manual',
+              year: 2016  , length:'4,570 (mm)', turbo:'Not Avaliable',abs:'Avaliable',transimission:'Automated-Manual',type:'Coupe' ,description:'This is Kia Making , Sportage Model with DarkRed Color',
             images:['http://blogmedia.dealerfire.com/wp-content/uploads/sites/862/2017/07/scarletred_o.jpg'] , cylinder:{cyl:'6 IN-LINE'} ,capacity:{cap:'2000'}},
             { id: 9, code: "B729", seller: "Veronia", making: { name: 'Kia' }, classification: 'Level A', color: 'Silver', model: { name: 'Optima', id: 9 }, fuelTank: 50, price:2300000,
-                 year: 2018 , length:'4,570 (mm)',  turbo:'Avaliable',abs:'Avaliable',transimission:'Automated-Manual',
+                 year: 2018 , length:'4,570 (mm)',  turbo:'Avaliable',abs:'Avaliable',transimission:'Automated-Manual', type:'MiniCar', description:'This is Kia Making , Optima Model with Silver Color',
             images:['https://images.dealer.com/ddc/vehicles/2019/Kia/Optima/Sedan/trim_LX_e25d5b/color/Sparkling%20Silver-KCS-186%2C186%2C186-640-en_US.jpg?impolicy=resize&w=650'] ,cylinder:{cyl:'4 IN-LINE'} , capacity:{cap:'1400'} },
             { id: 10, code: "V603", seller: "Petter", making: { name: 'Renault' }, classification: 'Level A', color: 'Blue', model: { name: 'Megan', id: 10 }, fuelTank: 55, price:300000,
-              year: 2017  , length:'4,570 (mm)', turbo:'Avaliable',abs:'Avaliable',transimission:'Automated-Manual',
-            images:['https://car-images.bauersecure.com/upload/30351/images/00003a43bf55-e731-4d49-8.jpg'], capacity:{cap:'2000'} ,cylinder:{cyl:'6 IN-LINE'} },
+              year: 2017  , length:'4,570 (mm)', turbo:'Avaliable',abs:'Avaliable',transimission:'Automated-Manual', type:'PickUp', description:'This is Renault Making , Megan Model with Blue Color',
+            images:['https://car-images.bauersecure.com/upload/30351/images/00003a43bf55-e731-4d49-8.jpg'], capacity:{cap:'2000'} ,cylinder:{cyl:'6 IN-LINE'}  },
             { id: 11, code: "R123", seller: "Lemas", making: { name: 'Hyundai' }, classification: 'Level B', color: 'DarkRed', model: { name: 'Elantra', id: 11 }, fuelTank: 50, price:500000,
-              year: 2018 , length:'4,570 (mm)',turbo:'Avaliable',abs:'Avaliable',transimission:'Automated-Manual',
+              year: 2018 , length:'4,570 (mm)',turbo:'Avaliable',abs:'Avaliable',transimission:'Automated-Manual',  type:'Suv', description:'This is Hyundai Making , Elantra Model with DarkRed Color',
              images:['https://s3.paultan.org/image/2015/03/hyundai-elantra-facelift-launched-30-630x318.jpg'] , capacity:{cap:'1600'} ,cylinder:{cyl:'4 IN-LINE'} },
              { id: 12, code: "C123" , seller: "Tafanin", making: { name: 'Ford' }, classification: 'Level A', color: 'DarkRed', model: { name: 'Fiesta', id: 12 }, fuelTank: 50, price:300000,
-              year: 2018 ,length:'4,570 (mm)', turbo:'Avaliable',abs:'Avaliable' ,transimission:'Automated-Manual',
+              year: 2018 ,length:'4,570 (mm)', turbo:'Avaliable',abs:'Avaliable' ,transimission:'Automated-Manual', type:'Sedan',description:'This is Ford Making , Fiesta Model with DarkRed Color',
              images:['https://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/styles/article_main_image/public/2017/11/_86a8175.jpg'], capacity:{cap:'2000'} ,cylinder:{cyl:'6 IN-LINE'}}
               
             
@@ -57,6 +57,9 @@ export class carService {
     }
     getBySeller(name: string): car[] {
         return this.data.filter((a) => a.seller === name);
+    }
+    getByYear(year:number){
+       return this.data.filter(a=>a.year==year);
     }
     getByMakingName(makingName:string){
         /*if(makingColor!='0')

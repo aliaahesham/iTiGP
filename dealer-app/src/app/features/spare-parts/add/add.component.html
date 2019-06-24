@@ -45,12 +45,40 @@
         <div class="form-group">
           <label for="categories">Category</label>
           <select formControlName="categoryId" class="form-control" name="ddlCategories" id="categories">
+            <option value='0'>
+              <span>Select Category</span>
+            </option>
             <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
           </select>
           <div class="error-msg"
             *ngIf="sparePartForm.get('categoryId').hasError('required') && sparePartForm.get('categoryId').touched">
             Please choose a category
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="making">Making</label>
+          <select (change)="onChange($event)" formControlName="makingId" class="form-control" name="ddlMaking"
+            id="making">
+            <option value='0'>
+              <span>Select Car making</span>
+            </option>
+            <option *ngFor="let making of makings" [value]="making.id">{{ making.name }}</option>
+          </select>
+          <div class="error-msg"
+            *ngIf="sparePartForm.get('makingId').hasError('required') && sparePartForm.get('makingId').touched">
+            Please choose a making
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="model">Model</label>
+          <select formControlName="modelId" class="form-control" name="ddlModel" id="model">
+            <option value='0'>
+              <span>Select Car model</span>
+            </option>
+            <option *ngFor="let model of models" [value]="model.id">{{ model.name }}</option>
+          </select>
         </div>
 
 
@@ -72,14 +100,14 @@
           <div class="w-50 pt-2">
             <label class="d-block">Sale?</label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="saleOptions" [formControl]="saleOptions" id="onSale"
-                value="onSale">
-              <label class="form-check-label" for="onSale">On Sale</label>
+              <input class="form-check-input mt-2 ml-0" type="radio" name="saleOptions" [formControl]="saleOptions"
+                id="onSale" value="onSale">
+              <label class="form-check-label ml-n1 mr-3" for="onSale">On Sale</label>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="saleOptions" [formControl]="saleOptions" id="notOnSale"
-                value="notOnSale">
-              <label class="form-check-label" for="notOnSale">Not On Sale</label>
+            <div class="form-check form-check-inline ml-3">
+              <input class="form-check-input mt-2 ml-0" type="radio" name="saleOptions" [formControl]="saleOptions"
+                id="notOnSale" value="notOnSale">
+              <label class="form-check-label ml-n1 mr-3" for="notOnSale">Not On Sale</label>
             </div>
           </div>
           <div class="form-group">
