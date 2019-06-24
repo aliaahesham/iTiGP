@@ -28,6 +28,7 @@ import { transimissionService } from 'src/app/features/cars/transimission.servic
 })
 export class AddComponent implements OnInit {
   car: car;
+  getAllCars: car[];
   making: making[];
   model: model[];
   color: color[];
@@ -53,6 +54,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit() {
     this.car = {};
+    this.getAllCars = this.carService.getAll();
     this.making = this.makingService.getAll();
     this.model = this.modelService.getAll();
     this.color = this.colorService.getAll();
@@ -69,37 +71,49 @@ export class AddComponent implements OnInit {
       colorId: new FormControl('', Validators.required),
       cylinderId: new FormControl('', Validators.required),
       transimissionId: new FormControl('', Validators.required),
-      price: new FormControl('', Validators.required),
-      productionYear: new FormControl('', Validators.required),
+      price: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
+      productionYear: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
       engineCapacity: new FormControl('', Validators.required),
       horsePower: new FormControl('', Validators.required),
       fueltank: new FormControl('', Validators.required),
-      width: new FormControl('', Validators.required),
-      height: new FormControl('', Validators.required),
-      length: new FormControl('', Validators.required),
+      width: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
+      height: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
+      length: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
 
     });
 
   }
 
   onSubmit(myForm) {
-    console.log(this.myForm);
-    this.car.makingId = this.myForm.value.makingId;
-    this.car.model = this.myForm.value.modelId;
-    this.car.color = this.myForm.value.colorId;
-    this.car.cylinder = this.myForm.value.cylinderId;
-    this.car.transimission = this.myForm.value.transimission;
-    this.car.price = this.myForm.value.price;
-    this.car.year = this.myForm.value.productionYear;
-    this.car.capacity = this.myForm.value.engineCapacity;
-    // this.car.horsePower = this.myForm.value.horsePower;
-    this.car.fuelTank = this.myForm.value.fueltank;
-    this.car.width = this.myForm.value.width;
-    this.car.height = this.myForm.value.height;
-    this.car.length = this.myForm.value.length;
+    if (this.myForm.valid) {
 
-    this.carService.add(this.car);
-    // this.router.navigate(['/car']); 
+      console.log(this.myForm);
+      console.log(this.getAllCars);
+
+      this.car.makingId = this.myForm.value.makingId;
+      this.car.model = this.myForm.value.modelId;
+      this.car.color = this.myForm.value.colorId;
+      this.car.cylinder = this.myForm.value.cylinderId;
+      this.car.transimission = this.myForm.value.transimission;
+      this.car.price = this.myForm.value.price;
+      this.car.year = this.myForm.value.productionYear;
+      this.car.capacity = this.myForm.value.engineCapacity;
+      // this.car.horsePower = this.myForm.value.horsePower;
+      this.car.fuelTank = this.myForm.value.fueltank;
+      this.car.width = this.myForm.value.width;
+      this.car.height = this.myForm.value.height;
+      this.car.length = this.myForm.value.length;
+
+      this.carService.add(this.car);
+
+      // this.router.navigate(['/car']); 
+
+      console.log(this.getAllCars);
+    } else {
+      console.log("error");
+      console.log(this.myForm);
+    }
+
   }
 
   onClick() {

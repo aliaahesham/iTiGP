@@ -4,7 +4,7 @@ export class AccessoriesService {
     data: Accessories[];
     constructor() {
         this.data = [
-            { id: 1, code: "C123", seller: "Tafanin", name: "Radiator", description: "Car Accessories for Jeep Grand Cherokee of radiator tank and Auto Aluminum Radiator DPI:2336 ", price:100, image: "['assets/img/products/product-grey-1.jpg']" },
+            { id: 1, code: "C123", seller: "Tafanin", name: "Radiator", description: "Car Accessories for Jeep Grand Cherokee of radiator tank and Auto Aluminum Radiator DPI:2336 ", price: 100, image: "['assets/img/products/product-grey-1.jpg']" },
             { id: 2, code: "X451", seller: "RK Anjel", name: "brake pump", description: " Air in the Lines: The number one most common cause for having to pump your brakes to get them to work is air in the lines", price: 20, image: "['assets/img/products/product-grey-1.jpg']" },
             { id: 3, code: "FT21", seller: "Xperience", name: "Cowl screen", description: " is the front part of the automobile's frame that supports the rear of the hood, windshield, dashboard", price: 10, image: "['assets/img/products/product-grey-1.jpg']" },
             { id: 4, code: "G523", seller: "Tafanin", name: "Front clip", description: " refers to the entire front portion of the car from the front doors / side mirrors forward", price: 1000, image: "['assets/img/products/product-grey-1.jpg']" },
@@ -24,7 +24,7 @@ export class AccessoriesService {
         return this.data.filter((a) => a.seller === name);
     }
     add(newProduct: Accessories): void {
-        newProduct.id = this.data.length;
+        newProduct.id = this.data.length + 1;
         this.data.push(newProduct);
     }
     update(updatedProduct: Accessories): void {
