@@ -13,8 +13,7 @@ import { AccessoriesResolver } from './accessories.resolver';
 import { AccessoriesService } from './accessories.service';
 //service
 import { CategoryService } from './category.service';
-
-
+import { CoreModule} from '../../core/core.module';
 @NgModule({
   declarations: [
     ListComponent,
@@ -26,6 +25,7 @@ import { CategoryService } from './category.service';
     CommonModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    CoreModule,
     RouterModule.forChild([
       { path: 'accessory', component: ListComponent },
       { path: 'accessory/add', component: AddComponent },

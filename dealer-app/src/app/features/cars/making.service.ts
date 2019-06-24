@@ -48,6 +48,9 @@ export class makingService {
     getByName(name:string){
         return this.data.filter(a=> a.name===name);
     }
+    getByMaking(name:string){
+        return this.data.filter(a=>a.models[name]===name)
+    }
     add(making: making) {
         making.id = this.data.length + 1;
         this.data.push(making);

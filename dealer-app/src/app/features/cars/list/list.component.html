@@ -24,16 +24,13 @@
                                             <li class="p-2">latest added</li>
                                         </ul>
                                     </div>
-                                    <div class="col-md-3 pr-0 mt-3" style="max-width: 22%;">
-                                        <button type="button" class="sekwed-btn p-2 border-0">
-                                            <span> Year Production <i class="fas fa-caret-down"></i></span>
-                                        </button>
-                                        <ul class="dropdown d-none">
-                                            <li class="p-2 border-bottom">latest added</li>
-                                            <li class="p-2 border-bottom">latest added</li>
-                                            <li class="p-2 border-bottom">latest added</li>
-                                            <li class="p-2">latest added</li>
-                                        </ul>
+                                    <div class="col-md-3 pr-0 mt-3 mr-4" >
+                                        <select class="custom-dropdown" style="padding: 6% 6%;" (click)="YearFunction($event)">  
+                                            <option value='0'>
+                                                <span>YEAR PRODUCTION <i class="fas fa-caret-down"></i></span>
+                                            </option>
+                                            <option  *ngFor="let item of yearProduction; let i =index" value="{{item.id}}">{{item.year}}</option>
+                                          </select>
                                     </div>
                                     <div class="col-md-3 pl-0 pr-0 mt-3">
                                         <button type="button" class="sekwed-btn p-2 border-0">
@@ -112,99 +109,81 @@
                       </a>
                   </div>
               </div> -->
-              <!-------------------------------- vertical card --------------------->
-              <div class="row vertical mt-3">
-                  <div class="col-md-12 justify-content-center pl-2">
-                      <div class="row justify-content-center">
-                          <div *ngFor="let item of cars ; let i = index" class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
-                              <a [routerLink]="['/car','details',item.id]" class="card-link">
-                                  <div class="card-container">
-                                      <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
-                                      <div class="card-tag">
-                                          <span>{{item.price}}</span>
-                                      </div>
-                                  </div>
-                                  <div class="card-body text-center p-3">
-                                      <h5 class="card-title text-dark mt-0">{{item.making.name}} {{item.model.name}}</h5>
-                                      <div class="row">
-                                          <div class="col"></div>
-                                          <div class="col pr-2">
-                                              <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
-                                              <span class="text-muted border-left pl-3">{{item.year}}</span>
-                                          </div>
-                                          <div class="col">
-                                              <i class="fas fa-car-battery d-block card__icon"></i>
-                                              <span
-                                                  class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
-                                          </div>
-                                          <div class="col"></div>
-
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <!-- <div class="card col rounded-0 border-0 p-0 mr-4 ">
-                              <a href="" class="card-link">
-                                  <div class="card-container">
-                                      <img src="../assets/car.jpg" class="card-img-top rounded-0" alt="...">
-                                      <div class="card-icon">
-                                          <i class="far fa-compass"></i>
-                                          <i class="far fa-compass"></i>
-                                      </div>
-                                      <div class="card-tag">
-                                          <span>500000</span>
-                                      </div>
-                                  </div>
-                                  <div class="card-body text-center p-3">
-                                      <h5 class="card-title text-dark mt-0">Ford Car escoda</h5>
-                                      <div class="row">
-                                          <div class="col"></div>
-                                          <div class="col pr-2">
-                                              <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
-                                              <span class="text-muted border-left pl-3">2019</span>
-                                          </div>
-                                          <div class="col">
-                                              <i class="fas fa-car-battery d-block card__icon"></i>
-                                              <span
-                                                  class="text-muted border-left border-right pl-3 pr-3">2000</span>
-                                          </div>
-                                          <div class="col"></div>
-
+                <!-------------------------------- vertical card --------------------->
+                <div class="row vertical mt-3">
+                    <div class="col-md-12 justify-content-center pl-2">
+                        <div class="row justify-content-center">
+                            <!-- All Making -->
+                            <ng-container *ngIf="!specificMakingName && !specificColor  ; else specificmakingname">
+                                <div *ngFor="let item of cars | paginate: { itemsPerPage: 6, currentPage: p } ; let i = index"
+                                    class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
+                                    <a [routerLink]="['/car','details',item.id]" class="card-link">
+                                        <div class="card-container">
+                                            <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
+                                            <div class="card-tag">
+                                                <span>{{item.price}}</span>
+                                            </div>
                                         </div>
+                                        <div class="card-body text-center p-3">
+                                            <h5 class="card-title text-dark mt-0">{{item.making.name}}
+                                                {{item.model.name}}</h5>
+                                            <div class="row">
+                                                <div class="col"></div>
+                                                <div class="col pr-2">
+                                                    <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
+                                                    <span class="text-muted border-left pl-3">{{item.year}}</span>
+                                                </div>
+                                                <div class="col">
+                                                        <i class="fas fa-car-battery d-block card__icon"></i>
+                                                        <span class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
+                                                    </div>
+                                                <div class="col"></div>
+      
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="justify-content-center col-12">
+                                        <pagination-controls class="col-12" (pageChange)="p = $event"></pagination-controls>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="card col rounded-0 border-0 p-0 ">
-                                <a href="" class="card-link">
+                            </ng-container>
+                            
+                            <!-- specific making -->
+                            <ng-template #specificmakingname>
+                                <div *ngFor="let item of (specificColor ? specificColor  :  specificMakingName ) | paginate: { itemsPerPage: 6, currentPage: p } ; let i = index"
+                                class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
+                                <a [routerLink]="['/car','details',item.id]" class="card-link">
                                     <div class="card-container">
-                                        <img src="../assets/car.jpg" class="card-img-top rounded-0" alt="...">
-                                        <div class="card-icon">
-                                            <i class="far fa-compass"></i>
-                                            <i class="far fa-compass"></i>
-                                        </div>
+                                        <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
                                         <div class="card-tag">
-                                            <span>500000</span>
+                                            <span>{{item.price}}</span>
                                         </div>
                                     </div>
                                     <div class="card-body text-center p-3">
-                                        <h5 class="card-title text-dark mt-0">Ford Car escoda</h5>
-                                        <div class="row">
-                                            <div class="col"></div>
-                                            <div class="col pr-2">
-                                                <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
-                                                <span class="text-muted border-left pl-3">2019</span>
+                                        <h5 class="card-title text-dark mt-0">{{item.making.name}}
+                                            {{item.model.name}}</h5>
+                                            <div class="row">
+                                                <div class="col"></div>
+                                                <div class="col pr-2">
+                                                    <i class="fas fa-calendar-times d-block pl-3 card__icon"></i>
+                                                    <span class="text-muted border-left pl-3">{{item.year}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <i class="fas fa-car-battery d-block card__icon"></i>
+                                                    <span
+                                                    class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
+                                                </div>
+                                                <div class="col"></div>
+                                                
                                             </div>
-                                            <div class="col">
-                                                <i class="fas fa-car-battery d-block card__icon"></i>
-                                                <span class="text-muted border-left border-right pl-3 pr-3">2000</span>
-                                            </div>
-                                            <div class="col"></div>
-
-                                      </div>
-                                  </div>
-                              </a>
-                          </div> -->
-                      </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="justify-content-center col-12">
+                                    <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+                                </div>
+                            </ng-template>
+                        </div> 
 
                     </div>
                 </div>
@@ -212,64 +191,29 @@
             <!----------------------------- side bar ------------------------->
             <div class="col ml-4 side-bar pl-0">
 
-              <div class="col-md-12 pl-0 mt-5">
-                  <h6 class="pl-3">BY MAKING & MODELS</h6>
-              </div>
-              <div class="col-md-12 pl-5">
-                  <div class="card-line"></div>
-              </div>
-              <div class="col-md-12 mt-3">
-                  <!-- <button type="button" (click)="isMaking = !isMaking" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
-                      <span> MAKING <i class="fas fa-caret-down"></i></span>
-                  </button>
-                  <ul class="dropdown " [ngClass]="{'d-none': isMaking}" style="width: 11.6rem;left: 12%;">
-                      <li class="p-2 border-bottom" *ngFor="let make of making; let i =index">{{make.name}}</li>
-                  </ul> -->
-                  <select class="custom-dropdown">  
-                    <option disabled>
-                            <span>SELECT MAKING <i class="fas fa-caret-down"></i></span>
-                    </option>
-                    <option  *ngFor="let make of making; let i =index" value="{{make.id}}">{{make.name}}</option>
-                  </select>
-              </div>
-              <div class="col-md-12 mt-3">
-                  <!-- <button type="button" (click)="isModel = !isModel" class="sekwed-btn pt-2 pl-5 pr-5 pb-2 border-0 ml-3 custom-btn">
-                      <span> MODELS <i class="fas fa-caret-down"></i></span>
-                  </button>
-                  <ul class="dropdown" [ngClass]="{'d-none': isModel}" style="width: 11.6rem;left: 11%;">
-                      <li class="p-2 border-bottom" *ngFor="let model of models; let i=index"> {{model.name}}</li>      
-                  </ul> -->
-                  <select class="custom-dropdown">  
-                        <option disabled>
-                                <span>SELECT MAKING <i class="fas fa-caret-down"></i></span>
+                <div class="col-md-12 pl-0 mt-5">
+                    <h6 class="pl-3">BY MAKING & MODELS</h6>
+                </div>
+                <div class="col-md-12 pl-5">
+                    <div class="card-line"></div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <select #makingSelect class="custom-dropdown" (change)="onChange($event, coloredSelect )">
+                        <option value='0'>
+                            <span>ALL MAKINGS <i class="fas fa-caret-down"></i></span>
                         </option>
-                        <option  *ngFor="let model of models; let i =index" value="{{model.id}}">{{model.name}}</option>
+                        <option *ngFor="let make of making; let i =index" value="{{make.id}}">{{make.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <select class="custom-dropdown" (click)="clickFunction($event )">
+                        <option disabled>
+                            <span>SELECT MODEL <i class="fas fa-caret-down"></i></span>
+                        </option>
+                        <option  *ngFor="let model of modelss; let i =index" value="{{model.id}}">{{model}}</option>
                       </select>
               </div>
-              <div class="col-md-12 pl-0 mt-4">
-                  <h6 class="pl-3">PRICE</h6>
-              </div>
-              <div class="col-md-12 pl-5">
-                  <div class="card-line"></div>
-              </div>
-              <div class="col-md-12 mt-4">
-                  <div class="row">
-                      <div class="col-md-3">
-                          <label>From:</label>
-                      </div>
-                      <div class="col-md-8">
-                          <input type="text" class="sekwed-btn border-0   ">
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-3">
-                          <label>To:</label>
-                      </div>
-                      <div class="col-md-8">
-                          <input type="text" class="sekwed-btn border-0   ">
-                      </div>
-                  </div>
-              </div>
+    
               <div class="col-md-12 pl-0 mt-4">
                   <h6 class="pl-3">COLOR</h6>
               </div>
@@ -277,15 +221,13 @@
                   <div class="card-line"></div>
               </div>
               <div class="col-md-12 mt-3">
-                  <button type="button" class="sekwed-btn pt-2 pl-3 pr-3 pb-2 border-0 ml-3 custom-btn">
-                      <span> AVALIABLE COLOR <i class="fas fa-caret-down"></i></span>
-                  </button>
-                  <ul class="dropdown d-none">
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2 border-bottom">latest added</li>
-                      <li class="p-2">latest added</li>
-                  </ul>
+                  <!-- Color Select -->
+                    <select #coloredSelect class="custom-dropdown"   (change)="colorFunction($event,makingSelect)">  
+                            <option value='0'>
+                                <span>ALL COLORS <i class="fas fa-caret-down"></i></span>
+                            </option>
+                            <option  *ngFor="let color of colors; let i =index" value="{{color.id}}">{{color.name}}</option>
+                          </select>
               </div>
               <div class="col-md-12 pl-0 mt-5">
                   <h6 class="pl-3">BY TYPES</h6>
@@ -295,30 +237,25 @@
               </div>
               <div class="row mt-4 no-gutters text-center">
                   <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
-                      <img src="../assets/sedan-mini.png" class="img-fluid">
+                      <img src="../assets/sedan-mini.png" class="img-fluid" alt="Sedan">
                   </div>
                   <div class="col-5 car-type ml-1 p-2 mb-2">
-                      <img src="../assets/suv-mini.png" class="img-fluid">
+                      <img src="../assets/suv-mini.png" class="img-fluid" alt="Suv">
                   </div>
                   <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
-                      <img src="../assets/picup-mini.png" class="img-fluid">
+                      <img src="../assets/picup-mini.png" class="img-fluid" alt="PickUp">
                   </div>
                   <div class="col-5 car-type ml-1 p-2 mb-2 ">
-                      <img src="../assets/mini-mini.png" class="img-fluid">
+                      <img src="../assets/mini-mini.png" class="img-fluid" alt="MiniCar">
                   </div>
                   <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
-                      <img src="../assets/convert-mini.png" class="img-fluid">
+                      <img src="../assets/convert-mini.png" class="img-fluid" alt="Convertible">
                   </div>
                   <div class="col-5 car-type ml-1 p-2 mb-2">
-                      <img src="../assets/coupe-mini.png" class="img-fluid">
+                      <img src="../assets/coupe-mini.png" class="img-fluid" alt="Coupe">
                   </div>
               </div>
           </div>
       </div>
-  </div>
+ </div>
 </section>
-<!-- <select>
-    <option *ngFor="let newproduct of cars" [value]="newproduct">
-    {{newproduct.making.name}}
-    </option>
-</select> -->

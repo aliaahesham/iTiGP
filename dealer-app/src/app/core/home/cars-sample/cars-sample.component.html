@@ -2,7 +2,7 @@
  <section class="mt-5 mb-5">
   <div class="container">
       <div class=" text-center">
-          <h2 class=" pl-3">Simple Of Cars</h2>
+          <h2 class=" pl-3">Sample of Cars</h2>
           <p class="text-muted">
               Lorem Ipsum is simply dummy text of
           </p>
@@ -10,62 +10,72 @@
       <div class="row mt-5 mb-4">
           <!-- large card -->
           <div class="col-12 col-md-6 card--img card__img--large">
+              <a [routerLink]="['/car','details',cars[0].id]">
               <div class="card__title">
-                  <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                  <a style="display:block !important; color:white">{{cars[0].making.name}} - {{cars[0].model.name}}</a>
               </div>
-              <img src="../assets/card-video.jpg" class="img-fluid" width="100%" style="height:430px">
+              <img src="{{cars[0].images[0]}}" class="img-fluid" width="100%" style="height:430px">
               <div class="card__overlay">
                   <div class=" card__tag--left" style="right: 4%;">
-                      <span>500000</span>
+                      <span>{{cars[0].price}}</span>
                   </div>
               </div>
+            </a>
           </div>
           <!-- small card -->
           <div class="col-12 col-md-6 card--img">
               <div class="row">
                   <div class="col-6 col-md-6 card--img--small">
+                      <a [routerLink]="['/car','details',cars[1].id]">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a style="display:block !important; color: white">{{cars[1].making.name}} - {{cars[1].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[1].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[1].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
                   <div class="col-6 col-md-6 card--img--small">
+                      <a [routerLink]="['/car','details',cars[2].id]">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a  style="display:block !important; color: white">{{cars[2].making.name}} - {{cars[2].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[2].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[2].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
                   <div class="col-6 col-md-6 card--img--small mt-3">
+                      <a [routerLink]="['/car','details',cars[3].id]">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a  style="display:block !important; color: white">{{cars[3].making.name}} - {{cars[3].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[3].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[3].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
                   <div class="col-6 col-md-6 card--img--small mt-3">
+                      <a [routerLink]="['/car','details',cars[4].id]">
                       <div class="card__title">
-                          <a href="#" style="display:block !important;">Hyundai- Elantra</a>
+                          <a  style="display:block !important; color: white">{{cars[4].making.name}} - {{cars[4].model.name}}</a>
                       </div>
-                      <img src="../assets/card-video.jpg" class="img-fluid" style=" height: 207px">
+                      <img src="{{cars[4].images[0]}}" class="img-fluid" style=" height: 207px">
                       <div class="card__overlay--small">
                           <div class=" card__tag--left" style="right: 4%;">
-                              <span>500000</span>
+                              <span>{{cars[4].price}}</span>
                           </div>
                       </div>
+                    </a>
                   </div>
               </div>
           </div>

@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { SellerService } from './seller.service';
 import { LoggedInSellerService } from './loggedIn.service';
-import { CoreModule } from '../core/core.module';
 import { DetailsComponent } from './dashboard/details/details.component';
 import { ProductsDataComponent } from './dashboard/products-data/products-data.component';
 import { carService } from '../features/cars/car.services';
@@ -14,6 +13,7 @@ import { SparePartsService } from '../features/spare-parts/spare-parts.service';
 import { AccessoriesService } from '../features/accessories/accessories.service';
 import { AddProductComponent } from './dashboard/details/add-product/add-product.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { CoreModule } from '../core/core.module';
 @NgModule({
   declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent, AddProductComponent, DropdownComponent],
   imports: [
