@@ -8,6 +8,7 @@ import { makingService } from '../../cars/making.service';
 import { modelService } from '../../cars/model.service';
 import { CategoryService } from '../category.service';
 import { SparePartsService } from '../spare-parts.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-sparePart',
@@ -16,32 +17,35 @@ import { SparePartsService } from '../spare-parts.service';
 })
 export class AddComponent implements OnInit {
   sparePart: SparePart;
+  sparePartById: SparePart;
   categories: category[];
   makings: making[];
   models: model[];
   sparePartForm: FormGroup;
   saleOptions = new FormControl('onSale');
-  edit: boolean;
+  //editFlag: boolean;
   constructor(
     private categoryService: CategoryService,
     private makingService: makingService,
     private modelService: modelService,
-    private sparePartService: SparePartsService
+    private sparePartService: SparePartsService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.categories = this.categoryService.getAll();
     this.makings = this.makingService.getAll();
-    this.edit = false;
+    //this.editFlag = false;
   }
 
   ngOnInit() {
     this.sparePartForm = new FormGroup({
-      'name': new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-      'description': new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(70)]),
-      'categoryId': new FormControl('0', Validators.required),
-      'makingId': new FormControl('0', Validators.required),
-      'modelId': new FormControl('0'),
-      'price': new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
-      'discount': new FormControl('', [Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)])
+      name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(70)]),
+      categoryId: new FormControl('0', Validators.required),
+      makingId: new FormControl('0', Validators.required),
+      modelId: new FormControl('0'),
+      price: new FormControl('', [Validators.required, Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)]),
+      discount: new FormControl('', [Validators.pattern(/^([0-9]*|\d*\.\d{1}?\d*)$/)])
     })
 
     this.saleOptions.valueChanges.subscribe((value) => {
@@ -51,16 +55,32 @@ export class AddComponent implements OnInit {
         this.sparePartForm.get('discount').enable();
       }
     })
+
+    const id: number = +this.activatedRoute.snapshot.params.id;
+    this.sparePartById = this.sparePartService.getById(id)
+    if (this.sparePartById) {
+      this.sparePartForm.patchValue({
+        name: this.sparePartById.name,
+        description: this.sparePartById.description,
+        categoryId: this.sparePartById.categoryId,
+        makingId: this.sparePartById.makingId,
+        modelId: this.sparePartById.modelId,
+        price: this.sparePartById.price,
+        discount: this.sparePartById.discount
+      })
+    }
+
   }
   onSubmit() {
     if (this.sparePartForm.valid) {
-      console.log(this.sparePartForm.value);
+      //console.log(this.sparePartForm.value);
       this.sparePart = this.sparePartForm.value as SparePart;
       this.sparePartService.add(this.sparePart);
       this.sparePartForm.reset();
-      console.log(this.sparePartService.getAll());
+      //console.log(this.sparePartService.getAll());
+      //this.router.navigate(['/spareParts']);
     } else {
-      console.log(this.sparePartForm);
+      //console.log(this.sparePartForm);
       console.log("error");
     }
   }
@@ -70,4 +90,5 @@ export class AddComponent implements OnInit {
     const makingId = makingIdUnknown as number;
     this.models = this.modelService.getBymakingId(makingId);
   }
+
 }
