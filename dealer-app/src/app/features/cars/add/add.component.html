@@ -12,6 +12,9 @@
           <label for="">Making</label>
           <!-- dropDown list -->
           <select formControlName="makingId" class="form-control" name="ddlCategory" id="">
+            <option value='0'>
+              <span>Select Car Making</span>
+            </option>
             <option *ngFor="let mak of making" [value]="mak.id">{{mak.name}}</option>
           </select>
           <div class="error-msg" *ngIf="myForm.get('makingId').hasError('required') && myForm.get('makingId').touched">
@@ -23,6 +26,9 @@
           <label for="">Model</label>
           <!-- dropDown list -->
           <select formControlName="modelId" class="form-control" name="ddlCategory" id="">
+            <option value='0'>
+              <span>Select Car Model</span>
+            </option>
             <option *ngFor="let mod of model" [value]="mod.id">{{mod.name}}</option>
           </select>
           <div class="error-msg" *ngIf="myForm.get('modelId').hasError('required') && myForm.get('modelId').touched">
@@ -45,6 +51,9 @@
           <label for="">Color</label>
           <!-- dropDown list -->
           <select formControlName="colorId" class="form-control" name="ddlCategory" id="">
+            <option value='0'>
+              <span>Select Car Color</span>
+            </option>
             <option *ngFor="let col of color" [value]="col.id">{{col.name}}</option>
           </select>
           <div class="error-msg" *ngIf="myForm.get('colorId').hasError('required') && myForm.get('colorId').touched">
@@ -101,11 +110,13 @@
           <label>Has Turbo?</label>
           <div class="w-75 pt-1">
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="turboOptions" id="withTurbo" [value]="1">
+              <input class="form-check-input" type="radio" name="turboOptions" id="withTurbo" [value]="1"
+                [formControl]="turboOptions">
               <label class="form-check-label" for="withTurbo">Yes</label>
             </div>
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="turboOptions" id="withoutTurbo" [value]="2">
+              <input class="form-check-input" type="radio" name="turboOptions" id="withoutTurbo" [value]="2"
+                [formControl]="turboOptions">
               <label class="form-check-label" for="withoutTurbo">No</label>
             </div>
           </div>
@@ -128,11 +139,13 @@
           <label>ABS</label>
           <div class="w-75 pt-1">
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="ABSoptions" id="withABS" [value]="1">
+              <input class="form-check-input" type="radio" name="ABSoptions" id="withABS" [value]="1"
+                [formControl]="ABSoptions">
               <label class="form-check-label" for="withABS">Yes</label>
             </div>
             <div class="form-check form-check-inline mr-5">
-              <input class="form-check-input" type="radio" name="ABSoptions" id="withoutABS" [value]="2">
+              <input class="form-check-input" type="radio" name="ABSoptions" id="withoutABS" [value]="2"
+                [formControl]="ABSoptions">
               <label class="form-check-label" for="withoutABS">No</label>
             </div>
           </div>
@@ -150,6 +163,9 @@
           <label for="">Cylinder</label>
           <!-- dropDown list -->
           <select formControlName="cylinderId" class="form-control" name="ddlCategory" id="">
+            <option value='0'>
+              <span>Select Car Cylinder</span>
+            </option>
             <option *ngFor="let cyl of cylinder" [value]="cyl.id">{{cyl.cyl}}</option>
           </select>
           <div class="error-msg"
@@ -162,6 +178,9 @@
           <label for="">Transmission</label>
           <!-- dropDown list -->
           <select formControlName="transimissionId" class="form-control" name="ddlCategory" id="">
+            <option value='0'>
+              <span>Select Car Transmission</span>
+            </option>
             <option *ngFor="let trans of transimission" [value]="trans.id">{{trans.name}}</option>
           </select>
           <div class="error-msg"
