@@ -37,7 +37,7 @@
             Please Enter Description
           </div>
           <div class="error-msg"
-            *ngIf="(myForm.get('description').hasError('minlength') || myForm.get('description').hasError('maxlength')) && sparePartForm.get('description').touched ">
+            *ngIf="(myForm.get('description').hasError('minlength') || myForm.get('description').hasError('maxlength')) && myForm.get('description').touched ">
             Description should be more than 10 letters and less than 50
           </div>
         </div>

@@ -10,11 +10,10 @@ import { DiagnosticesComponent } from './home/diagnostices/diagnostices.componen
 import { PartnersComponent } from './home/partners/partners.component';
 import { HeaderComponent } from './header/header.component';
 import { TitleComponent } from './title/title.component';
-import { RouterModule ,Router } from '@angular/router';
-import {DetailsComponent} from '../features/cars/details/details.component';
-
-import {carService} from '../features/cars/car.services'
-
+import { RouterModule, Router } from '@angular/router';
+import { DetailsComponent } from '../features/cars/details/details.component';
+import { carService } from '../features/cars/car.services';
+import { AboutCarDealerComponent } from './about-car-dealer/about-car-dealer.component'
 
 @NgModule({
   declarations: [
@@ -25,16 +24,16 @@ import {carService} from '../features/cars/car.services'
     CarsSampleComponent,
     TutorialsComponent,
     DiagnosticesComponent,
-    PartnersComponent,
     HeaderComponent,
     TitleComponent,
-   
+    PartnersComponent,
+    AboutCarDealerComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       { path: 'car/details/:id', component: DetailsComponent },
-     
+      { path: 'aboutus', component: AboutCarDealerComponent }
     ])
   ],
   exports: [
@@ -42,8 +41,7 @@ import {carService} from '../features/cars/car.services'
     FooterComponent,
     TitleComponent
   ],
-  providers:[carService]
-   
+  providers: [carService]
+
 })
 export class CoreModule { }
- 
