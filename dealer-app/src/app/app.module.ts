@@ -11,6 +11,7 @@ import { CarsModule } from './features/cars/cars.module';
 import { SparePartsModule } from './features/spare-parts/spare-parts.module';
 import { TutorialsModule } from './features/tutorials/tutorials.module';
 import { CoreModule } from './core/core.module';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CoreModule } from './core/core.module';
     RouterModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // entryComponents: [ConfirmDialogComponent]
 })
 export class AppModule { }

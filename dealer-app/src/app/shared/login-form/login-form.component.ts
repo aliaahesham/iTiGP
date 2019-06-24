@@ -49,7 +49,7 @@ export class LoginFormComponent implements OnInit {
           this.router.navigateByUrl('/seller/dashboard');
         }
         else {
-          this.errors = "*Invalid password";
+          this.errors = "*Incorrect password";
         }
       }
       else {

@@ -14,12 +14,16 @@ import { AccessoriesService } from '../features/accessories/accessories.service'
 import { AddProductComponent } from './dashboard/details/add-product/add-product.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { CoreModule } from '../core/core.module';
+import { MatDialogModule } from '@angular/material';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { DeletedProductService } from './DeletedProduct.service';
 @NgModule({
-  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent, AddProductComponent, DropdownComponent],
+  declarations: [LoginFormComponent, DashboardComponent, DetailsComponent, ProductsDataComponent, AddProductComponent, DropdownComponent, ConfirmDialogComponent],
   imports: [
     CommonModule,
     CoreModule,
     ReactiveFormsModule,
+    MatDialogModule,
     RouterModule.forChild([
       { path: 'seller/login', component: LoginFormComponent },
       { path: 'seller/dashboard', component: DashboardComponent },
@@ -32,6 +36,7 @@ import { CoreModule } from '../core/core.module';
     carService,
     SparePartsService,
     AccessoriesService,
+    DeletedProductService
   ],
   exports: [
     DropdownComponent
