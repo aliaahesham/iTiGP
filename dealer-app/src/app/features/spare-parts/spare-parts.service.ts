@@ -42,4 +42,15 @@ export class SparePartsService {
         const i = this.data.findIndex(s => s.id === id);
         this.data.splice(i, 1);
     }
+
+    getPrice(id: number) {
+        let result: number;
+        const sparePart = this.data.find(s => s.id === id);
+        if (sparePart.discount) {
+            result = sparePart.price - sparePart.discount;
+        } else {
+            result = sparePart.price;
+        }
+        return result;
+    }
 }

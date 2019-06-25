@@ -16,21 +16,21 @@ export class DetailsComponent implements OnInit, OnDestroy {
   accessories: Accessories;
   subscription: Subscription;
   ngOnInit() {
-  this.accessories=this.activeRoute.snapshot.data.myResolver;
+    this.accessories = this.activeRoute.snapshot.data.myResolver;
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  count=0;
-  myval=1;
-  counter(flag){
+  count = 0;
+  myval = 1;
+  counter(flag) {
 
-    if(flag==='increment'){
+    if (flag === 'increment') {
       this.count++;
     }
-    if(flag==='decrement'){
+    if (flag === 'decrement') {
       this.count--;
     }
-   this.myval= this.count;
+    this.myval = this.count;
   }
 }

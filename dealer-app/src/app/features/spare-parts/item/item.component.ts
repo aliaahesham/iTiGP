@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SparePart } from '../../../_models/spare-parts/spare-parts';
+import { SparePartsService } from '../spare-parts.service';
+import { NumberValueAccessor } from '@angular/forms';
 //import { SparePartsService } from '../../spare-parts/spare-parts.service';
 
 @Component({
@@ -9,17 +11,12 @@ import { SparePart } from '../../../_models/spare-parts/spare-parts';
 })
 export class ItemComponent implements OnInit {
   @Input() sparePart: SparePart;
-  constructor() { }
+  price: number;
+  constructor(
+    private sparePartsService: SparePartsService
+  ) { }
 
   ngOnInit() {
-  }
-  getPrice() {
-    let result: number;
-    if (this.sparePart.discount) {
-      result = this.sparePart.price - this.sparePart.discount;
-    } else {
-      result = this.sparePart.price;
-    }
-    return result;
+    this.price = this.sparePartsService.getPrice(this.sparePart.id);
   }
 }

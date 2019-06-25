@@ -19,9 +19,14 @@ import { ItemComponent } from './item/item.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      { path: 'spareParts', component: ListComponent },
-      { path: 'spareParts/add', component: AddComponent },
-      { path: 'spareParts/details', component: DetailsComponent },
+      {
+        path: 'spareParts', children: [
+          { path: '', component: ListComponent },
+          { path: 'add', component: AddComponent },
+          { path: 'details/:id', component: DetailsComponent },
+        ]
+      },
+
     ])
   ],
   providers: [

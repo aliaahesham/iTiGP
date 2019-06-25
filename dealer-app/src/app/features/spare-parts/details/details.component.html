@@ -6,10 +6,14 @@
     <!-- car spesfication class should be replaced after the modification of sass classes-->
     <div class="col-12 car-spesfication">
       <!--car-details-title should be renamed to details title after the modification-->
-      <div class="car-details-title">
+      <div class="car-details-title" style="margin-top: 64px;">
         <div class="row">
-          <div class="col-md-8 mx-auto text-left">
-            <h4>Spare-Part Name</h4>
+          <div class="col-md-8 mx-auto text-center">
+            <h4> {{sparePart.name}} </h4>
+          </div>
+          <div class="col-md-4  mx-auto text-center">
+            <button type="button" style="background-color:#dc2d13;" class="btn btn--skewx  car-price">
+              <span class="btn--skewx--text__secondary-color">${{price}}</span></button>
           </div>
         </div>
       </div>
@@ -17,36 +21,40 @@
   </div>
   <div class="row">
     <div class="col-md-4 col-sm-12 m-3">
-      <img src="../assets/photoTemplate300px.png" class="rounded mx-auto d-block img-fluid" alt="spare part img">
+      <img [src]="sparePart.image" class="rounded mx-auto d-block img-fluid" alt="spare part img">
     </div>
     <div class="col-md-4 col-sm-12 m-3">
       <h3 class="border-bottom pb-2">Details</h3>
       <div class="row d-flex justify-content-between">
         <div class="col-6">
-          <ul>
+          <ul class="p-0 m-0">
             <li>Category:</li>
-            <li>Dummy Details1:</li>
-            <li>Dummy Details2:</li>
-            <li>Dummy Details3:</li>
+            <li>Car Making:</li>
+            <li>Car Model:</li>
           </ul>
         </div>
         <div class="col-6">
-          <ul class="text-right font-weight-light">
-            <li>Electric msln</li>
-            <li>Dummy Details1</li>
-            <li>Dummy Details2</li>
-            <li>Dummy Details3</li>
+          <ul class="text-right" [ngStyle]="{
+            'width': 'max-content'
+          }">
+            <li>{{category.name}}</li>
+            <li> {{making.name}} </li>
+            <li> {{model.name}} </li>
           </ul>
         </div>
       </div>
+      <div class="row">
+        <p class="">{{ sparePart.description }}</p>
+      </div>
     </div>
     <div class="col-md-3 col-sm-12 m-3">
-      <h3 class="border-bottom pb-2 text-right">£ 22,03</h3>
       <h5 class="mt-4 ml-3">Quantity</h5>
       <div class="d-flex mx-auto w-50 justify-content-center">
-        <a href="#" class="increment-control__action d-flex justify-content-center align-items-center border">-</a>
-        <input type="text" class="form-control border text-center mx-2" title="Qty" value="1">
-        <a href="#" class="increment-control__action d-flex justify-content-center align-items-center border">+</a>
+        <button class="increment-control__action d-flex justify-content-center align-items-center border"
+          (click)="counter('decrement')" [disabled]="count === 1">-</button>
+        <input type="text" class="form-control border text-center mx-2" title="Qty" [value]="countValue">
+        <button class="increment-control__action d-flex justify-content-center align-items-center border"
+          (click)="counter('increment')">+</button>
       </div>
       <button type="button" class="btn btn--ordinary btn--color-primary p-3 my-4 w-100"><span class="fs-1p3"><i
             class="fas fa-cart-plus mr-3"></i>Add to Cart</span>

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 // import {Ng2BootstrapModule } from '@angular/core'
 import { TabsModule } from 'ngx-bootstrap';
-import {carService} from '../car.services'
+import { carService } from '../car.services'
 import { ActivatedRoute } from '@angular/router';
 import { car } from 'src/app/_models/car/car';
 import { Subscription } from 'rxjs';
@@ -11,23 +11,34 @@ import { Subscription } from 'rxjs';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit ,OnDestroy {
+export class DetailsComponent implements OnInit, OnDestroy {
 
-  constructor(private carService:carService, private activatedRoute:ActivatedRoute) { }
-   id:number;
-   car:car;
-   subscription:Subscription;
+  constructor(private carService: carService, private activatedRoute: ActivatedRoute) { }
+  id: number;
+  car: car;
+  subscription: Subscription;
   ngOnInit() {
     this.subscription = this.activatedRoute.params.subscribe(
-      (params)=>{
-        this.id= +params.id;
-        this.car=this.carService.getById(this.id);
+      (params) => {
+        this.id = +params.id;
+        this.car = this.carService.getById(this.id);
       }
     );
 
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+  count = 0;
+  myval = 1;
+  counter(flag) {
 
+    if (flag === 'increment') {
+      this.count++;
+    }
+    if (flag === 'decrement') {
+      this.count--;
+    }
+    this.myval = this.count;
+  }
 }
