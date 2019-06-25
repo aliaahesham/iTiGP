@@ -12,6 +12,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EditedProductService } from '../../../shared/EditedProduct.service';
 import { LoggedInSellerService } from '../../../shared/loggedIn.service';
 import { Seller } from 'src/app/_models/seller';
+import { BrowserModule } from '@angular/platform-browser'
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-add-sparePart',
   templateUrl: './add.component.html',
@@ -27,6 +30,8 @@ export class AddComponent implements OnInit {
   saleOptions = new FormControl('onSale');
   editedSparePart;
   loggedInSeller: Seller;
+  fileName: string;
+  filePreview: string = "../assets/photoTemplate300px.png";
   constructor(
     private categoryService: CategoryService,
     private makingService: makingService,
@@ -35,7 +40,8 @@ export class AddComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private EditedProductService: EditedProductService,
-    private LoggedInSellerService: LoggedInSellerService
+    private LoggedInSellerService: LoggedInSellerService,
+    private sanitizer: DomSanitizer
   ) {
     this.categories = this.categoryService.getAll();
     this.makings = this.makingService.getAll();
@@ -111,6 +117,19 @@ export class AddComponent implements OnInit {
     const makingIdUnknown = eventTarget.value as unknown;
     const makingId = makingIdUnknown as number;
     this.models = this.modelService.getBymakingId(makingId);
+  }
+  onFileChanged(event) {
+
+    let reader = new FileReader();
+    if (event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+
+        this.fileName = file.name + " " + file.type;
+        this.filePreview = 'data:image/png' + ';base64,' + (<string>reader.result).split(',')[1];
+      };
+    }
   }
 
 }

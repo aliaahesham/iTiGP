@@ -39,7 +39,8 @@ export class AddComponent implements OnInit {
   myForm: FormGroup;
   turboOptions = new FormControl('yes');
   ABSoptions = new FormControl('yes');
-
+  fileName: string;
+  filePreview: string = "../assets/photoTemplate300px.png";
 
 
   constructor(private makingService: makingService,
@@ -119,6 +120,19 @@ export class AddComponent implements OnInit {
 
   onClick() {
     this.router.navigate(['/car']);
+  }
+  onFileChanged(event) {
+
+    let reader = new FileReader();
+    if (event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+
+        this.fileName = file.name + " " + file.type;
+        this.filePreview = 'data:image/png' + ';base64,' + (<string>reader.result).split(',')[1];
+      };
+    }
   }
 
 }
