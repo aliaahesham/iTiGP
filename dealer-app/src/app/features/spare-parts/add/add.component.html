@@ -6,7 +6,13 @@
 
       <!--SparePart Image-->
       <div class="col-md-4 col-sm-6">
-        <img src="../assets/photoTemplate300px.png" class="rounded mx-auto d-block img-fluid" alt="add spare part img">
+
+
+        <label for="file-input">
+          <img [src]="filePreview" class="rounded mx-auto d-block img-fluid" alt="add spare part img">
+        </label>
+        <input type="file" id="file-input" style="display: none" name="image" (change)="onFileChanged($event)">
+
       </div>
 
       <!--SparePart Details-->
@@ -122,7 +128,7 @@
 
 
         <div class="d-flex justify-content-end my-2">
-          <button type="reset" class="btn btn--ordinary btn--color-secondary  mr-1">Cancel</button>
+          <button type="reset" class="btn btn--ordinary btn--color-secondary  mr-1" (click)="onCancel()">Cancel</button>
           <button type="submit" class="btn btn--ordinary btn--color-primary mr-1">Add</button>
         </div>
       </div>
