@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 
 import { Accessories } from 'src/app/_models/accessories/accessories';
 import { Category } from 'src/app/_models/accessories/category';
-import { Seller } from 'src/app/_models/seller';
 import { AccessoriesService } from '../accessories.service';
 import { CategoryService } from '../category.service';
 import { SellerService } from 'src/app/shared/seller.service';
-
+import { EditedProductService } from '../../../shared/EditedProduct.service';
+import { LoggedInSellerService } from '../../../shared/loggedIn.service';
+import { Seller } from 'src/app/_models/seller';
 @Component({
   selector: 'app-add-accessories',
   templateUrl: './add.component.html',
@@ -25,13 +26,19 @@ export class AddComponent implements OnInit {
   // myPrice: FormControl;
   fileName: string;
   filePreview: string = "../assets/photoTemplate300px.png";
+  editedSparePart;
+  loggedInSeller: Seller;
   constructor(private accessoriesService: AccessoriesService,
     private categoryService: CategoryService,
     private sellerService: SellerService,
     private router: Router,
+    private EditedProductService: EditedProductService,
+    private LoggedInSellerService: LoggedInSellerService,
   ) { }
 
   ngOnInit() {
+    this.loggedInSeller = this.LoggedInSellerService.GetSeller();
+
     this.accessories = {};
     this.numOfAllAccessores = this.accessoriesService.getAll();
     this.category = this.categoryService.getAll();
@@ -54,18 +61,21 @@ export class AddComponent implements OnInit {
       this.accessories.price = this.myForm.value.price;
       this.accessories.image = this.myForm.value.image;
       this.accessories.categoryId = this.myForm.value.categoryId;
+      this.accessories.seller = this.loggedInSeller.name;
 
       this.accessoriesService.add(this.accessories);
 
       console.log(this.accessories);
       console.log(this.numOfAllAccessores);
 
-      // this.router.navigate(['/accessory']);
+      this.router.navigateByUrl('/seller/dashboard');
+
     } else {
       console.log("error");
       console.log(this.myForm);
     }
   }
+
   onFileChanged(event) {
 
     let reader = new FileReader();
@@ -78,5 +88,9 @@ export class AddComponent implements OnInit {
         this.filePreview = 'data:image/png' + ';base64,' + (<string>reader.result).split(',')[1];
       };
     }
+  }
+  onClick() {
+    this.router.navigateByUrl('/seller/dashboard');
+
   }
 }

@@ -41,7 +41,6 @@ export class AddComponent implements OnInit {
     private router: Router,
     private EditedProductService: EditedProductService,
     private LoggedInSellerService: LoggedInSellerService,
-    private sanitizer: DomSanitizer
   ) {
     this.categories = this.categoryService.getAll();
     this.makings = this.makingService.getAll();
@@ -130,6 +129,9 @@ export class AddComponent implements OnInit {
         this.filePreview = 'data:image/png' + ';base64,' + (<string>reader.result).split(',')[1];
       };
     }
+  }
+  onCancel() {
+    this.router.navigateByUrl('/seller/dashboard');
   }
 
 }

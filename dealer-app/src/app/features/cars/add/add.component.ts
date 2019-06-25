@@ -20,6 +20,9 @@ import { colorService } from 'src/app/features/cars/color.service';
 //import { classificationService } from 'src/app/features/cars/classification.service';
 import { cylinderService } from 'src/app/features/cars/cylinder.service';
 import { transimissionService } from 'src/app/features/cars/transimission.service';
+import { EditedProductService } from '../../../shared/EditedProduct.service';
+import { LoggedInSellerService } from '../../../shared/loggedIn.service';
+import { Seller } from 'src/app/_models/seller';
 
 @Component({
   selector: 'app-add-car',
@@ -41,7 +44,8 @@ export class AddComponent implements OnInit {
   ABSoptions = new FormControl('yes');
   fileName: string;
   filePreview: string = "../assets/photoTemplate300px.png";
-
+  editedSparePart;
+  loggedInSeller: Seller;
 
   constructor(private makingService: makingService,
     private modelService: modelService,
@@ -52,9 +56,13 @@ export class AddComponent implements OnInit {
     private transimissionService: transimissionService,
     private carService: carService,
     private router: Router,
+    private EditedProductService: EditedProductService,
+    private LoggedInSellerService: LoggedInSellerService,
   ) { }
 
   ngOnInit() {
+    this.loggedInSeller = this.LoggedInSellerService.GetSeller();
+
     this.car = {};
     this.getAllCars = this.carService.getAll();
     this.making = this.makingService.getAll();
@@ -105,21 +113,23 @@ export class AddComponent implements OnInit {
       this.car.width = this.myForm.value.width;
       this.car.height = this.myForm.value.height;
       this.car.length = this.myForm.value.length;
+      this.car.seller = this.loggedInSeller.name;
 
       this.carService.add(this.car);
 
-      // this.router.navigate(['/car']); 
+      this.router.navigateByUrl('/seller/dashboard');
 
-      // console.log(this.getAllCars);
+
     } else {
+
       console.log("error");
-      console.log(this.myForm);
     }
 
   }
 
   onClick() {
-    this.router.navigate(['/car']);
+    this.router.navigateByUrl('/seller/dashboard');
+
   }
   onFileChanged(event) {
 
