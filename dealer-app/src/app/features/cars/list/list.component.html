@@ -24,13 +24,15 @@
                                             <li class="p-2">latest added</li>
                                         </ul>
                                     </div>
-                                    <div class="col-md-3 pr-0 mt-3 mr-4" >
-                                        <select class="custom-dropdown" style="padding: 6% 6%;" (click)="YearFunction($event)">  
+                                    <div class="col-md-3 pr-0 mt-3 mr-4">
+                                        <select class="custom-dropdown" style="padding: 6% 6%;"
+                                            (click)="YearFunction($event)">
                                             <option value='0'>
                                                 <span>YEAR PRODUCTION <i class="fas fa-caret-down"></i></span>
                                             </option>
-                                            <option  *ngFor="let item of yearProduction; let i =index" value="{{item.id}}">{{item.year}}</option>
-                                          </select>
+                                            <option *ngFor="let item of yearProduction; let i =index"
+                                                value="{{item.id}}">{{item.year}}</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-3 pl-0 pr-0 mt-3">
                                         <button type="button" class="sekwed-btn p-2 border-0">
@@ -134,34 +136,35 @@
                                                     <span class="text-muted border-left pl-3">{{item.year}}</span>
                                                 </div>
                                                 <div class="col">
-                                                        <i class="fas fa-car-battery d-block card__icon"></i>
-                                                        <span class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
-                                                    </div>
+                                                    <i class="fas fa-car-battery d-block card__icon"></i>
+                                                    <span
+                                                        class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
+                                                </div>
                                                 <div class="col"></div>
-      
+
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="justify-content-center col-12">
-                                        <pagination-controls class="col-12" (pageChange)="p = $event"></pagination-controls>
-                                    </div>
+                                    <pagination-controls class="col-12" (pageChange)="p = $event"></pagination-controls>
+                                </div>
                             </ng-container>
-                            
+
                             <!-- specific making -->
                             <ng-template #specificmakingname>
                                 <div *ngFor="let item of (specificColor ? specificColor  :  specificMakingName ) | paginate: { itemsPerPage: 6, currentPage: p } ; let i = index"
-                                class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
-                                <a [routerLink]="['/car','details',item.id]" class="card-link">
-                                    <div class="card-container">
-                                        <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
-                                        <div class="card-tag">
-                                            <span>{{item.price}}</span>
+                                    class="card col-3 mb-3 rounded-0 border-0 p-0 mr-5 ">
+                                    <a [routerLink]="['/car','details',item.id]" class="card-link">
+                                        <div class="card-container">
+                                            <img src={{item.images[0]}} class="card-img-top rounded-0" alt="...">
+                                            <div class="card-tag">
+                                                <span>{{item.price}}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-body text-center p-3">
-                                        <h5 class="card-title text-dark mt-0">{{item.making.name}}
-                                            {{item.model.name}}</h5>
+                                        <div class="card-body text-center p-3">
+                                            <h5 class="card-title text-dark mt-0">{{item.making.name}}
+                                                {{item.model.name}}</h5>
                                             <div class="row">
                                                 <div class="col"></div>
                                                 <div class="col pr-2">
@@ -171,19 +174,19 @@
                                                 <div class="col">
                                                     <i class="fas fa-car-battery d-block card__icon"></i>
                                                     <span
-                                                    class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
+                                                        class="text-muted border-left border-right pl-3 pr-3">{{item.fuelTank}}</span>
                                                 </div>
                                                 <div class="col"></div>
-                                                
+
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="justify-content-center col-12">
-                                    <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                                 </div>
                             </ng-template>
-                        </div> 
+                        </div>
 
                     </div>
                 </div>
@@ -210,52 +213,52 @@
                         <option disabled>
                             <span>SELECT MODEL <i class="fas fa-caret-down"></i></span>
                         </option>
-                        <option  *ngFor="let model of modelss; let i =index" value="{{model.id}}">{{model}}</option>
-                      </select>
-              </div>
-    
-              <div class="col-md-12 pl-0 mt-4">
-                  <h6 class="pl-3">COLOR</h6>
-              </div>
-              <div class="col-md-12 pl-5">
-                  <div class="card-line"></div>
-              </div>
-              <div class="col-md-12 mt-3">
-                  <!-- Color Select -->
-                    <select #coloredSelect class="custom-dropdown"   (change)="colorFunction($event,makingSelect)">  
-                            <option value='0'>
-                                <span>ALL COLORS <i class="fas fa-caret-down"></i></span>
-                            </option>
-                            <option  *ngFor="let color of colors; let i =index" value="{{color.id}}">{{color.name}}</option>
-                          </select>
-              </div>
-              <div class="col-md-12 pl-0 mt-5">
-                  <h6 class="pl-3">BY TYPES</h6>
-              </div>
-              <div class="col-md-12 pl-5">
-                  <div class="card-line"></div>
-              </div>
-              <div class="row mt-4 no-gutters text-center">
-                  <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
-                      <img src="../assets/sedan-mini.png" class="img-fluid" alt="Sedan">
-                  </div>
-                  <div class="col-5 car-type ml-1 p-2 mb-2">
-                      <img src="../assets/suv-mini.png" class="img-fluid" alt="Suv">
-                  </div>
-                  <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
-                      <img src="../assets/picup-mini.png" class="img-fluid" alt="PickUp">
-                  </div>
-                  <div class="col-5 car-type ml-1 p-2 mb-2 ">
-                      <img src="../assets/mini-mini.png" class="img-fluid" alt="MiniCar">
-                  </div>
-                  <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
-                      <img src="../assets/convert-mini.png" class="img-fluid" alt="Convertible">
-                  </div>
-                  <div class="col-5 car-type ml-1 p-2 mb-2">
-                      <img src="../assets/coupe-mini.png" class="img-fluid" alt="Coupe">
-                  </div>
-              </div>
-          </div>
-      </div>
- </div>
+                        <option *ngFor="let model of modelss; let i =index" [value]="model">{{model}}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12 pl-0 mt-4">
+                    <h6 class="pl-3">COLOR</h6>
+                </div>
+                <div class="col-md-12 pl-5">
+                    <div class="card-line"></div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <!-- Color Select -->
+                    <select #coloredSelect class="custom-dropdown" (change)="colorFunction($event,makingSelect)">
+                        <option value='0'>
+                            <span>ALL COLORS <i class="fas fa-caret-down"></i></span>
+                        </option>
+                        <option *ngFor="let color of colors; let i =index" value="{{color.id}}">{{color.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 pl-0 mt-5">
+                    <h6 class="pl-3">BY TYPES</h6>
+                </div>
+                <div class="col-md-12 pl-5">
+                    <div class="card-line"></div>
+                </div>
+                <div class="row mt-4 no-gutters text-center">
+                    <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
+                        <img src="../assets/sedan-mini.png" class="img-fluid" alt="Sedan">
+                    </div>
+                    <div class="col-5 car-type ml-1 p-2 mb-2">
+                        <img src="../assets/suv-mini.png" class="img-fluid" alt="Suv">
+                    </div>
+                    <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
+                        <img src="../assets/picup-mini.png" class="img-fluid" alt="PickUp">
+                    </div>
+                    <div class="col-5 car-type ml-1 p-2 mb-2 ">
+                        <img src="../assets/mini-mini.png" class="img-fluid" alt="MiniCar">
+                    </div>
+                    <div class="col-5 ml-4 car-type no-gutters p-2 mb-2">
+                        <img src="../assets/convert-mini.png" class="img-fluid" alt="Convertible">
+                    </div>
+                    <div class="col-5 car-type ml-1 p-2 mb-2">
+                        <img src="../assets/coupe-mini.png" class="img-fluid" alt="Coupe">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
