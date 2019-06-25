@@ -3,7 +3,11 @@
 <div class="container my-5 py-5 ">
   <div class="row no-gutters pt-3 d-flex justify-content-center">
     <div class="col-md-4 col-sm-6">
-      <img src="../assets/photoTemplate300px.png" class="rounded mx-auto d-block img-fluid" alt="add spare part img">
+      <label for="file-input">
+        <img [src]="filePreview" class="rounded mx-auto d-block img-fluid" alt="add car img">
+      </label>
+      <input type="file" id="file-input" style="display: none" name="image" (change)="onFileChanged($event)">
+
     </div>
     <div class="col-md-7 col-sm-6 mx-2 mt-n1">
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()">

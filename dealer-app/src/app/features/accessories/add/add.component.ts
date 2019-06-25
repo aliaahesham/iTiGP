@@ -23,7 +23,8 @@ export class AddComponent implements OnInit {
   myForm: FormGroup;
   // myName: FormControl;
   // myPrice: FormControl;
-
+  fileName: string;
+  filePreview: string = "../assets/photoTemplate300px.png";
   constructor(private accessoriesService: AccessoriesService,
     private categoryService: CategoryService,
     private sellerService: SellerService,
@@ -63,6 +64,19 @@ export class AddComponent implements OnInit {
     } else {
       console.log("error");
       console.log(this.myForm);
+    }
+  }
+  onFileChanged(event) {
+
+    let reader = new FileReader();
+    if (event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+
+        this.fileName = file.name + " " + file.type;
+        this.filePreview = 'data:image/png' + ';base64,' + (<string>reader.result).split(',')[1];
+      };
     }
   }
 }

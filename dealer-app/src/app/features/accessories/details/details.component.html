@@ -1,4 +1,4 @@
-<app-title>Accesories Detail</app-title>
+<app-title>Accessory Details</app-title>
 <!-- body -->
 <div class="container my-5 py-5">
   <div class="row pt-3">
@@ -31,12 +31,12 @@
       <h3 class="border-bottom pb-2 text-right">${{accessories.price}}</h3>
       <h5 class="mt-4 ml-3">Quantity</h5>
       <div class="d-flex mx-auto w-50 justify-content-center">
-        <button class="increment-control__action d-flex justify-content-center align-items-center border" 
-        (click)="counter('decrement')" [disabled]="count < 1" >-</button>
+        <button class="increment-control__action d-flex justify-content-center align-items-center border"
+          (click)="counter('decrement')" [disabled]="count < 1">-</button>
         <input type="text" class="form-control border text-center mx-2" title="Qty" value="1" id="inputval"
-        [value]="myval" readonly required >
-        <button class="increment-control__action d-flex justify-content-center align-items-center border" 
-        (click)="counter('increment')">+</button>
+          [value]="myval" readonly required>
+        <button class="increment-control__action d-flex justify-content-center align-items-center border"
+          (click)="counter('increment')">+</button>
       </div>
       <button type="button" class="btn btn--ordinary btn--color-primary p-3 my-4 w-100"><span class="fs-1p3"><i
             class="fas fa-cart-plus mr-3"></i>Add to Cart</span>
