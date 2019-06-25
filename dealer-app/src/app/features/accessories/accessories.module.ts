@@ -14,12 +14,16 @@ import { AccessoriesService } from './accessories.service';
 //service
 import { CategoryService } from './category.service';
 import { CoreModule} from '../../core/core.module';
+import { ItemCategoryComponent } from './item-category/item-category.component';
+import { ListCategoryComponent } from './list-category/list-category.component';
 @NgModule({
   declarations: [
     ListComponent,
     ItemComponent,
     DetailsComponent,
     AddComponent,
+    ItemCategoryComponent,
+    ListCategoryComponent,
   ],
   imports: [
     CommonModule,
