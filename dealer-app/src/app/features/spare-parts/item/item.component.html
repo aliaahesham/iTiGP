@@ -1,0 +1,18 @@
+<div class="card rounded-0 border-0">
+  <div class="card-container">
+    <img [src]="sparePart.image" class="rounded-0" [alt]="sparePart.name" [ngStyle]="{'width.rem':14}">
+    <div class="card-tag">
+      <h6>${{ getPrice() }}</h6>
+    </div>
+  </div>
+  <div class="card-body text-center p-3">
+    <h5 class="card-title text-dark mt-0">{{ sparePart.name }}</h5>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <a class="btn btn--ordinary btn--color-primary">More Details</a>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>

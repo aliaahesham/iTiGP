@@ -8,9 +8,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CategoryService } from './category.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
-  declarations: [ListComponent, AddComponent, DetailsComponent],
+  declarations: [ListComponent, AddComponent, DetailsComponent, ItemComponent],
   imports: [
     CommonModule,
     CoreModule,
