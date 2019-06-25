@@ -160,7 +160,7 @@ YearFunction(yearProd:Event){
   let year = yearProd.target['options']
   [yearProd.target['options'].selectedIndex].text;
   let yearNum =year as string; 
-  if (yearNum == 'YEAR PRODUCTION'){
+  if (yearNum == 'ALL YEARS'){
     this.specificMakingName=this.carService.getAll();
   }
   else{
