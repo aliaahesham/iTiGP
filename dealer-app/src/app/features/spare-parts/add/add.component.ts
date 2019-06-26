@@ -28,6 +28,7 @@ export class AddComponent implements OnInit {
   models: model[];
   sparePartForm: FormGroup;
   saleOptions = new FormControl('onSale');
+  btnName: string = "Add";
   editedSparePart;
   loggedInSeller: Seller;
   fileName: string;
@@ -80,6 +81,8 @@ export class AddComponent implements OnInit {
         price: this.sparePartById.price,
         discount: this.sparePartById.discount
       })
+      this.btnName = "Edit";
+
     }
 
   }
