@@ -1,8 +1,8 @@
 <div class="card" style="height: 100%;" >
-  <img class="card-img-top" [src]="accessories.image" alt="Card image cap">
+  <img class="card-img-top" [src]="accessories.image" alt="Card image cap" style="height: 15em">
   <div class="card-body text-center">
     <h5 class="card-title">{{accessories.name}}</h5>
-    <h3 class="card-title">{{accessories.price}}</h3>
+    <h3 class="card-title">${{accessories.price}}</h3>
     <a  [routerLink]="['details',accessories.id ]"  class="text-decoration-none btn owl-box-btn">More Details </a>
   </div>
 </div>

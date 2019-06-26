@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
 
 //components
 import { ListComponent } from './list/list.component';
@@ -13,13 +13,17 @@ import { AccessoriesResolver } from './accessories.resolver';
 import { AccessoriesService } from './accessories.service';
 //service
 import { CategoryService } from './category.service';
-import { CoreModule} from '../../core/core.module';
+import { CoreModule } from '../../core/core.module';
+import { ItemCategoryComponent } from './item-category/item-category.component';
+import { ListCategoryComponent } from './list-category/list-category.component';
 @NgModule({
   declarations: [
     ListComponent,
     ItemComponent,
     DetailsComponent,
     AddComponent,
+    ItemCategoryComponent,
+    ListCategoryComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,7 @@ import { CoreModule} from '../../core/core.module';
     RouterModule.forChild([
       { path: 'accessory', component: ListComponent },
       { path: 'accessory/add', component: AddComponent },
-      { path: 'accessory/details/:id', component: DetailsComponent,resolve:{myResolver:AccessoriesResolver} },
+      { path: 'accessory/details/:id', component: DetailsComponent, resolve: { myResolver: AccessoriesResolver } },
     ])
   ],
   exports: [
@@ -37,11 +41,11 @@ import { CoreModule} from '../../core/core.module';
     DetailsComponent,
     AddComponent
   ],
-  providers:[
+  providers: [
     AccessoriesResolver,
     AccessoriesService,
-     CategoryService,
-     
+    CategoryService,
+    ListCategoryComponent
   ]
 })
 export class AccessoriesModule { }

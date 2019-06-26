@@ -93,9 +93,11 @@ export class AddComponent implements OnInit {
       this.sparePartById.modelId = editedSparePart.modelId;
       this.sparePartById.price = editedSparePart.price;
       this.sparePartById.discount = editedSparePart.discount;
+      this.sparePartById.image = this.filePreview;
       this.sparePartService.update(this.sparePartById);
       //console.log(this.sparePartService.getAll());
-      //console.log(this.sparePartService.getAll())
+      // console.log(this.sparePartService.getAll())
+      this.sparePartForm.reset();
       this.router.navigateByUrl('/seller/dashboard');
 
     }
@@ -103,6 +105,7 @@ export class AddComponent implements OnInit {
       if (this.sparePartForm.valid) {
         this.sparePart = this.sparePartForm.value as SparePart;
         this.sparePart.seller = this.loggedInSeller.name;
+        this.sparePart.image = this.filePreview;
         this.sparePartService.add(this.sparePart);
         this.sparePartForm.reset();
         this.router.navigateByUrl('/seller/dashboard');
