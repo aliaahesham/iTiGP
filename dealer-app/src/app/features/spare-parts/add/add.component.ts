@@ -95,7 +95,7 @@ export class AddComponent implements OnInit {
       this.sparePartById.discount = editedSparePart.discount;
       this.sparePartService.update(this.sparePartById);
       //console.log(this.sparePartService.getAll());
-      console.log(this.sparePartService.getAll())
+      //console.log(this.sparePartService.getAll())
       this.router.navigateByUrl('/seller/dashboard');
 
     }

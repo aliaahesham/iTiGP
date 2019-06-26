@@ -17,7 +17,12 @@ export class ListComponent implements OnInit {
   makings: making[];
   models: model[];
   categories: category[];
+  makingId: number;
+  modelId: number;
+  categoryId: number;
   @Input() allSpareParts: SparePart[];
+  //@Input() filteredSpareParts: SparePart[];
+  isFiltered: boolean;
 
   constructor(
     private makingService: makingService,
@@ -27,18 +32,74 @@ export class ListComponent implements OnInit {
   ) {
     this.makings = this.makingService.getAll();
     this.categories = this.categoryService.getAll();
+    this.isFiltered = false;
   }
 
   ngOnInit() {
-    if (!this.allSpareParts) {
+
+  }
+
+  ngDoCheck() {
+    //debugger;
+    if (!this.isFiltered) {
       this.allSpareParts = this.sparePartsService.getAll();
+    } else {
+      //this.allSpareParts = null;
+      this.allSpareParts = this.sparePartsService.getFiltered(this.makingId, this.modelId, this.categoryId);
+    }
+    if (this.makingId != 0 && this.modelId != 0 && this.categoryId != 0) {
+      this.isFiltered = true;
+    } else {
+      this.isFiltered = false;
     }
   }
 
   makingOnChange(event: Event) {
-    const eventTarget = event.target as HTMLTextAreaElement;
-    const makingIdUnknown = eventTarget.value as unknown;
-    const makingId = makingIdUnknown as number;
-    this.models = this.modelService.getBymakingId(makingId);
+    const makingIdNum = +(event.target as HTMLTextAreaElement).value;
+    this.models = this.modelService.getBymakingId(makingIdNum);
+    this.makingId = makingIdNum;
+    /**
+     * if (this.makingId != 0) {
+      this.isFiltered = true;
+    } else {
+      this.isFiltered = false
+    }
+     */
+
   }
+
+  modelOnChange(event: Event) {
+    this.modelId = +(event.target as HTMLTextAreaElement).value;
+    /**
+     * if (this.modelId != 0) {
+      this.isFiltered = true;
+    } else {
+      this.isFiltered = false
+    }
+     */
+
+  }
+
+  categoryOnChange(event: Event) {
+    this.categoryId = +(event.target as HTMLTextAreaElement).value;
+    /**
+     * if (this.categoryId != 0) {
+      this.isFiltered = true;
+    } else {
+      this.isFiltered = false
+    }
+     */
+
+  }
+
+
+  /**
+   * addFilter(filter: {key :string, value :number}) {
+    const existedFilter = this.filters.find(f => f.key === filter.key && f.value === filter.value);
+    if(!existedFilter) {
+      this.filters.push(filter);
+    }
+  }
+   */
+
 }

@@ -1,4 +1,5 @@
 import { SparePart } from '../../_models/spare-parts/spare-parts';
+import { type } from 'os';
 
 export class SparePartsService {
     data: SparePart[];
@@ -20,12 +21,39 @@ export class SparePartsService {
         return this.data;
     }
 
+    getFiltered(makingId: number, modelId: number, categoryId: number): SparePart[] {
+        //console.log(categoryId);
+        return this.data.filter(
+            a => a.categoryId === categoryId && a.makingId === makingId && a.modelId === modelId ||
+                a.makingId === makingId && a.modelId === modelId ||
+                a.categoryId === categoryId && a.makingId === makingId ||
+                a.categoryId === categoryId && a.modelId === modelId ||
+                a.modelId === modelId ||
+                a.categoryId === categoryId ||
+                a.makingId === makingId
+        )
+    }
+
     getById(id: number): SparePart {
         return this.data.find(s => s.id === id);
     }
+
+    getByMakingId(makingId: number): SparePart {
+        return this.data.find(s => s.makingId === makingId)
+    }
+
+    getByModelId(modelId: number): SparePart {
+        return this.data.find(s => s.modelId === modelId)
+    }
+
+    getByCategoryId(categoryId: number): SparePart {
+        return this.data.find(s => s.categoryId === categoryId)
+    }
+
     getBySeller(name: string): SparePart[] {
         return this.data.filter((a) => a.seller.toLowerCase() === name.toLowerCase());
     }
+
     add(sparePart: SparePart) {
         sparePart.id = this.data.length + 1;
         this.data.push(sparePart);

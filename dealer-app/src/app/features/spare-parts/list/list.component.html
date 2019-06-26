@@ -43,6 +43,12 @@
             <app-sparePart-item [sparePart]="sparePart" *ngFor="let sparePart of allSpareParts"
               class="col-3 p-0 mr-5 mb-3">
             </app-sparePart-item>
+            <!--
+              <app-sparePart-item [sparePart]="sparePart" *ngFor="let sparePart of filteredSpareParts"
+              class="col-3 p-0 mr-5 mb-3">
+            </app-sparePart-item>
+            -->
+
           </div>
         </div>
       </div>
@@ -57,7 +63,7 @@
         </div>
         <div class="col-md-12 mt-3">
           <select class="custom-dropdown" (change)="makingOnChange($event)">
-            <option value='0'>
+            <option [value]='0'>
               <span>ALL MAKINGS <i class="fas fa-caret-down"></i></span>
             </option>
             <option *ngFor="let making of makings" [value]="making.id">{{making.name}}</option>
@@ -66,8 +72,8 @@
 
 
         <div class="col-md-12 mt-3">
-          <select class="custom-dropdown">
-            <option disabled>
+          <select class="custom-dropdown" (change)="modelOnChange($event)">
+            <option [value]='0'>
               <span>ALL MODELS <i class="fas fa-caret-down"></i></span>
             </option>
             <option *ngFor="let model of models" [value]="model.id">{{model.name}}</option>
@@ -81,8 +87,8 @@
           <div class="card-line"></div>
         </div>
         <div class="col-md-12 mt-3">
-          <select class="custom-dropdown">
-            <option disabled>
+          <select class="custom-dropdown" (change)="categoryOnChange($event)">
+            <option [value]='0'>
               <span>ALL CATEGORIES <i class="fas fa-caret-down"></i></span>
             </option>
             <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
