@@ -1,0 +1,14 @@
+<div class=" ml-3 mb-5 text-center">
+  <div class="">
+      <div class="row">
+          <div class=" pl-0 pr-0">
+              <img [src]="accessories.image" class="img-fluid" style="height: 10em;width: 15em">
+          </div>
+          <div class=" pt-2 text-center">
+              <a href="#" class="text-decoration-none" [routerLink]="['details',accessories.id ]"   >
+                  <h5 class="text-dark">{{accessories.name}}</h5>
+                  <p class="owl-box-span">${{accessories.price}}</p>
+              </a>
+          </div>
+      </div>
+  </div>
