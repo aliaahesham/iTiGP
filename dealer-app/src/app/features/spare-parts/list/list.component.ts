@@ -33,13 +33,17 @@ export class ListComponent implements OnInit {
     this.makings = this.makingService.getAll();
     this.categories = this.categoryService.getAll();
     this.isFiltered = false;
+    this.makingId = 0;
+    this.modelId = 0;
+    this.categoryId = 0;
   }
 
   ngOnInit() {
-
+    this.allSpareParts = this.sparePartsService.getFiltered(0, 0, 0);
   }
 
-  ngDoCheck() {
+  /**
+   * ngDoCheck() {
     //debugger;
     if (!this.isFiltered) {
       this.allSpareParts = this.sparePartsService.getAll();
@@ -53,23 +57,19 @@ export class ListComponent implements OnInit {
       this.isFiltered = false;
     }
   }
+   */
+
 
   makingOnChange(event: Event) {
     const makingIdNum = +(event.target as HTMLTextAreaElement).value;
     this.models = this.modelService.getBymakingId(makingIdNum);
     this.makingId = makingIdNum;
-    /**
-     * if (this.makingId != 0) {
-      this.isFiltered = true;
-    } else {
-      this.isFiltered = false
-    }
-     */
-
+    this.allSpareParts = this.sparePartsService.getFiltered(this.makingId, this.modelId, this.categoryId);
   }
 
   modelOnChange(event: Event) {
     this.modelId = +(event.target as HTMLTextAreaElement).value;
+    this.allSpareParts = this.sparePartsService.getFiltered(this.makingId, this.modelId, this.categoryId);
     /**
      * if (this.modelId != 0) {
       this.isFiltered = true;
@@ -82,6 +82,7 @@ export class ListComponent implements OnInit {
 
   categoryOnChange(event: Event) {
     this.categoryId = +(event.target as HTMLTextAreaElement).value;
+    this.allSpareParts = this.sparePartsService.getFiltered(this.makingId, this.modelId, this.categoryId);
     /**
      * if (this.categoryId != 0) {
       this.isFiltered = true;

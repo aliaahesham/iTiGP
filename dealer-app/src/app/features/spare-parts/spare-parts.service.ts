@@ -23,7 +23,25 @@ export class SparePartsService {
 
     getFiltered(makingId: number, modelId: number, categoryId: number): SparePart[] {
         //console.log(categoryId);
-        return this.data.filter(
+        let newData: SparePart[];
+        if (categoryId == 0) {
+            newData = this.data.filter(a => a.categoryId != 0)
+        } else {
+            newData = this.data.filter(a => a.categoryId === categoryId)
+        }
+        if (makingId == 0) {
+            newData = newData.filter(a => a.makingId != 0)
+        } else {
+            newData = newData.filter(a => a.makingId === makingId)
+        }
+        if (modelId == 0) {
+            newData = newData.filter(a => a.modelId != 0)
+        } else {
+            newData = newData.filter(a => a.modelId === modelId)
+        }
+        return newData;
+        /**
+         * return this.data.filter(
             a => a.categoryId === categoryId && a.makingId === makingId && a.modelId === modelId ||
                 a.makingId === makingId && a.modelId === modelId ||
                 a.categoryId === categoryId && a.makingId === makingId ||
@@ -32,6 +50,8 @@ export class SparePartsService {
                 a.categoryId === categoryId ||
                 a.makingId === makingId
         )
+         */
+
     }
 
     getById(id: number): SparePart {
