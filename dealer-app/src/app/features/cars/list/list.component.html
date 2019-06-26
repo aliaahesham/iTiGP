@@ -15,7 +15,7 @@
                                     </div>
                                     <div class=" col-4 col-md-3 pr-0 mt-3 mr-4">
                                         <select class="custom-dropdown" style="padding: 6% 6%;">
-                                            <option value='0'>
+                                            <option value='0' disabled
                                                 <ng-container *ngIf="makingName==null; else otherSelect">
                                                     <span>ALL MAKINGS<i class="fas fa-caret-down"></i></span>
                                                 </ng-container>
@@ -24,6 +24,8 @@
 
                                                 </ng-template>
                                             </option>
+                                            <option value="1"> Recent Added </option>
+                                            <option value="1"> Low to hight Price </option>
                                             <!-- <option  *ngFor="let item of yearProduction; let i =index" value="{{item.id}}">{{item.year}}</option> -->
                                         </select>
                                     </div>
