@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.2.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "typescript": "^3.3.1"
   }
 }
